@@ -1,19 +1,17 @@
-import { Grid, Paper, Container } from '@mui/material';
+import { Box } from '@mui/material';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
-import { EmailSignInForm } from '@/components/auth';
+import { GoogleAuthButton } from '@/components';
+import { envUtil } from '@/utils';
 
 import styles from './styles';
 
 export default function SignIn() {
+  const { googleClientId } = envUtil.getEnv();
+
   return (
-    <Container fixed maxWidth="md">
-      <Paper sx={styles.paper}>
-        <Grid container spacing={4}>
-          <Grid item xs={12}>
-            <EmailSignInForm />
-          </Grid>
-        </Grid>
-      </Paper>
-    </Container>
+    <GoogleOAuthProvider clientId={googleClientId}>
+      <Box sx={styles.root}>{googleClientId && <GoogleAuthButton />}</Box>
+    </GoogleOAuthProvider>
   );
 }

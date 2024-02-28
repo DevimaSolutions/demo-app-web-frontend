@@ -8,4 +8,5 @@ export interface IEnv {
   appName: string;
   frontendUrl: string;
   backendUrl: string;
+  googleClientId: string;
 }

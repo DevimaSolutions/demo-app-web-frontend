@@ -37,6 +37,8 @@ const styles = {
   children: {
     zIndex: 2,
     width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
   },
 } as const;
 export default styles;

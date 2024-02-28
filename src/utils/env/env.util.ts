@@ -22,6 +22,7 @@ const mapEnv = () => {
     appName: envRuntime('NEXT_PUBLIC_APP_NAME') || '',
     frontendUrl: envRuntime('NEXT_PUBLIC_FRONTEND_URL') || '',
     backendUrl: envRuntime('NEXT_PUBLIC_BACKEND_URL') || '',
+    googleClientId: envRuntime('NEXT_PUBLIC_GOOGLE_CLIENT_ID') || '',
   };
 
   return Object.freeze(parsed);

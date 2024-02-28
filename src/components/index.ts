@@ -5,6 +5,7 @@ export { default as HtmlHead } from './HtmlHead';
 export { default as NextLinkButton } from './NextLinkButton';
 export { default as NextLinkIconButton } from './NextLinkIconButton';
 export { default as BlurredBackground } from './BlurredBackground';
+export { default as GoogleAuthButton } from './GoogleAuthButton';
 
 export * from './auth';
 export * from './inputs';
