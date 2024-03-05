@@ -1,18 +1,12 @@
-import { Button } from '@mui/material';
-import { useGoogleLogin } from '@react-oauth/google';
+import { Button, CircularProgress } from '@mui/material';
+
+import useGoogleAuthButton from './useGoogleAuthButton';
 
 const GoogleAuthButton = () => {
-  const login = useGoogleLogin({
-    onSuccess: async (tokenResponse) => {
-      // TODO: send token to backend and login user
-      console.log('tokenResponse', tokenResponse);
-    },
-    onError: () => console.log('Login Failed'),
-  });
-
+  const { login, isLogging } = useGoogleAuthButton();
   return (
-    <Button variant="outlined" onClick={() => login()}>
-      Continue with Google
+    <Button variant="outlined" onClick={() => login()} disabled={isLogging}>
+      {isLogging ? <CircularProgress /> : 'Continue with Google'}
     </Button>
   );
 };
