@@ -9,4 +9,9 @@ export interface IEnv {
   frontendUrl: string;
   backendUrl: string;
   googleClientId: string;
+  linkedinState: string;
+  linkedinScope: string;
+  linkedinRedirect: string;
+  linkedinClientId: string;
+  linkedinClientSecret: string;
 }

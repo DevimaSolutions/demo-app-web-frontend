@@ -11,6 +11,8 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'column',
+    gap: 5,
   },
 } as const;
 

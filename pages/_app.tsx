@@ -4,6 +4,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { useMemo } from 'react';
 import { Provider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { AuthGate, HtmlHead, Layout, AuthProvider } from '@/components';
 import { theme, createEmotionCache } from '@/constants';

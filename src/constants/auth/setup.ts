@@ -15,6 +15,7 @@ const createAxiosInstance = () => {
     },
   });
 };
+
 const createAuthOptions = () => {
   const axiosInstance = createAxiosInstance();
   const authOptions: IAuthOptions<IFullUserResponse, ISignInParams> = {
@@ -23,7 +24,7 @@ const createAuthOptions = () => {
     signOut: () => Promise.resolve(),
     refreshToken: (manager) =>
       manager.axios.post('/auth/refresh', { refreshToken: manager.getRefreshToken() }),
-    getUser: (manager) => manager.axios.get('/auth/me'),
+    getUser: (manager) => manager.axios.get('/auth/profile'),
   };
 
   return authOptions;

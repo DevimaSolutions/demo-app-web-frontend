@@ -23,6 +23,11 @@ const mapEnv = () => {
     frontendUrl: envRuntime('NEXT_PUBLIC_FRONTEND_URL') || '',
     backendUrl: envRuntime('NEXT_PUBLIC_BACKEND_URL') || '',
     googleClientId: envRuntime('NEXT_PUBLIC_GOOGLE_CLIENT_ID') || '',
+    linkedinState: envRuntime('NEXT_PUBLIC_LINKEDIN_STATE') || '',
+    linkedinScope: envRuntime('NEXT_PUBLIC_LINKEDIN_SCOPE') || '',
+    linkedinRedirect: envRuntime('NEXT_PUBLIC_LINKEDIN_REDIRECT') || '',
+    linkedinClientId: envRuntime('NEXT_PUBLIC_LINKEDIN_CLIENT_ID') || '',
+    linkedinClientSecret: envRuntime('NEXT_PUBLIC_LINKEDIN_CLIENT_SECRET') || '',
   };
 
   return Object.freeze(parsed);
