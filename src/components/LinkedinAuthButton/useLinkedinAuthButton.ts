@@ -12,6 +12,7 @@ const AUTHORIZATION_LINK = 'https://www.linkedin.com/oauth/v2/authorization';
 
 export const useLinkedinAuthButton = () => {
   const [isLogging, setIsLogging] = useState(false);
+  const [code, setCode] = useState<string | string[]>('');
   const router = useRouter();
 
   const LINKEDIN_URL = getURLWithQueryParams(AUTHORIZATION_LINK, {
@@ -26,6 +27,7 @@ export const useLinkedinAuthButton = () => {
     router.replace('/sign-in', undefined, { shallow: true });
     toast.error(errorMessages.somethingWentWrong);
     setIsLogging(false);
+    setCode('');
   }, [router]);
 
   const loginWithLinkedIn = () => router.push(LINKEDIN_URL);
@@ -49,10 +51,14 @@ export const useLinkedinAuthButton = () => {
     if (router.query.error) {
       handleLinkedInError();
     }
-    if (router.query.code) {
-      authorizeWithLinkedIn(router.query.code);
+    if (code) {
+      authorizeWithLinkedIn(code);
     }
-  }, [authorizeWithLinkedIn, handleLinkedInError, router]);
+  }, [authorizeWithLinkedIn, code, handleLinkedInError, router.query.error]);
+
+  useEffect(() => {
+    if (router.query.code) setCode(router.query.code);
+  }, [router.query.code]);
 
   return { loginWithLinkedIn, isLogging };
 };
