@@ -1,3 +1,4 @@
+import { outlinedInputClasses } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
@@ -27,18 +28,42 @@ export const theme = createTheme({
         disableElevation: true,
       },
       styleOverrides: {
-        sizeLarge: {
-          padding: '1rem 1.25rem',
-          fontSize: '1rem',
-          lineHeight: 1.3125,
-          letterSpacing: 0,
-          fontFamily:
-            '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
-          fontWeight: 700,
-        },
         containedPrimary: {
-          backgroundColor: '#007FFF',
-          color: '#fff',
+          fontFamily: 'Poppins',
+          fontWeight: 500,
+          fontSize: '16px',
+          lineHeight: '20px',
+          backgroundColor: '#8A80B9',
+          color: '#FFFFFF',
+          borderRadius: '8px',
+          padding: '13px 20px 15px',
+          '&:active, &:focus, &:hover': {
+            backgroundColor: '#6C629B',
+          },
+          '&:disabled': {
+            backgroundColor: '#D2CDDA',
+            color: '#A09BA8D',
+          },
+        },
+        containedSecondary: {
+          fontFamily: 'Poppins',
+          fontWeight: 500,
+          fontSize: '16px',
+          lineHeight: '20px',
+          backgroundColor: '#FFFFFF',
+          color: '#6C629B',
+          borderRadius: '8px',
+          padding: '12px 20px 14px',
+          border: '1.5px solid #FFFFFF',
+          '&:active, &:focus, &:hover': {
+            backgroundColor: '#FFFFFF',
+            border: '1.5px solid #8A80B9',
+          },
+          '&:disabled': {
+            backgroundColor: '#E6E1EE',
+            color: '#A09BA8',
+            border: '1.5px solid #DCD7E4',
+          },
         },
       },
     },
@@ -65,16 +90,81 @@ export const theme = createTheme({
       },
       styleOverrides: {
         root: {
-          color: '#0072E5',
-          fontWeight: 700,
+          color: '#38229F',
+          fontFamily: 'Poppins',
+          fontWeight: 500,
+          fontSize: '12px',
+          lineHeight: '18px',
           display: 'inline-flex',
           alignItems: 'center',
+          '&:hover': {
+            textDecoration: 'underline',
+          },
           '&.MuiTypography-body1 > svg': {
             marginTop: 2,
           },
           '& svg:last-child': {
             marginLeft: 2,
           },
+        },
+      },
+    },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          [`&.${outlinedInputClasses.root}`]: {
+            padding: 0,
+            borderRadius: '8px',
+            border: '1px solid #FFFFFF',
+            backgroundColor: '#FFFFFF',
+            '&:hover': {
+              border: '1px solid #8A80B9',
+              boxShadow: '0px 0px 0px 2.5px #8674DB1A',
+            },
+            '&:active, &.Mui-focused': {
+              border: '1.5px solid #8A80B966',
+              boxShadow: 'none',
+            },
+            fieldset: {
+              border: 'none',
+              top: 0,
+              legend: {
+                display: 'none',
+              },
+            },
+          },
+          '& input::placeholder': {
+            color: '#D2CFD7',
+            fontFamily: 'Poppins',
+            opacity: 1,
+            fontSize: '16px',
+            fontWeight: 400,
+            lineHeight: '20px',
+          },
+        },
+        input: {
+          [`&.${outlinedInputClasses.input}`]: {
+            height: 'auto',
+            padding: '13px 12px',
+            fontSize: '16px',
+            fontWeight: 400,
+            lineHeight: '20px',
+            color: '#343434',
+          },
+        },
+      },
+    },
+    MuiInputAdornment: {
+      styleOverrides: {
+        root: {
+          margin: 0,
+          color: 'currentColor',
+        },
+        positionStart: {
+          marginLeft: '12px',
+        },
+        positionEnd: {
+          marginRight: '12px',
         },
       },
     },
@@ -212,7 +302,7 @@ export const theme = createTheme({
       '700': '#0059B2',
       '800': '#004C99',
       '900': '#003A75',
-      main: '#007FFF',
+      main: '#8A80B9',
       light: '#66B2FF',
       dark: '#0059B2',
       contrastText: '#fff',
@@ -244,7 +334,7 @@ export const theme = createTheme({
       '50': '#F3F6F9',
       '100': '#EAEEF3',
       '200': '#E5E8EC',
-      '300': '#D7DCE1',
+      '300': '#A09BA8',
       '400': '#BFC7CF',
       '500': '#AAB4BE',
       '600': '#7F8E9D',
@@ -267,7 +357,7 @@ export const theme = createTheme({
       '700': '#C70011',
       '800': '#94000D',
       '900': '#570007',
-      main: '#EB0014',
+      main: '#FF6565',
       light: '#FF99A2',
       dark: '#C70011',
       contrastText: '#fff',
@@ -340,19 +430,16 @@ export const theme = createTheme({
     borderRadius: 10,
   },
   typography: {
-    fontFamily:
-      '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+    fontFamily: 'Poppins',
     h1: {
-      fontFamily:
-        '"PlusJakartaSans-ExtraBold",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: 'Poppins',
       fontSize: 'clamp(2.625rem, 1.2857rem + 3.5714vw, 4rem)',
       fontWeight: 800,
       lineHeight: 1.1142857142857143,
       color: '#0A1929',
     },
     h2: {
-      fontFamily:
-        '"PlusJakartaSans-ExtraBold",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: 'Poppins',
       fontSize: 'clamp(1.5rem, 0.9643rem + 1.4286vw, 2.25rem)',
       fontWeight: 800,
       lineHeight: 1.2222222222222223,
@@ -362,40 +449,35 @@ export const theme = createTheme({
       fontSize: '2.25rem',
       lineHeight: 1.2222222222222223,
       letterSpacing: 0,
-      fontFamily:
-        '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: 'Poppins',
       fontWeight: 400,
     },
     h4: {
       fontSize: '1.75rem',
       lineHeight: 1.5,
       letterSpacing: 0,
-      fontFamily:
-        '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: 'Poppins',
       fontWeight: 400,
     },
     h5: {
       fontSize: '1.5rem',
       lineHeight: 1.5,
       letterSpacing: 0,
-      fontFamily:
-        '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: 'Poppins',
       fontWeight: 400,
     },
     h6: {
       fontSize: '1.25rem',
       lineHeight: 1.5,
       letterSpacing: 0,
-      fontFamily:
-        '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: 'Poppins',
       fontWeight: 500,
     },
     button: {
       textTransform: 'initial',
       fontWeight: 700,
       letterSpacing: 0,
-      fontFamily:
-        '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: 'Poppins',
       fontSize: '0.875rem',
       lineHeight: 1.75,
     },
@@ -404,23 +486,20 @@ export const theme = createTheme({
       lineHeight: 1.3333333333333333,
       letterSpacing: 0,
       fontWeight: 500,
-      fontFamily:
-        '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: 'Poppins',
     },
     body1: {
       fontSize: '1rem',
       lineHeight: 1.5,
       letterSpacing: 0,
-      fontFamily:
-        '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: 'Poppins',
       fontWeight: 400,
     },
     body2: {
       fontSize: '0.875rem',
       lineHeight: 1.5,
       letterSpacing: 0,
-      fontFamily:
-        '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: 'Poppins',
       fontWeight: 400,
     },
     caption: {
@@ -429,19 +508,16 @@ export const theme = createTheme({
       lineHeight: 1.5,
       letterSpacing: 0,
       fontWeight: 700,
-      fontFamily:
-        '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: 'Poppins',
     },
     subtitle2: {
-      fontFamily:
-        '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: 'Poppins',
       fontWeight: 500,
       fontSize: '0.875rem',
       lineHeight: 1.57,
     },
     overline: {
-      fontFamily:
-        '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: 'Poppins',
       fontWeight: 400,
       fontSize: '0.75rem',
       lineHeight: 2.66,
