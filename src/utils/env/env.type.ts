@@ -4,14 +4,18 @@ export enum EnvMode {
   TEST_ENV = 'test',
 }
 
-export interface IEnv {
-  appName: string;
-  frontendUrl: string;
-  backendUrl: string;
+export interface IEnvAuthOptions {
   googleClientId: string;
   linkedinState: string;
   linkedinScope: string;
   linkedinRedirect: string;
   linkedinClientId: string;
   linkedinClientSecret: string;
+}
+
+export interface IEnv {
+  appName: string;
+  frontendUrl: string;
+  backendUrl: string;
+  auth: IEnvAuthOptions;
 }

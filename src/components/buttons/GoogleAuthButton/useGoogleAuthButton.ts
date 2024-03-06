@@ -20,11 +20,11 @@ const useGoogleAuthButton = () => {
           socialType: AuthTypeEnum.Google,
         })
         .catch((error) => {
-          toast.error(`${errorMessages.somethingWentWrong}, ${error}`);
+          toast.error(error.message || errorMessages.somethingWentWrong);
           setIsLogging(false);
         });
     },
-    onError: ({ error }) => toast.error(`${errorMessages.somethingWentWrong}, ${error}`),
+    onError: ({ error }) => toast.error(error || errorMessages.somethingWentWrong),
     onNonOAuthError: ({ type }) => toast.error(onNonOAuthErrorMessages[type]),
   });
 

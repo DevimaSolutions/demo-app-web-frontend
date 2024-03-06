@@ -17,10 +17,10 @@ export const useLinkedinAuthButton = () => {
 
   const LINKEDIN_URL = getURLWithQueryParams(AUTHORIZATION_LINK, {
     response_type: 'code',
-    client_id: env.linkedinClientId,
-    redirect_uri: env.linkedinRedirect,
-    state: env.linkedinState,
-    scope: env.linkedinScope,
+    client_id: env.auth.linkedinClientId,
+    redirect_uri: env.auth.linkedinRedirect,
+    state: env.auth.linkedinState,
+    scope: env.auth.linkedinScope,
   });
 
   const handleLinkedInError = useCallback(() => {
@@ -37,7 +37,7 @@ export const useLinkedinAuthButton = () => {
       setIsLogging(true);
       authorizationService
         .authorizeWithSocial<AuthTypeEnum.LinkedIn>({
-          payload: { code: authCode, redirect: env.linkedinRedirect },
+          payload: { code: authCode, redirect: env.auth.linkedinRedirect },
           socialType: AuthTypeEnum.LinkedIn,
         })
         .catch(() => {

@@ -7,13 +7,13 @@ import { envUtil } from '@/utils';
 import styles from './styles';
 
 export default function SignIn() {
-  const { googleClientId, linkedinClientId } = envUtil.getEnv();
+  const { auth } = envUtil.getEnv();
 
   return (
-    <GoogleOAuthProvider clientId={googleClientId}>
+    <GoogleOAuthProvider clientId={auth.googleClientId}>
       <Box sx={styles.root}>
-        {googleClientId && <GoogleAuthButton />}
-        {linkedinClientId && <LinkedinAuthButton />}
+        {auth.googleClientId && <GoogleAuthButton />}
+        {auth.linkedinClientId && <LinkedinAuthButton />}
       </Box>
     </GoogleOAuthProvider>
   );
