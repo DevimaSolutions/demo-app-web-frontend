@@ -1,6 +1,7 @@
-import { AuthTypeEnum, type ISocialAuthorizeRequest } from '@/data-transfer/requests';
+import { AuthTypeEnum } from '@/data-transfer/requests/enums';
 import { getAuthManager } from '@/utils';
 
+import type { IResetPasswordRequest, ISocialAuthorizeRequest } from '@/data-transfer/requests';
 import type {
   IFullUserResponse,
   IGoogleAuthorizeResponse,
@@ -53,9 +54,19 @@ const authorizeWithSocial = async <AuthType>({
   auth.setAuth(user, authToken);
 };
 
+const resetPassword = async ({ token, password }: IResetPasswordRequest) => {
+  const auth = await getAuthManager();
+  const response = await auth.axios
+    .put<ISuccessResponse>('/auth/password/reset', { token, password })
+    .then((res) => res.data);
+
+  return response;
+};
+
 const authorizationService = {
   sendForgotPassword,
   verifyAccount,
   authorizeWithSocial,
+  resetPassword,
 };
 export default authorizationService;

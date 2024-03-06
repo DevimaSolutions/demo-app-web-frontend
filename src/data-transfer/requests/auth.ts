@@ -24,3 +24,8 @@ export interface ISocialAuthorizeRequest<AuthType> {
     ? IGoogleAuthorizeRequest
     : ILinkedInAuthorizeRequest;
 }
+
+export interface IResetPasswordRequest {
+  token: string;
+  password: string;
+}
