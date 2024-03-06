@@ -1,9 +1,10 @@
-import { Button, Grid } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import { Formik, Form, Field } from 'formik';
 
 import { PasswordInput, TextInput } from '@/components/inputs';
 
 import { schema } from './schema';
+import styles from './styles';
 import useEmailSignInForm from './useEmailSignInForm';
 
 export default function EmailSignInForm() {
@@ -16,38 +17,36 @@ export default function EmailSignInForm() {
       onSubmit={onSubmit}
     >
       {({ isSubmitting }) => (
-        <Form>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <Field
-                type="email"
-                name="email"
-                autoComplete="email"
-                fullWidth
-                component={TextInput}
-              />
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Field
-                name="password"
-                autoComplete="current-password"
-                fullWidth
-                component={PasswordInput}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <Button
-                variant="contained"
-                color="primary"
-                fullWidth
-                type="submit"
-                disabled={isSubmitting}
-              >
-                Sign In
-              </Button>
-            </Grid>
-          </Grid>
-        </Form>
+        <Box sx={styles.container}>
+          <Form>
+            <Field
+              type="email"
+              name="email"
+              autoComplete="email"
+              fullWidth
+              component={TextInput}
+              label={'email'}
+            />
+
+            <Field
+              name="password"
+              autoComplete="current-password"
+              fullWidth
+              component={PasswordInput}
+              label={'password'}
+            />
+
+            <Button
+              variant="contained"
+              color="primary"
+              fullWidth
+              type="submit"
+              disabled={isSubmitting}
+            >
+              Sign In
+            </Button>
+          </Form>
+        </Box>
       )}
     </Formik>
   );
