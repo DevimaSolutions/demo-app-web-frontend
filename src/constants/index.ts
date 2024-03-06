@@ -3,4 +3,5 @@ export * from './theme';
 export * from './styles';
 export * from './regex';
 export * from './messages';
+export * from './fonts';
 export { default as errorMessages } from './errorMessages';

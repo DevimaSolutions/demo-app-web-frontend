@@ -1,0 +1,38 @@
+export const fonts = [
+  {
+    fontFamily: 'Poppins',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 400,
+    src: `local('Poppins'), local('Poppins'), url(/fonts/Poppins-Regular.ttf) format('opentype')`,
+    font: '/fonts/Poppins-Regular.ttf',
+    type: 'opentype',
+  },
+  {
+    fontFamily: 'Poppins',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 500,
+    src: `local('Poppins'), local('Poppins'), url(/fonts/Poppins-Medium.ttf) format('opentype')`,
+    font: '/fonts/Poppins-Medium.ttf',
+    type: 'opentype',
+  },
+  {
+    fontFamily: 'Poppins',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 600,
+    src: `local('Poppins'), local('Poppins'), url(/fonts/Poppins-SemiBold.ttf) format('opentype')`,
+    font: '/fonts/Poppins-SemiBold.ttf',
+    type: 'opentype',
+  },
+  {
+    fontFamily: 'Poppins',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 700,
+    src: `local('Poppins'), local('Poppins'), url(/fonts/Poppins-Bold.ttf) format('opentype')`,
+    font: '/fonts/Poppins-Bold.ttf',
+    type: 'opentype',
+  },
+] as const;
