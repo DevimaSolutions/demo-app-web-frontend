@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { useDispatch as useDefaultDispatch } from 'react-redux';
 
 import { isSSR } from '@/utils';
 
@@ -50,3 +51,4 @@ export const initializeStore = (preloadedState?: RootState): Store => {
 export type Store = ReturnType<typeof createStore>;
 export type RootState = ReturnType<Store['getState']>;
 export type AppDispatch = Store['dispatch'];
+export const useDispatch = () => useDefaultDispatch<AppDispatch>();
