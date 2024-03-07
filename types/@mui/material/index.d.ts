@@ -5,3 +5,8 @@ declare module '@mui/material/styles/createPalette' {
     primaryDark?: PaletteColorOptions;
   }
 }
+declare module '@mui/material/Button' {
+  interface ButtonPropsVariantOverrides {
+    social: true;
+  }
+}

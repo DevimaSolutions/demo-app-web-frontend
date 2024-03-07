@@ -66,6 +66,27 @@ export const theme = createTheme({
           },
         },
       },
+      variants: [
+        {
+          props: { variant: 'social' },
+          style: {
+            backgroundColor: '#FFFFFF',
+            borderRadius: '8px',
+            padding: '20px',
+            border: '1.5px solid #FFFFFF',
+            '&:active, &:focus, &:hover': {
+              backgroundColor: '#FFFFFF',
+              border: '1.5px solid #8674DB',
+              boxShadow: ' 0px 0px 0px 2px #8674DB1A',
+            },
+            '&:disabled': {
+              backgroundColor: '#FFFFFF',
+              color: '#bdbdbd',
+              border: '1.5px solid #FFFFFF',
+            },
+          },
+        },
+      ],
     },
     MuiContainer: {
       styleOverrides: {
@@ -165,6 +186,22 @@ export const theme = createTheme({
         },
         positionEnd: {
           marginRight: '12px',
+        },
+      },
+    },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          '&.Mui-error': {
+            color: '#343434',
+            opacity: '0.4',
+          },
+          marginTop: '4px',
+          marginLeft: '12px',
+          fontFamily: 'Poppins',
+          fontSize: '12px',
+          fontWeight: 400,
+          lineHeight: '16px',
         },
       },
     },
@@ -328,7 +365,7 @@ export const theme = createTheme({
     text: {
       primary: '#20262D',
       secondary: '#2F3A45',
-      disabled: 'rgba(0, 0, 0, 0.38)',
+      disabled: '#BDBDBD',
     },
     grey: {
       '50': '#F3F6F9',
@@ -418,7 +455,7 @@ export const theme = createTheme({
       hoverOpacity: 0.04,
       selected: 'rgba(0, 0, 0, 0.08)',
       selectedOpacity: 0.08,
-      disabled: 'rgba(0, 0, 0, 0.26)',
+      disabled: '#BDBDBD',
       disabledBackground: 'rgba(0, 0, 0, 0.12)',
       disabledOpacity: 0.38,
       focus: 'rgba(0, 0, 0, 0.12)',
