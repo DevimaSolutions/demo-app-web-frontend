@@ -21,7 +21,7 @@ const GoogleIcon = ({
       viewBox={viewBox}
       width={width}
       height={height}
-      sx={combineSx(styles.root, sx, styles[direction])}
+      sx={combineSx(styles.root, styles[direction], sx)}
       {...rest}
     >
       <g xmlns="http://www.w3.org/2000/svg" clipPath="url(#clip0_194_14759)">

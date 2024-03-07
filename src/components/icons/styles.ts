@@ -5,16 +5,16 @@ const styles = {
     height: 'auto',
   },
   up: {
-    transform: 'rotateZ(0deg)',
+    transform: 'rotate(0deg)',
   },
   right: {
-    transform: 'rotateZ(90deg)',
+    transform: 'rotate(90deg)',
   },
   down: {
-    transform: 'rotateZ(180deg)',
+    transform: 'rotate(180deg)',
   },
   left: {
-    transform: 'rotateZ(270deg)',
+    transform: 'rotate(270deg)',
   },
 } as const;
 export default styles;

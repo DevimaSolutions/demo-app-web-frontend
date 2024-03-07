@@ -1,20 +1,14 @@
 import { Box, TextField } from '@mui/material';
 
-import { theme } from '@/constants';
+import useTextInput from './useTextInput';
 
 import type { ITextInputProps } from './types';
 
 function TextInput<
   V = string,
   FormValues extends Record<string, unknown> = Record<string, unknown>,
->({ field, form: { touched, errors }, InputProps, ...props }: ITextInputProps<V, FormValues>) {
-  const hasError = Boolean(touched[field.name] && errors[field.name]);
-
-  const adornmentColor = hasError
-    ? theme.palette.error.main
-    : (field.value as string).length
-    ? theme.palette.grey[300]
-    : theme.palette.primary.main;
+>({ field, InputProps, ...props }: ITextInputProps<V, FormValues>) {
+  const { hasError, errorText, adornmentColor } = useTextInput({ field, InputProps, ...props });
 
   return (
     <TextField
@@ -29,7 +23,7 @@ function TextInput<
           : {}
       }
       error={hasError}
-      helperText={hasError ? errors[field.name]?.toString() : ' '}
+      helperText={hasError ? errorText : ' '}
     />
   );
 }

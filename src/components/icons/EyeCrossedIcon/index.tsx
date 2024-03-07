@@ -20,7 +20,7 @@ const EyeCrossedIcon = ({
       viewBox={viewBox}
       width={width}
       height={height}
-      sx={combineSx(styles.root, sx, styles[direction])}
+      sx={combineSx(styles.root, styles[direction], sx)}
       {...rest}
     >
       <path
