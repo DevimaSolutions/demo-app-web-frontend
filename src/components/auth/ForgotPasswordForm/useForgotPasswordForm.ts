@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
+import { useDispatch } from '@/hooks';
 import { sendForgotPassword } from '@/redux/authorization/thunks';
-import { useDispatch } from '@/redux/store';
 
 import type { IForgotPasswordFormProps } from './types';
 import type { FormikHelpers } from 'formik';

@@ -1,5 +1,4 @@
-import { useSelector } from 'react-redux';
-
+import { useSelector } from '@/hooks';
 import { resetPasswordSent } from '@/redux/authorization/selectors';
 
 const useForgotPassword = () => {

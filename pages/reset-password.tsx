@@ -3,7 +3,7 @@ import { ResetPassword } from '@/page-content';
 import { Layout } from '@/types';
 import { withPageSettings } from '@/utils';
 
-import type { IPasswordResetPageProps } from '@/page-content/ResetPassword/types';
+import type { IPasswordResetPageProps } from '@/page-content/auth/ResetPassword/types';
 
 export default function SignInPage({ token }: IPasswordResetPageProps) {
   return <ResetPassword token={token} />;
