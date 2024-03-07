@@ -1,6 +1,6 @@
 export enum UserRole {
-  Customer,
-  Admin,
+  User = 'user',
+  Admin = 'admin',
 }
 
 export enum AuthAccessLevel {
@@ -10,6 +10,7 @@ export enum AuthAccessLevel {
 }
 
 export enum UserStatus {
-  Active,
-  Blocked,
+  Pending = 'pending',
+  Active = 'active',
+  Blocked = 'blocked',
 }
