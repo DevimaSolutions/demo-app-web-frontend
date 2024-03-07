@@ -484,7 +484,6 @@ export const theme = createTheme({
       fontSize: '2.25rem',
       lineHeight: 1.2222222222222223,
       letterSpacing: 0,
-      fontFamily: 'Poppins',
       fontWeight: 400,
     },
     h4: {
