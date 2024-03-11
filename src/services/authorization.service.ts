@@ -1,10 +1,14 @@
 import { AuthTypeEnum } from '@/data-transfer/requests/enums';
 import { getAuthManager } from '@/utils';
 
-import type { IResetPasswordRequest, ISocialAuthorizeRequest } from '@/data-transfer/requests';
+import type {
+  IResetPasswordRequest,
+  ISignUpRequest,
+  ISocialAuthorizeRequest,
+} from '@/data-transfer/requests';
 import type {
   IFullUserResponse,
-  IGoogleAuthorizeResponse,
+  ISuccessAuthorizeResponse,
   ISuccessResponse,
 } from '@/data-transfer/responses';
 import type { IVerifyAccountData } from '@/redux/authorization/types';
@@ -42,7 +46,7 @@ const authorizeWithSocial = async <AuthType>({
   }[socialType];
 
   const authToken = await auth.axios
-    .post<IGoogleAuthorizeResponse>(`/auth/${socialName}`, payload)
+    .post<ISuccessAuthorizeResponse>(`/auth/${socialName}`, payload)
     .then((res) => res.data);
 
   const user = await auth.axios
@@ -63,10 +67,27 @@ const resetPassword = async ({ token, password }: IResetPasswordRequest) => {
   return response;
 };
 
+const signUp = async (data: ISignUpRequest) => {
+  const auth = await getAuthManager();
+
+  const authToken = await auth.axios
+    .post<ISuccessAuthorizeResponse>('/auth/sign-up', data)
+    .then((res) => res.data);
+
+  const user = await auth.axios
+    .get<IFullUserResponse>('/auth/profile', {
+      headers: { Authorization: `Bearer ${authToken.accessToken}` },
+    })
+    .then((res) => res.data);
+
+  auth.setAuth(user, authToken);
+};
+
 const authorizationService = {
   sendForgotPassword,
   verifyAccount,
   authorizeWithSocial,
   resetPassword,
+  signUp,
 };
 export default authorizationService;

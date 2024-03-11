@@ -12,6 +12,10 @@ const getAuthRedirect = (user?: IFullUserResponse | null) => {
     return '/admin';
   }
 
+  if (!user.isOnboardingComplete) {
+    return '/onboarding';
+  }
+
   return '/';
 };
 

@@ -29,3 +29,9 @@ export interface IResetPasswordRequest {
   token: string;
   password: string;
 }
+
+export interface ISignUpRequest {
+  email: string;
+  password: string;
+  confirmPassword: string;
+}

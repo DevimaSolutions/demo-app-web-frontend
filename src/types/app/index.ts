@@ -12,6 +12,7 @@ export interface AppAdditionalProps {
 export interface IAuthInitialProps {
   accessLevel: AuthAccessLevel;
   permissions?: UserRole[];
+  isOnboardingRequired?: boolean;
 }
 
 export interface IPageSettings {

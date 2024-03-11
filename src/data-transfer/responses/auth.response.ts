@@ -1,4 +1,4 @@
-export interface IGoogleAuthorizeResponse {
+export interface ISuccessAuthorizeResponse {
   accessToken: string;
   refreshToken: string;
 }

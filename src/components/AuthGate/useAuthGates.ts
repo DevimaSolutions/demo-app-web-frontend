@@ -11,7 +11,9 @@ const useAuthGate = (auth: IAuthContext, authSettings?: IAuthInitialProps) => {
   const ensureAuthSettings = {
     accessLevel: authSettings?.accessLevel || AuthAccessLevel.Public,
     permissions: authSettings?.permissions,
+    isOnboardingRequired: authSettings?.isOnboardingRequired ?? true,
   };
+
   const { isAvailable, shouldRedirect } = isRouteAvailable(
     auth.user,
     auth.isLoading,

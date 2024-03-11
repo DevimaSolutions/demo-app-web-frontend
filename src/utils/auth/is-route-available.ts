@@ -9,6 +9,10 @@ const checkUserPermissions = (role: UserRole, permissions?: UserRole[]) => {
   return permissions?.length ? permissions.includes(role) : true;
 };
 
+const checkOnboardingPermission = (isOnboardingComplete: boolean, isOnboardingRequired?: boolean) =>
+  // Checks if the user can access with current onboarding status
+  !isOnboardingRequired || isOnboardingComplete;
+
 // Feel free to place additional authorization checks here
 const isUserAuthenticatedForRoute = (
   user: IFullUserResponse | null,
@@ -19,7 +23,9 @@ const isUserAuthenticatedForRoute = (
   // The user is signed in
   !!user &&
   // The user has a corresponding role
-  checkUserPermissions(user.role, authSettings.permissions);
+  checkUserPermissions(user.role, authSettings.permissions) &&
+  // Checks if the user can access with current onboarding status
+  checkOnboardingPermission(user.isOnboardingComplete, authSettings.isOnboardingRequired);
 
 const isRouteAvailable = (
   user: IFullUserResponse | null,

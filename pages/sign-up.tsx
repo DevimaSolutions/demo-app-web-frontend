@@ -1,14 +1,14 @@
 import { AuthAccessLevel } from '@/constants';
-import { ForgotPassword } from '@/page-content';
+import { SignUp } from '@/page-content';
 import { Layout } from '@/types';
 import { withPageSettings } from '@/utils';
 
-export default function ForgotPasswordPage() {
-  return <ForgotPassword />;
+export default function SignUpPage() {
+  return <SignUp />;
 }
 
 export const getServerSideProps = withPageSettings({
   auth: { accessLevel: AuthAccessLevel.Unauthorized },
-  metaData: { title: 'Forgot password' },
+  metaData: { title: 'Sign up' },
   layout: Layout.Auth,
 });
