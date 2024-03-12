@@ -42,7 +42,7 @@ export const theme = createTheme({
           },
           '&:disabled': {
             backgroundColor: '#D2CDDA',
-            color: '#A09BA8D',
+            color: '#A09BA8',
           },
         },
         containedSecondary: {
@@ -530,11 +530,13 @@ export const theme = createTheme({
       fontWeight: 400,
     },
     caption: {
+      color: '#908C97',
+      opacity: 0.7,
       display: 'inline-block',
-      fontSize: '0.75rem',
+      fontSize: '16px',
       lineHeight: 1.5,
       letterSpacing: 0,
-      fontWeight: 700,
+      fontWeight: 500,
     },
     subtitle2: {
       fontWeight: 500,

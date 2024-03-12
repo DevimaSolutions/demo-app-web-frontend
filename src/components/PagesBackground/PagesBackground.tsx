@@ -4,7 +4,7 @@ import styles from './styles';
 
 import type { PropsWithChildren } from 'react';
 
-const BlurredBackground = ({ children }: PropsWithChildren) => {
+const PagesBackground = ({ children }: PropsWithChildren) => {
   return (
     <Box sx={styles.container}>
       <Box sx={styles.children}>{children}</Box>
@@ -12,4 +12,4 @@ const BlurredBackground = ({ children }: PropsWithChildren) => {
   );
 };
 
-export default BlurredBackground;
+export default PagesBackground;

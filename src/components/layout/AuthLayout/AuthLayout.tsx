@@ -1,9 +1,9 @@
-import { BlurredBackground } from '@/components';
+import { PagesBackground } from '@/components';
 
 import type { PropsWithChildren } from 'react';
 
 const AuthLayout = ({ children }: PropsWithChildren<{}>) => {
-  return <BlurredBackground>{children}</BlurredBackground>;
+  return <PagesBackground>{children}</PagesBackground>;
 };
 
 export default AuthLayout;

@@ -4,7 +4,8 @@ export { default as AuthProvider } from './AuthProvider';
 export { default as HtmlHead } from './HtmlHead';
 export { default as NextLinkButton } from './NextLinkButton';
 export { default as NextLinkIconButton } from './NextLinkIconButton';
-export { default as BlurredBackground } from './BlurredBackground';
+export { default as PagesBackground } from './PagesBackground';
+export { default as StyledContainer } from './StyledContainer';
 
 export * from './auth';
 export * from './inputs';

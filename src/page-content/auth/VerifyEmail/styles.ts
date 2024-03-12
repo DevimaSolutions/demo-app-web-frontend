@@ -1,18 +1,24 @@
-import { theme } from '@/constants';
-
 const styles = {
   root: {
-    width: 714,
-    height: 825,
-    borderRadius: 2.5,
-    border: `1px solid ${theme.palette.common.white}`,
-    background: 'linear-gradient(120deg, rgba(255,255,255, 0.47), rgba(255,255,255, 0))',
-    backdropFilter: 'blur(42px)',
+    p: '48px 40px',
+    gap: 0,
+    minWidth: 480,
+  },
+  title: {
+    fontSize: 24,
+    lineHeight: 1.333,
+    fontWeight: 500,
+    mb: 1,
+  },
+  codeInput: {
+    mt: 4,
+  },
+  buttonContainer: {
+    width: '100%',
+    mt: 7,
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
     flexDirection: 'column',
-    gap: 5,
+    gap: 1.25,
   },
 } as const;
 

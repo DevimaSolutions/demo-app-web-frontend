@@ -1,6 +1,6 @@
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
-import { ResetPasswordForm } from '@/components';
+import { ResetPasswordForm, StyledContainer } from '@/components';
 
 import styles from './styles';
 
@@ -8,7 +8,7 @@ import type { IPasswordResetPageProps } from './types';
 
 const ResetPassword = ({ token }: IPasswordResetPageProps) => {
   return (
-    <Box sx={styles.root}>
+    <StyledContainer sx={styles.root}>
       {token ? (
         <>
           <Typography>Reset password form</Typography>
@@ -17,7 +17,7 @@ const ResetPassword = ({ token }: IPasswordResetPageProps) => {
       ) : (
         <Typography>Invalid Url</Typography>
       )}
-    </Box>
+    </StyledContainer>
   );
 };
 
