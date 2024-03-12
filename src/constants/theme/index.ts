@@ -72,7 +72,7 @@ export const theme = createTheme({
           style: {
             backgroundColor: '#FFFFFF',
             borderRadius: '8px',
-            padding: '20px',
+            padding: '19px',
             border: '1.5px solid #FFFFFF',
             '&:active, &:focus, &:hover': {
               backgroundColor: '#FFFFFF',
@@ -171,6 +171,9 @@ export const theme = createTheme({
             fontWeight: 400,
             lineHeight: '20px',
             color: '#2C2535',
+          },
+          '&:-webkit-autofill': {
+            '-webkit-box-shadow': '0 0 0 30px #FFFFFF inset',
           },
         },
       },
@@ -447,7 +450,7 @@ export const theme = createTheme({
     tonalOffset: 0.2,
     background: {
       paper: '#fff',
-      default: '#fff',
+      default: '#E6E1EE',
     },
     action: {
       active: 'rgba(0, 0, 0, 0.54)',
@@ -468,6 +471,7 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: 'Poppins,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
+
     h1: {
       fontSize: 'clamp(2.625rem, 1.2857rem + 3.5714vw, 4rem)',
       fontWeight: 800,
@@ -475,10 +479,10 @@ export const theme = createTheme({
       color: '#0A1929',
     },
     h2: {
-      fontSize: 'clamp(1.5rem, 0.9643rem + 1.4286vw, 2.25rem)',
-      fontWeight: 800,
-      lineHeight: 1.2222222222222223,
-      color: '#132F4C',
+      fontSize: '32px',
+      fontWeight: 500,
+      lineHeight: '32px',
+      color: '#2C2535',
     },
     h3: {
       fontSize: '2.25rem',
@@ -512,10 +516,10 @@ export const theme = createTheme({
       lineHeight: 1.75,
     },
     subtitle1: {
-      fontSize: '1.125rem',
-      lineHeight: 1.3333333333333333,
-      letterSpacing: 0,
-      fontWeight: 500,
+      fontSize: '12px',
+      lineHeight: '18px',
+      fontWeight: 400,
+      color: '#908C97',
     },
     body1: {
       fontSize: '1rem',

@@ -1,12 +1,16 @@
 import { Button, CircularProgress } from '@mui/material';
 
+import { LinkedInIcon } from '@/components';
+
 import useLinkedinAuthButton from './useLinkedinAuthButton';
 
-const LinkedinAuthButton = () => {
+import type { ILinkedinAuthButtonProps } from './types';
+
+const LinkedinAuthButton = (props: ILinkedinAuthButtonProps) => {
   const { loginWithLinkedIn, isLogging } = useLinkedinAuthButton();
   return (
-    <Button variant="outlined" onClick={loginWithLinkedIn} disabled={isLogging}>
-      {isLogging ? <CircularProgress /> : 'LinkedinAuthButton'}
+    <Button variant="social" onClick={loginWithLinkedIn} disabled={isLogging} {...props}>
+      {isLogging ? <CircularProgress /> : <LinkedInIcon />}
     </Button>
   );
 };

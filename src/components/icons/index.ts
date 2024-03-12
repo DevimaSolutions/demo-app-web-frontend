@@ -4,3 +4,4 @@ export { default as PersonIcon } from './PersonIcon';
 export { default as LockIcon } from './LockIcon';
 export { default as EyeIcon } from './EyeIcon';
 export { default as EyeCrossedIcon } from './EyeCrossedIcon';
+export { default as LetterIcon } from './LetterIcon';

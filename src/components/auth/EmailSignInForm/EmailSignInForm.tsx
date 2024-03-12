@@ -1,6 +1,7 @@
-import { Box, Button } from '@mui/material';
+import { Box, Button, InputAdornment } from '@mui/material';
 import { Formik, Form, Field } from 'formik';
 
+import { LetterIcon } from '@/components';
 import { PasswordInput, TextInput } from '@/components/inputs';
 
 import { schema } from './schema';
@@ -18,22 +19,28 @@ export default function EmailSignInForm() {
     >
       {({ isSubmitting }) => (
         <Box sx={styles.container}>
-          <Form>
+          <Form style={styles.form}>
             <Field
               type="email"
               name="email"
               autoComplete="email"
+              placeholder="Your email"
               fullWidth
               component={TextInput}
-              label={'email'}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <LetterIcon width={20} height={20} />
+                  </InputAdornment>
+                ),
+              }}
             />
-
             <Field
               name="password"
               autoComplete="current-password"
+              placeholder="Password"
               fullWidth
               component={PasswordInput}
-              label={'password'}
             />
 
             <Button
@@ -43,7 +50,7 @@ export default function EmailSignInForm() {
               type="submit"
               disabled={isSubmitting}
             >
-              Sign In
+              Login
             </Button>
           </Form>
         </Box>
