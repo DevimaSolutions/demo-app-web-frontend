@@ -12,7 +12,7 @@ const styles = {
   },
   container: {
     width: 456,
-    height: 563,
+    height: 'auto',
     borderRadius: 3.2,
     padding: '24px 23px',
     border: `1.5px solid ${theme.palette.common.white}`,
