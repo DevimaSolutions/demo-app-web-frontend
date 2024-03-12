@@ -22,6 +22,8 @@ const isUserAuthenticatedForRoute = (
   authSettings.accessLevel === AuthAccessLevel.Authorized &&
   // The user is signed in
   !!user &&
+  // Check if the user email is verified
+  !user.isEmailVerified &&
   // The user has a corresponding role
   checkUserPermissions(user.role, authSettings.permissions) &&
   // Checks if the user can access with current onboarding status
