@@ -16,7 +16,7 @@ const getAuthRedirect = (user?: IFullUserResponse | null) => {
     return '/email-verify';
   }
 
-  if (!user.isOnboardingComplete) {
+  if (!user.isOnboardingCompleted) {
     return '/onboarding';
   }
 

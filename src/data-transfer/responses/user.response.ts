@@ -5,6 +5,6 @@ export interface IFullUserResponse {
   email: string;
   role: UserRole;
   imageUri?: string;
-  isOnboardingComplete: boolean;
+  isOnboardingCompleted: boolean;
   isEmailVerified: boolean;
 }
