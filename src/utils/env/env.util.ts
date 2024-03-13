@@ -28,7 +28,6 @@ const mapEnv = () => {
       linkedinScope: envRuntime('NEXT_PUBLIC_LINKEDIN_SCOPE') || '',
       linkedinRedirect: envRuntime('NEXT_PUBLIC_LINKEDIN_REDIRECT') || '',
       linkedinClientId: envRuntime('NEXT_PUBLIC_LINKEDIN_CLIENT_ID') || '',
-      linkedinClientSecret: envRuntime('NEXT_PUBLIC_LINKEDIN_CLIENT_SECRET') || '',
     },
   };
 

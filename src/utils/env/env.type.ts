@@ -10,7 +10,6 @@ export interface IEnvAuthOptions {
   linkedinScope: string;
   linkedinRedirect: string;
   linkedinClientId: string;
-  linkedinClientSecret: string;
 }
 
 export interface IEnv {
