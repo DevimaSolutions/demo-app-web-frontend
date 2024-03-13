@@ -18,30 +18,30 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
-    gap: '32px',
+    gap: 4,
   },
   titleWrapper: {
     display: 'flex',
     flexDirection: 'column',
     textAlign: 'center',
-    padding: '0 42px',
-    gap: '8px',
+    padding: theme.spacing(0, 5.25),
+    gap: 1,
   },
   socialsWrapper: {
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
-    gap: '20px',
+    gap: 2.5,
     width: '100%',
   },
   buttonWrapper: {
     display: 'flex',
-    gap: '12px',
+    gap: 1.5,
     width: '100%',
   },
   bottomLinks: {
     display: 'flex',
-    gap: '4px',
+    gap: 0.5,
   },
 } as const;
 
