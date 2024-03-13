@@ -6,6 +6,7 @@ export { default as NextLinkButton } from './NextLinkButton';
 export { default as NextLinkIconButton } from './NextLinkIconButton';
 export { default as PagesBackground } from './PagesBackground';
 export { default as StyledContainer } from './StyledContainer';
+export { default as StyledToastContainer } from './StyledToastContainer';
 
 export * from './auth';
 export * from './inputs';
