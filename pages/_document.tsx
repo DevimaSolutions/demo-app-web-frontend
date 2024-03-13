@@ -1,5 +1,6 @@
 import createEmotionServer from '@emotion/server/create-instance';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { PublicEnvScript } from 'next-runtime-env';
 import { Children } from 'react';
 
 import { createEmotionCache } from '@/constants';
@@ -15,7 +16,9 @@ export default class MyDocument extends Document {
   render(): JSX.Element {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <PublicEnvScript />
+        </Head>
         <body>
           <Main />
           <NextScript />
