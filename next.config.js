@@ -4,6 +4,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE_BUNDLE === 'true',
 });
 
+const { configureRuntimeEnv } = require('next-runtime-env/build/configure');
+
+configureRuntimeEnv();
+
 const securityHeaders = [
   {
     key: 'X-Frame-Options',

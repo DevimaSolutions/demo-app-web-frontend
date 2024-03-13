@@ -1,3 +1,5 @@
+import { env as envRuntime } from 'next-runtime-env';
+
 import { EnvMode } from './env.type';
 
 import type { IEnv } from './env.type';
@@ -17,9 +19,9 @@ export const isTestEnv = () => isEnv(EnvMode.TEST_ENV);
 
 const mapEnv = () => {
   const parsed: IEnv = {
-    appName: process.env.NEXT_PUBLIC_APP_NAME || '',
-    frontendUrl: process.env.NEXT_PUBLIC_FRONTEND_URL || '',
-    backendUrl: process.env.NEXT_PUBLIC_BACKEND_URL || '',
+    appName: envRuntime('NEXT_PUBLIC_APP_NAME') || '',
+    frontendUrl: envRuntime('NEXT_PUBLIC_FRONTEND_URL') || '',
+    backendUrl: envRuntime('NEXT_PUBLIC_BACKEND_URL') || '',
   };
 
   return Object.freeze(parsed);

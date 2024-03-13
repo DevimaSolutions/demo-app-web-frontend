@@ -1,6 +1,5 @@
 import createEmotionServer from '@emotion/server/create-instance';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { PublicEnvScript } from 'next-runtime-env';
 import { Children } from 'react';
 
 import { createEmotionCache } from '@/constants';
@@ -17,7 +16,8 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <PublicEnvScript />
+          {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+          <script src="/__ENV.js" />
         </Head>
         <body>
           <Main />
