@@ -136,10 +136,10 @@ export const theme = createTheme({
           [`&.${outlinedInputClasses.root}`]: {
             padding: 0,
             borderRadius: '8px',
-            border: '1px solid #FFFFFF',
+            border: '1.5px solid #FFFFFF',
             backgroundColor: '#FFFFFF',
             '&:hover': {
-              border: '1px solid #8A80B9',
+              border: '1.5px solid #8A80B9',
               boxShadow: '0px 0px 0px 2.5px #8674DB1A',
             },
             '&:active, &.Mui-focused': {
