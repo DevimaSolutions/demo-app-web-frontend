@@ -17,33 +17,31 @@ export default function SignIn() {
 
   return (
     <GoogleOAuthProvider clientId={auth.googleClientId}>
-      <StyledContainer sx={styles.root}>
-        <Box sx={styles.root}>
-          <Box sx={styles.container}>
-            <Box sx={styles.titleIconWrapper}>
-              <Image src={'/logo.svg'} width={32} height={32} alt="Logo" />
-              <Box sx={styles.titleWrapper}>
-                <Typography variant="h2">Welcome Back</Typography>
-                <Typography variant="subtitle1">
-                  It’s time to dive back into your skill-building journey with Shaper GAP®!
-                </Typography>
-              </Box>
-            </Box>
-            <EmailSignInForm />
-            <Box sx={styles.socialsWrapper}>
-              <Link href="/forgot-password">Forgot password?</Link>
-              <Box sx={styles.buttonWrapper}>
-                {auth.linkedinClientId && <LinkedinAuthButton fullWidth />}
-                {auth.googleClientId && <GoogleAuthButton fullWidth />}
-              </Box>
+      <Box sx={styles.container}>
+        <StyledContainer sx={styles.root}>
+          <Box sx={styles.titleIconWrapper}>
+            <Image src={'/logo.svg'} width={32} height={32} alt="Logo" />
+            <Box sx={styles.titleWrapper}>
+              <Typography variant="h2">Welcome Back</Typography>
+              <Typography variant="subtitle1">
+                It’s time to dive back into your skill-building journey with Shaper GAP®!
+              </Typography>
             </Box>
           </Box>
-          <Box sx={styles.bottomLinks}>
-            <Typography variant="subtitle1">Don’t have an account?</Typography>
-            <Link href="/sign-up">Sign up</Link>
+          <EmailSignInForm />
+          <Box sx={styles.socialsWrapper}>
+            <Link href="/forgot-password">Forgot password?</Link>
+            <Box sx={styles.buttonWrapper}>
+              {auth.linkedinClientId && <LinkedinAuthButton fullWidth />}
+              {auth.googleClientId && <GoogleAuthButton fullWidth />}
+            </Box>
           </Box>
+        </StyledContainer>
+        <Box sx={styles.bottomLinks}>
+          <Typography variant="subtitle1">Don’t have an account?</Typography>
+          <Link href="/sign-up">Sign up</Link>
         </Box>
-      </StyledContainer>
+      </Box>
     </GoogleOAuthProvider>
   );
 }

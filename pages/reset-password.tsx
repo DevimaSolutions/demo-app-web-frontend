@@ -18,6 +18,12 @@ export const getServerSideProps = withPageSettings(
   async (context) => {
     const token = (context.query.token as string) ?? null;
 
+    if (!token) {
+      return {
+        notFound: true,
+      };
+    }
+
     return {
       props: { token },
     };

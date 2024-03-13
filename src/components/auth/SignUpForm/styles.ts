@@ -1,12 +1,12 @@
 const styles = {
   container: {
     width: 408,
-    marginTop: '16px',
+    marginTop: 2,
   },
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '4px',
+    gap: 0.5,
   },
 } as const;
 

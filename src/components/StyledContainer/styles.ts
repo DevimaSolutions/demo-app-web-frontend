@@ -3,9 +3,8 @@ import { theme } from '@/constants';
 const styles = {
   root: {
     borderRadius: 2.5,
-    border: `1px solid ${theme.palette.common.white}`,
-    background: 'linear-gradient(-25deg, rgba(255,255,255, 0.47), rgba(255,255,255, 0))',
-    backdropFilter: 'blur(42px)',
+    border: `1.5px solid ${theme.palette.common.white}`,
+    background: 'rgba(255,255,255, 0.4)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

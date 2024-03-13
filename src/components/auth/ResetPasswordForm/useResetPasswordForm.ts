@@ -5,10 +5,10 @@ import { toast } from 'react-toastify';
 import { errorMessages } from '@/constants';
 import { authorizationService } from '@/services';
 
-import type { IResetPasswordFormProps, IResetPasswordFormValues } from './types';
+import type { IUseResetPasswordFormProps, IResetPasswordFormValues } from './types';
 import type { FormikHelpers } from 'formik';
 
-const useResetPasswordForm = ({ token }: IResetPasswordFormProps) => {
+const useResetPasswordForm = ({ token, toastIcon }: IUseResetPasswordFormProps) => {
   const router = useRouter();
   const initialValues = {
     password: '',
@@ -23,7 +23,7 @@ const useResetPasswordForm = ({ token }: IResetPasswordFormProps) => {
       authorizationService
         .resetPassword({ token, password })
         .then(() => {
-          toast.success('Success!');
+          toast.success('Your password was successfully changed!', { icon: toastIcon });
           router.push('/sign-in');
         })
         .catch((error) => {
@@ -33,7 +33,7 @@ const useResetPasswordForm = ({ token }: IResetPasswordFormProps) => {
           setSubmitting(false);
         });
     },
-    [router, token],
+    [router, token, toastIcon],
   );
 
   return { initialValues, resetPasswordHandler };

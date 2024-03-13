@@ -1,13 +1,17 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { toast } from 'react-toastify';
 
 import { useDispatch } from '@/hooks';
 import { sendForgotPassword } from '@/redux/authorization/thunks';
 
 import type { IForgotPasswordFormProps } from './types';
 import type { FormikHelpers } from 'formik';
+import type { ReactElement } from 'react';
 
-const useForgotPasswordForm = () => {
+const useForgotPasswordForm = (toastIcon: ReactElement) => {
   const dispatch = useDispatch();
+
+  const [seconds, setSeconds] = useState(0);
 
   const initialValues = {
     email: '',
@@ -20,15 +24,30 @@ const useForgotPasswordForm = () => {
     ) => {
       dispatch(sendForgotPassword(email))
         .unwrap()
+        .then(() => {
+          toast.info(`We have sent email to ${email}`, {
+            icon: toastIcon,
+          });
+          setSeconds(60);
+        })
         .catch((error) => {
           setErrors({
             email: error.response?.data?.message,
           });
         });
     },
-    [dispatch],
+    [dispatch, toastIcon],
   );
-  return { forgotPasswordHandler, initialValues };
+
+  useEffect(() => {
+    if (Boolean(seconds)) {
+      setTimeout(() => setSeconds(seconds - 1), 1000);
+    }
+  }, [seconds]);
+
+  const resendProgress = useMemo(() => 60 - seconds, [seconds]);
+
+  return { forgotPasswordHandler, initialValues, seconds, resendProgress };
 };
 
 export default useForgotPasswordForm;
