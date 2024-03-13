@@ -47,7 +47,14 @@ RUN chown nextjs:nodejs .next
 COPY --from=builder --chown=nextjs:nodejs /src/app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /src/app/.next/static ./.next/static
 
+# Configure runtime env
+COPY --chown=nextjs:nodejs ./configure-runtime-env.js ./configure-runtime-env.js
+RUN touch /src/app/public/__ENV.js
+RUN chown nextjs:nodejs /src/app/public/__ENV.js
+
 USER nextjs
+
+RUN chmod 600 /src/app/public/__ENV.js
 
 EXPOSE 8080
 
@@ -57,4 +64,4 @@ ENV HOSTNAME "0.0.0.0"
 
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
-CMD ["node", "server.js"]
+CMD ["node", "-r", "./configure-runtime-env.js", "server.js"]

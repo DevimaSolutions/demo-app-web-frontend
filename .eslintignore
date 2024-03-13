@@ -3,3 +3,4 @@ node_modules
 .github
 README.md
 sentry.client.config.js
+configure-runtime-env.js

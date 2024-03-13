@@ -6,7 +6,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const { configureRuntimeEnv } = require('next-runtime-env/build/configure');
 
-configureRuntimeEnv();
+if (process.env.NODE_ENV === 'development') {
+  configureRuntimeEnv();
+}
 
 const securityHeaders = [
   {
