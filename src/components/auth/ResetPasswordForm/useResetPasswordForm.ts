@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 import { toast } from 'react-toastify';
 
-import { errorMessages } from '@/constants';
+import { errorMessages, successMessages } from '@/constants';
 import { authorizationService } from '@/services';
 
 import type { IUseResetPasswordFormProps, IResetPasswordFormValues } from './types';
@@ -23,7 +23,7 @@ const useResetPasswordForm = ({ token, toastIcon }: IUseResetPasswordFormProps) 
       authorizationService
         .resetPassword({ token, password })
         .then(() => {
-          toast.success('Your password was successfully changed!', { icon: toastIcon });
+          toast.success(successMessages.passwordChanged, { icon: toastIcon });
           router.push('/sign-in');
         })
         .catch((error) => {

@@ -1,5 +1,3 @@
-import { theme } from '@/constants';
-
 const styles = {
   container: {
     width: 408,

@@ -6,7 +6,7 @@ const styles = {
   },
   toast: {
     padding: theme.spacing(1.75, 2.5, 1.75, 2),
-    borderRadius: 1,
+    borderRadius: 8,
     boxShadow: 'none',
     minHeight: 'auto',
   },

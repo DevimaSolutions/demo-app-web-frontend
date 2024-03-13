@@ -13,14 +13,14 @@ import { envUtil } from '@/utils';
 import styles from './styles';
 
 export default function SignIn() {
-  const { auth } = envUtil.getEnv();
+  const { auth, appName } = envUtil.getEnv();
 
   return (
     <GoogleOAuthProvider clientId={auth.googleClientId}>
       <Box sx={styles.container}>
         <StyledContainer sx={styles.root}>
           <Box sx={styles.titleIconWrapper}>
-            <Image src={'/logo.svg'} width={32} height={32} alt="Logo" />
+            <Image src={'/logo.svg'} width={32} height={32} alt={appName} />
             <Box sx={styles.titleWrapper}>
               <Typography variant="h2">Welcome Back</Typography>
               <Typography variant="subtitle1">

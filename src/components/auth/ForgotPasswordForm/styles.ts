@@ -9,8 +9,8 @@ const styles = {
     gap: 0.5,
   },
   toastWrapper: {
-    width: 2.5,
-    height: 2.5,
+    width: 20,
+    height: 20,
     padding: 0.5,
   },
 } as const;

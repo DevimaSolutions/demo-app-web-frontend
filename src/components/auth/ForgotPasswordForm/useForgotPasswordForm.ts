@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { toast } from 'react-toastify';
 
+import { successMessages } from '@/constants';
 import { useDispatch } from '@/hooks';
 import { sendForgotPassword } from '@/redux/authorization/thunks';
 
@@ -25,7 +26,7 @@ const useForgotPasswordForm = (toastIcon: ReactElement) => {
       dispatch(sendForgotPassword(email))
         .unwrap()
         .then(() => {
-          toast.info(`We have sent email to ${email}`, {
+          toast.info(successMessages.emailSent(email), {
             icon: toastIcon,
           });
           setSeconds(60);
