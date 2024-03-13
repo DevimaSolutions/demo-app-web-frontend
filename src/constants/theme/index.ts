@@ -329,7 +329,7 @@ export const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      '50': '#F0F7FF',
+      '50': '#E6E1EE',
       '100': '#C2E0FF',
       '200': '#A5D8FF',
       '300': '#66B2FF',

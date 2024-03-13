@@ -1,6 +1,8 @@
+import { theme } from '@/constants';
+
 const styles = {
   root: {
-    p: '48px 40px',
+    p: theme.spacing(6, 5),
     gap: 0,
     minWidth: 480,
   },

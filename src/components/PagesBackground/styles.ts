@@ -1,8 +1,10 @@
+import { theme } from '@/constants';
+
 const styles = {
   container: {
     minHeight: '100vh',
     width: '100%',
-    bgcolor: '#E6E1EE', // Connect MUI theme in this file
+    bgcolor: theme.palette.primary[50],
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
