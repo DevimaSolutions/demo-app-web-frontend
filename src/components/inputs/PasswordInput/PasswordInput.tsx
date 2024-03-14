@@ -21,7 +21,7 @@ function PasswordInput<
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
-            <LockIcon fill={adornmentColor} />
+            <LockIcon width={20} height={20} fill={adornmentColor} />
           </InputAdornment>
         ),
         endAdornment: (

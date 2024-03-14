@@ -220,8 +220,21 @@ export const theme = createTheme({
     },
     MuiSelect: {
       styleOverrides: {
-        iconFilled: {
-          top: 'calc(50% - .25em)',
+        select: {
+          minHeight: '20px',
+        },
+      },
+    },
+    MuiMenu: {
+      styleOverrides: {
+        paper: {
+          marginTop: '8px',
+          border: '1.5px solid #8A80B966',
+          boxShadow: 'none',
+          borderRadius: '8px',
+        },
+        list: {
+          padding: '4px',
         },
       },
     },
@@ -335,13 +348,13 @@ export const theme = createTheme({
       '50': '#E6E1EE',
       '100': '#D2CDDA',
       '200': '#A5D8FF',
-      '300': '#66B2FF',
-      '400': '#3399FF',
+      '300': '#D2CFD7', //input placeholder
+      '400': '#F1EBF9', //menu option hover
       '500': '#007FFF',
       '600': '#0072E5',
       '700': '#0059B2',
-      '800': '#004C99',
-      '900': '#003A75',
+      '800': '#38229F', // selected text
+      '900': '#886FFF', // check mark icon
       main: '#8A80B9',
       light: '#66B2FF',
       dark: '#0059B2',
@@ -556,7 +569,7 @@ export const theme = createTheme({
   },
   shadows: [
     'none',
-    '0px 2px 1px -1px rgba(0,0,0,0.1),0px 1px 1px 0px rgba(0,0,0,0.07),0px 1px 3px 0px rgba(0,0,0,0.06)',
+    '0px 0px 0px 2.5px #8674DB1A', //1 inputs hover
     '0px 3px 1px -2px rgba(0,0,0,0.1),0px 2px 2px 0px rgba(0,0,0,0.07),0px 1px 5px 0px rgba(0,0,0,0.06)',
     '0px 3px 3px -2px rgba(0,0,0,0.1),0px 3px 4px 0px rgba(0,0,0,0.07),0px 1px 8px 0px rgba(0,0,0,0.06)',
     '0px 2px 4px -1px rgba(0,0,0,0.1),0px 4px 5px 0px rgba(0,0,0,0.07),0px 1px 10px 0px rgba(0,0,0,0.06)',

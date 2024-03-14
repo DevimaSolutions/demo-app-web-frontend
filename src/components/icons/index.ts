@@ -5,3 +5,6 @@ export { default as LockIcon } from './LockIcon';
 export { default as EyeIcon } from './EyeIcon';
 export { default as EyeCrossedIcon } from './EyeCrossedIcon';
 export { default as LetterIcon } from './LetterIcon';
+export { default as PersonCircleIcon } from './PersonCircleIcon';
+export { default as ArrowIcon } from './ArrowIcon';
+export { default as CheckMarkIcon } from './CheckMarkIcon';
