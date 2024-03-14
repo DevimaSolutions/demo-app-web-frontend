@@ -5,7 +5,7 @@ const styles = {
     width: 456,
     height: 'auto',
     padding: 3,
-    gap: 3,
+    gap: 4.5,
   },
   container: {
     display: 'flex',

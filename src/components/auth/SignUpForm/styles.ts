@@ -1,7 +1,6 @@
 const styles = {
   container: {
     width: 408,
-    marginTop: 2,
   },
   form: {
     display: 'flex',

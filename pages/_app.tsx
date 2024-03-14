@@ -8,8 +8,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthGate, HtmlHead, Layout, AuthProvider, StyledToastContainer } from '@/components';
 import { theme, createEmotionCache } from '@/constants';
 import { initializeStore } from '@/redux/store';
+import { setYupLocale } from '@/utils/yup-setup.util';
 
 import type { MyAppProps } from '@/types';
+
+setYupLocale();
 
 function MyApp({ Component, pageProps, emotionCache }: MyAppProps) {
   const styleCache = useMemo(() => emotionCache || createEmotionCache(), [emotionCache]);
