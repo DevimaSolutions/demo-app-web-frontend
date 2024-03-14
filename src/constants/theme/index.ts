@@ -333,7 +333,7 @@ export const theme = createTheme({
     mode: 'light',
     primary: {
       '50': '#E6E1EE',
-      '100': '#C2E0FF',
+      '100': '#D2CDDA',
       '200': '#A5D8FF',
       '300': '#66B2FF',
       '400': '#3399FF',

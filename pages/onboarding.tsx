@@ -1,13 +1,14 @@
 import { AuthAccessLevel } from '@/constants';
+import { Onboarding } from '@/page-content';
 import { Layout } from '@/types';
 import { withPageSettings } from '@/utils';
 
 export default function OnboardingPage() {
-  return <div>OnboardingPage</div>;
+  return <Onboarding />;
 }
 
 export const getServerSideProps = withPageSettings({
   auth: { accessLevel: AuthAccessLevel.Authorized, isOnboardingRequired: false },
-  metaData: { title: 'Verify email' },
-  layout: Layout.Auth,
+  metaData: { title: 'Onboarding' },
+  layout: Layout.Onboarding,
 });

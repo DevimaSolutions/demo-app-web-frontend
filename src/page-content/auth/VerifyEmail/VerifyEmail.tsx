@@ -1,6 +1,6 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
-import { FillingButton, StyledContainer } from '@/components';
+import { FillingButton, NextLinkButton, StyledContainer } from '@/components';
 
 import { CodeInput } from './components';
 import styles from './styles';
@@ -29,9 +29,9 @@ const VerifyEmail = () => {
         >
           Resend code {!!seconds && `(${seconds})`}
         </FillingButton>
-        <Button variant="containedSecondary" fullWidth>
+        <NextLinkButton variant="containedSecondary" fullWidth href={'/sign-in'}>
           Back to login
-        </Button>
+        </NextLinkButton>
       </Box>
     </StyledContainer>
   );

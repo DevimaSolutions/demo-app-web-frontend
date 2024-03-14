@@ -18,10 +18,3 @@ export interface IEnv {
   backendUrl: string;
   auth: IEnvAuthOptions;
 }
-
-export interface IEnv {
-  appName: string;
-  frontendUrl: string;
-  backendUrl: string;
-  auth: IEnvAuthOptions;
-}
