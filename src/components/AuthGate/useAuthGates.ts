@@ -12,7 +12,7 @@ const useAuthGate = (auth: IAuthContext, authSettings?: IAuthInitialProps) => {
     accessLevel: authSettings?.accessLevel || AuthAccessLevel.Public,
     permissions: authSettings?.permissions,
     isOnboardingRequired: authSettings?.isOnboardingRequired ?? true,
-    isEmailRequired: authSettings?.isEmailRequired ?? true,
+    verificationRequired: authSettings?.verificationRequired ?? true,
   };
 
   const { isAvailable, shouldRedirect } = isRouteAvailable(

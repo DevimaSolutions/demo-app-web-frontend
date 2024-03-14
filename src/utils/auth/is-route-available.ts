@@ -16,9 +16,9 @@ const checkOnboardingPermission = (
   // Checks if the user can access with current onboarding status
   !isOnboardingRequired || isOnboardingCompleted;
 
-const checkEmailPermission = (isEmailVerified: boolean, isEmailRequired?: boolean) =>
-  (isEmailVerified && (isEmailRequired === undefined || isEmailRequired)) ||
-  (!isEmailVerified && !isEmailRequired);
+const checkEmailPermission = (isEmailVerified: boolean, verificationRequired?: boolean) =>
+  (isEmailVerified && (verificationRequired === undefined || verificationRequired)) ||
+  (!isEmailVerified && !verificationRequired);
 
 // Feel free to place additional authorization checks here
 const isUserAuthenticatedForRoute = (
@@ -30,7 +30,7 @@ const isUserAuthenticatedForRoute = (
   // The user is signed in
   !!user &&
   // Check if the user email is verified
-  checkEmailPermission(user.isEmailVerified, authSettings.isEmailRequired) &&
+  checkEmailPermission(user.isEmailVerified, authSettings.verificationRequired) &&
   // The user has a corresponding role
   checkUserPermissions(user.role, authSettings.permissions) &&
   // Checks if the user can access with current onboarding status

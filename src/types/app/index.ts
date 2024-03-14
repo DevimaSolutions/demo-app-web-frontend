@@ -13,7 +13,7 @@ export interface IAuthInitialProps {
   accessLevel: AuthAccessLevel;
   permissions?: UserRole[];
   isOnboardingRequired?: boolean;
-  isEmailRequired?: boolean;
+  verificationRequired?: boolean;
 }
 
 export interface IPageSettings {

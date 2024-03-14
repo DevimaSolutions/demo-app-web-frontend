@@ -11,7 +11,7 @@ export const getServerSideProps = withPageSettings({
   auth: {
     accessLevel: AuthAccessLevel.Authorized,
     isOnboardingRequired: false,
-    isEmailRequired: false,
+    verificationRequired: false,
   },
   metaData: { title: 'Verify email' },
   layout: Layout.Auth,
