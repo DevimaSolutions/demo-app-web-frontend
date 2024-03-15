@@ -516,10 +516,11 @@ export const theme = createTheme({
       fontWeight: 400,
     },
     h6: {
-      fontSize: '1.25rem',
-      lineHeight: 1.5,
+      fontSize: '18px',
+      lineHeight: '20px',
       letterSpacing: 0,
-      fontWeight: 500,
+      fontWeight: 400,
+      color: '#2C2535',
     },
     button: {
       textTransform: 'initial',
@@ -570,7 +571,7 @@ export const theme = createTheme({
   shadows: [
     'none',
     '0px 0px 0px 2.5px #8674DB1A', //1 inputs hover
-    '0px 3px 1px -2px rgba(0,0,0,0.1),0px 2px 2px 0px rgba(0,0,0,0.07),0px 1px 5px 0px rgba(0,0,0,0.06)',
+    '0px 24px 64px 0px #C8C3D066', //2 option button
     '0px 3px 3px -2px rgba(0,0,0,0.1),0px 3px 4px 0px rgba(0,0,0,0.07),0px 1px 8px 0px rgba(0,0,0,0.06)',
     '0px 2px 4px -1px rgba(0,0,0,0.1),0px 4px 5px 0px rgba(0,0,0,0.07),0px 1px 10px 0px rgba(0,0,0,0.06)',
     '0px 3px 5px -1px rgba(0,0,0,0.1),0px 5px 8px 0px rgba(0,0,0,0.07),0px 1px 14px 0px rgba(0,0,0,0.06)',

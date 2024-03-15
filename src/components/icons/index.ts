@@ -8,3 +8,4 @@ export { default as LetterIcon } from './LetterIcon';
 export { default as PersonCircleIcon } from './PersonCircleIcon';
 export { default as ArrowIcon } from './ArrowIcon';
 export { default as CheckMarkIcon } from './CheckMarkIcon';
+export { default as CheckMarkCircleIcon } from './CheckMarkCircleIcon';
