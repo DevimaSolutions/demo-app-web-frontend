@@ -1,13 +1,13 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 
-import { FillingButton, NextLinkButton, StyledContainer } from '@/components';
+import { FillingButton, StyledContainer } from '@/components';
 
 import { CodeInput } from './components';
 import styles from './styles';
 import useVerifyEmail from './useVerifyEmail';
 
 const VerifyEmail = () => {
-  const { sendCode, handleFocus, settings, resendEmail, resendProgress, seconds } =
+  const { sendCode, handleFocus, settings, resendEmail, resendProgress, seconds, backToLogIn } =
     useVerifyEmail();
   return (
     <StyledContainer sx={styles.root}>
@@ -29,9 +29,9 @@ const VerifyEmail = () => {
         >
           Resend code {!!seconds && `(${seconds})`}
         </FillingButton>
-        <NextLinkButton variant="containedSecondary" fullWidth href={'/sign-in'}>
+        <Button variant="containedSecondary" fullWidth onClick={backToLogIn}>
           Back to login
-        </NextLinkButton>
+        </Button>
       </Box>
     </StyledContainer>
   );

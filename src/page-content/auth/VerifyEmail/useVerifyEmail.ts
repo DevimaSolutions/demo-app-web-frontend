@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { authorizationService } from '@/services';
+import { getAuthManager } from '@/utils';
 
 import type { IVerifySettings } from './types';
 
@@ -34,9 +35,13 @@ const useVerifyEmail = () => {
     });
   };
 
+  const backToLogIn = () => {
+    getAuthManager().then((auth) => auth.signOut());
+  };
+
   const resendProgress = useMemo(() => 60 - seconds, [seconds]);
 
-  return { sendCode, handleFocus, settings, resendEmail, resendProgress, seconds };
+  return { sendCode, handleFocus, settings, resendEmail, resendProgress, seconds, backToLogIn };
 };
 
 export default useVerifyEmail;
