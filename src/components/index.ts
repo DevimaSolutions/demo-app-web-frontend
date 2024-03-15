@@ -7,6 +7,7 @@ export { default as NextLinkIconButton } from './NextLinkIconButton';
 export { default as PagesBackground } from './PagesBackground';
 export { default as StyledContainer } from './StyledContainer';
 export { default as StyledToastContainer } from './StyledToastContainer';
+export { default as SelectableChip } from './SelectableChip';
 
 export * from './auth';
 export * from './inputs';

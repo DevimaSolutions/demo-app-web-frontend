@@ -262,6 +262,34 @@ export const theme = createTheme({
         },
       },
     },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          height: 'auto',
+          padding: '8px 9px 10px',
+          color: '#2C2535',
+          backgroundColor: '#FAF8FD',
+          borderRadius: '8px',
+          border: '1.5px solid #FFFFFF',
+          boxShadow: '0px 24px 64px 0px #C8C3D066',
+          '&:hover': {
+            backgroundColor: '#FAF8FD',
+            boxShadow: '0px 24px 64px 0px #C8C3D066',
+          },
+          '&:active, &.Mui-focused': {
+            color: '#38229F',
+            backgroundColor: '#F1EBF9',
+            border: '1.5px solid rgba(138, 128, 185, 0.3)',
+            boxShadow: '0px 24px 64px 0px #C8C3D066',
+          },
+        },
+        label: {
+          fontSize: '16px',
+          fontWeight: 500,
+          lineHeight: '20px',
+        },
+      },
+    },
     MuiTableCell: {
       styleOverrides: {
         root: {
