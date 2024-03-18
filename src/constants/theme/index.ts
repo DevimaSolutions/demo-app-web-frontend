@@ -284,6 +284,7 @@ export const theme = createTheme({
           },
         },
         label: {
+          padding: 0,
           fontSize: '16px',
           fontWeight: 500,
           lineHeight: '20px',

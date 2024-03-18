@@ -9,3 +9,4 @@ export { default as PersonCircleIcon } from './PersonCircleIcon';
 export { default as ArrowIcon } from './ArrowIcon';
 export { default as CheckMarkIcon } from './CheckMarkIcon';
 export { default as CheckMarkCircleIcon } from './CheckMarkCircleIcon';
+export { default as ArrowLineIcon } from './ArrowLineIcon';

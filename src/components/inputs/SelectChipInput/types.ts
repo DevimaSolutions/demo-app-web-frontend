@@ -1,4 +1,4 @@
-import type { SelectProps } from '@mui/material';
+import type { SelectProps, SxProps } from '@mui/material';
 import type { FieldProps } from 'formik';
 
 export interface ISelectChipInputProps<
@@ -8,4 +8,5 @@ export interface ISelectChipInputProps<
     Omit<SelectProps, 'name' | 'value' | 'onChange' | 'onBlur'> {
   options: string[];
   max?: number;
+  errorSx?: SxProps;
 }

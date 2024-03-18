@@ -10,6 +10,7 @@ import type { ISelectChipInputProps } from './types';
 
 function SelectChipInput<FormValues extends Record<string, unknown> = Record<string, unknown>>({
   sx,
+  errorSx,
   ...props
 }: ISelectChipInputProps<string[], FormValues>) {
   const { renderOptions, handleChipClick, hasError, errorText } = useSelectInput(props);
@@ -26,7 +27,7 @@ function SelectChipInput<FormValues extends Record<string, unknown> = Record<str
           />
         ))}
       </Box>
-      {hasError ? <FormHelperText>{errorText}</FormHelperText> : <Box height={20} />}
+      {hasError ? <FormHelperText sx={errorSx}>{errorText}</FormHelperText> : <Box height={20} />}
     </>
   );
 }
