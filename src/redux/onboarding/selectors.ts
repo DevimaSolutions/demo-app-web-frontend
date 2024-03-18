@@ -8,3 +8,13 @@ export const onboardingCurrentStep = createSelector(
   onboardingStateSelector,
   (state) => state.currentStep,
 );
+
+export const isInitialLoadingSelector = createSelector(
+  onboardingStateSelector,
+  (state) => state.isInitialLoading,
+);
+
+export const onboardingDataSelector = createSelector(
+  onboardingStateSelector,
+  (state) => state.onboardingData,
+);

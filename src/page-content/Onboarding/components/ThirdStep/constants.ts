@@ -1,24 +1,26 @@
+import { UserLearningPaceEnum } from '@/data-transfer/requests';
+
 const learningPaceOptions = [
   {
     icon: '🧘🏻',
     title: 'Relaxed',
     subtitle: '1-3 times per week',
     selected: false,
-    value: 'Relaxed', //use enum value
+    value: UserLearningPaceEnum.Relaxed,
   },
   {
     icon: '🤩',
     title: 'Ambitious',
     subtitle: '3-5 times per week',
     selected: false,
-    value: 'Ambitious', //use enum value
+    value: UserLearningPaceEnum.Ambitious,
   },
   {
     icon: '🧐',
     title: 'Focused',
     subtitle: '+5 times per week',
     selected: false,
-    value: 'Focused', //use enum value
+    value: UserLearningPaceEnum.Focused,
   },
 ];
 export default learningPaceOptions;

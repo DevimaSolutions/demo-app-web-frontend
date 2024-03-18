@@ -11,19 +11,20 @@ import type { ISelectChipInputProps } from './types';
 function SelectChipInput<FormValues extends Record<string, unknown> = Record<string, unknown>>({
   sx,
   errorSx,
+  options,
   ...props
 }: ISelectChipInputProps<string[], FormValues>) {
-  const { renderOptions, handleChipClick, hasError, errorText } = useSelectInput(props);
+  const { handleChipClick, hasError, errorText } = useSelectInput(props);
 
   return (
     <>
       <Box sx={combineSx(styles.root, sx)}>
-        {renderOptions.map((el, index) => (
+        {options.map((el, index) => (
           <SelectableChip
             key={index}
             label={el.name}
-            selected={el.selected}
-            onClick={handleChipClick(el.name)}
+            selected={props.field.value.includes(el.id)}
+            onClick={handleChipClick(el.id)}
           />
         ))}
       </Box>

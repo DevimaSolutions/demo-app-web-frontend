@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
 import { errorMessages } from '@/constants';
-import { AuthTypeEnum } from '@/data-transfer/requests/enums';
+import { AuthTypeEnum } from '@/data-transfer/requests';
 import { authorizationService } from '@/services';
 import { getURLWithQueryParams, envUtil } from '@/utils';
 

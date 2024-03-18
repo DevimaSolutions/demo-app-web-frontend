@@ -7,11 +7,22 @@ import useFillingButton from './useFillingButton';
 
 import type { IFillingButtonProps } from './types';
 
-const FillingButton = ({ children, progress, segments, ...rest }: IFillingButtonProps) => {
+const FillingButton = ({
+  children,
+  progress,
+  segments,
+  disabled,
+  sx,
+  ...rest
+}: IFillingButtonProps) => {
   const { isDisabled, progressBar } = useFillingButton({ segments, progress });
 
   return (
-    <Button disabled={isDisabled} sx={combineSx(styles.root(progressBar), rest.sx)} {...rest}>
+    <Button
+      disabled={disabled || isDisabled}
+      sx={combineSx(styles.root(progressBar), sx)}
+      {...rest}
+    >
       {children}
     </Button>
   );

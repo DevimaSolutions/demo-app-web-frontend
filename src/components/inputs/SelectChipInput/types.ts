@@ -6,7 +6,7 @@ export interface ISelectChipInputProps<
   FormValues extends Record<string, unknown> = Record<string, unknown>,
 > extends FieldProps<V, FormValues>,
     Omit<SelectProps, 'name' | 'value' | 'onChange' | 'onBlur'> {
-  options: string[];
+  options: { id: string; name: string }[];
   max?: number;
   errorSx?: SxProps;
 }

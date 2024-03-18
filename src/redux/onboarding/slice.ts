@@ -1,9 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import { OnboardingStepEnum, stepperMap } from '@/constants';
+
+import { getOnboardingData, updateOnboardingData } from './thunk';
+
 import type IOnboardingState from './types';
 
 const initialState: IOnboardingState = {
-  currentStep: 1,
+  currentStep: stepperMap[OnboardingStepEnum.FirstStep],
+  isInitialLoading: true,
+  onboardingData: undefined,
 };
 
 export const onboardingSlice = createSlice({
@@ -11,18 +17,33 @@ export const onboardingSlice = createSlice({
   initialState,
   reducers: {
     resetState(state) {
-      state.currentStep = 1;
+      state.currentStep = stepperMap[OnboardingStepEnum.FirstStep];
+      state.isInitialLoading = true;
+      state.onboardingData = undefined;
     },
     nextStep(state) {
-      if (state.currentStep < 4) {
+      if (state.currentStep < stepperMap[OnboardingStepEnum.FourthStep]) {
         state.currentStep += 1;
       }
     },
     prevStep(state) {
-      if (state.currentStep > 1) {
+      if (state.currentStep > stepperMap[OnboardingStepEnum.FirstStep]) {
         state.currentStep -= 1;
       }
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getOnboardingData.fulfilled, (state, { payload }) => {
+      state.currentStep = stepperMap[payload.currentStep];
+      state.isInitialLoading = false;
+      state.onboardingData = payload;
+    });
+    builder.addCase(updateOnboardingData.fulfilled, (state, { payload }) => {
+      state.onboardingData = payload;
+      if (state.currentStep < stepperMap[OnboardingStepEnum.FourthStep]) {
+        state.currentStep += 1;
+      }
+    });
   },
 });
 

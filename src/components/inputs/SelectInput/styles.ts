@@ -12,7 +12,13 @@ const commonStyles = {
 };
 
 const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+  },
   root: {
+    height: 49,
     [`&.${outlinedInputClasses.root}`]: {
       '&:active, &.Mui-focused': {
         border: `1.5px solid ${theme.palette.common.white}`,

@@ -1,7 +1,7 @@
 import type { ButtonProps } from '@mui/material/Button';
 import type { ReactNode } from 'react';
 
-export interface IFillingButtonProps extends Omit<ButtonProps, 'disabled'> {
+export interface IFillingButtonProps extends ButtonProps {
   segments: number;
   progress: number;
   children: ReactNode;

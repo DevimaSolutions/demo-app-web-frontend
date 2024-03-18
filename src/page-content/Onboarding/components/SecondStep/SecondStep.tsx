@@ -1,27 +1,13 @@
 import { Box, Button, Typography } from '@mui/material';
-import { useCallback } from 'react';
 
 import { OptionButton, StyledContainer } from '@/components';
-import { useDispatch } from '@/hooks';
-import { nextStep, prevStep } from '@/redux/onboarding/slice';
 
 import socialStatusOptions from './constants';
 import styles from './styles';
+import useSecondStep from './useSecondStep';
 
 const SecondStep = () => {
-  //////// Just for example //////////
-  const dispatch = useDispatch();
-
-  const prev = () => dispatch(prevStep());
-  const next = () => dispatch(nextStep());
-  ////////////////////////////////////
-
-  const handleOptionClick = useCallback(
-    (optionValue: string) => () => {
-      console.log(optionValue); //temporary solution
-    },
-    [],
-  );
+  const { prev, handleOptionClick } = useSecondStep();
 
   return (
     <StyledContainer sx={styles.root}>
@@ -45,9 +31,6 @@ const SecondStep = () => {
       <Box sx={styles.navButtons}>
         <Button variant="contained" onClick={prev} fullWidth>
           Back
-        </Button>
-        <Button variant="contained" onClick={next}>
-          Next
         </Button>
       </Box>
     </StyledContainer>

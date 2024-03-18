@@ -1,26 +1,45 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { useDispatch } from '@/hooks';
 import { prevStep } from '@/redux/onboarding/slice';
+import { updateOnboardingData } from '@/redux/onboarding/thunk';
+import onboardingService from '@/services/onboarding.service';
 
 import type { ISelectSkillsFormProps } from './types';
+import type { IFormErrorResponse, ISoftSkillsObject } from '@/data-transfer/responses';
+import type { AxiosError } from 'axios';
+import type { FormikHelpers } from 'formik';
 
 const useSelectSkillsForm = () => {
-  //////// Just for example //////////
   const dispatch = useDispatch();
+  const [options, setOptions] = useState<ISoftSkillsObject[] | null>(null);
 
   const prev = useCallback(() => dispatch(prevStep()), [dispatch]);
-  ////////////////////////////////////
 
   const initialValues: ISelectSkillsFormProps = { skills: [] };
 
-  const handleSubmit = useCallback(({ skills }: ISelectSkillsFormProps) => {
-    console.log('success ', skills);
+  const submitHandler = useCallback(
+    (
+      values: ISelectSkillsFormProps,
+      { setErrors, setSubmitting }: FormikHelpers<ISelectSkillsFormProps>,
+    ) => {
+      dispatch(updateOnboardingData({ fourthStep: { softSkills: values.skills } }))
+        .unwrap()
+        .catch((error: AxiosError<IFormErrorResponse<ISelectSkillsFormProps>>) => {
+          setErrors({
+            ...error.response?.data?.errors,
+          });
+        })
+        .finally(() => setSubmitting(false));
+    },
+    [dispatch],
+  );
+
+  useEffect(() => {
+    onboardingService.getSoftSkills().then((res) => setOptions(res));
   }, []);
 
-  const handleReturn = useCallback(() => prev(), [prev]);
-
-  return { initialValues, handleSubmit, handleReturn };
+  return { initialValues, submitHandler, prev, options };
 };
 
 export default useSelectSkillsForm;

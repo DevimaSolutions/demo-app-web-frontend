@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback } from 'react';
 
 import { errorMessages } from '@/constants';
 
@@ -11,8 +11,7 @@ const useSelectInput = <
   field: { name, value },
   form: { touched, errors, setFieldValue, setFieldError, setFieldTouched },
   max,
-  options,
-}: ISelectChipInputProps<V, FormValues>) => {
+}: Omit<ISelectChipInputProps<V, FormValues>, 'options'>) => {
   const hasError = Boolean(touched[name] && errors[name]);
   const errorText = errors[name]?.toString();
 
@@ -34,16 +33,7 @@ const useSelectInput = <
     [setFieldTouched, touched, setFieldValue, setFieldError, name, value, max],
   );
 
-  const renderOptions = useMemo(
-    () =>
-      options.map((option) => ({
-        name: option,
-        selected: value.includes(option),
-      })),
-    [options, value],
-  );
-
-  return { renderOptions, handleChipClick, hasError, errorText };
+  return { handleChipClick, hasError, errorText };
 };
 
 export default useSelectInput;

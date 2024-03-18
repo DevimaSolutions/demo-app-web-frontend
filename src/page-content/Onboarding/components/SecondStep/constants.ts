@@ -1,21 +1,23 @@
+import { UserProfileTypeEnum } from '@/data-transfer/requests';
+
 const socialStatusOptions = [
   {
     icon: '🧑🏻‍🎓',
     title: 'Student',
     selected: false,
-    value: 'Student', //use enum value
+    value: UserProfileTypeEnum.Student,
   },
   {
     icon: '👨🏻‍💻',
     title: 'Professional',
     selected: false,
-    value: 'Professional', //use enum value
+    value: UserProfileTypeEnum.Professional,
   },
   {
     icon: '💼',
     title: 'Career shifter',
     selected: false,
-    value: 'Career shifter', //use enum value
+    value: UserProfileTypeEnum.CareerShifter,
   },
 ];
 export default socialStatusOptions;

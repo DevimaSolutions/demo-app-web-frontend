@@ -1,11 +1,11 @@
-import { AuthTypeEnum } from '@/data-transfer/requests/enums';
+import {
+  AuthTypeEnum,
+  type IResetPasswordRequest,
+  type ISignUpRequest,
+  type ISocialAuthorizeRequest,
+} from '@/data-transfer/requests';
 import { getAuthManager } from '@/utils';
 
-import type {
-  IResetPasswordRequest,
-  ISignUpRequest,
-  ISocialAuthorizeRequest,
-} from '@/data-transfer/requests';
 import type {
   IFullUserResponse,
   ISuccessAuthorizeResponse,

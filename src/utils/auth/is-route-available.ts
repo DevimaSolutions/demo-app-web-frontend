@@ -14,7 +14,8 @@ const checkOnboardingPermission = (
   isOnboardingRequired?: boolean,
 ) =>
   // Checks if the user can access with current onboarding status
-  !isOnboardingRequired || isOnboardingCompleted;
+  (isOnboardingCompleted && (isOnboardingRequired === undefined || isOnboardingRequired)) ||
+  (!isOnboardingCompleted && !isOnboardingRequired);
 
 const checkEmailPermission = (isEmailVerified: boolean, verificationRequired?: boolean) =>
   (isEmailVerified && (verificationRequired === undefined || verificationRequired)) ||

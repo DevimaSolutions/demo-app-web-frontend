@@ -1,14 +1,29 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
-import { useSelector } from '@/hooks';
-import { onboardingCurrentStep } from '@/redux/onboarding/selectors';
+import { useDispatch, useSelector } from '@/hooks';
+import { onboardingCurrentStep, isInitialLoadingSelector } from '@/redux/onboarding/selectors';
+import { resetState } from '@/redux/onboarding/slice';
+import { getOnboardingData } from '@/redux/onboarding/thunk';
 
+import { Loading } from './components';
 import { stepsMap } from './constants';
 
 const useOnboarding = () => {
   const currentStep = useSelector(onboardingCurrentStep);
+  const isLoading = useSelector(isInitialLoadingSelector);
+  const dispatch = useDispatch();
 
-  const component = useMemo(() => stepsMap[currentStep], [currentStep]);
+  const component = useMemo(
+    () => (isLoading ? Loading : stepsMap[currentStep]),
+    [currentStep, isLoading],
+  );
+
+  useEffect(() => {
+    dispatch(getOnboardingData({}));
+    return () => {
+      dispatch(resetState());
+    };
+  }, [dispatch]);
 
   return { component };
 };
