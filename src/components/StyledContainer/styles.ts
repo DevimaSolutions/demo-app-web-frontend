@@ -2,7 +2,7 @@ import { theme } from '@/constants';
 
 const styles = {
   root: {
-    borderRadius: 2.5,
+    borderRadius: 3.2,
     border: `1.5px solid ${theme.palette.common.white}`,
     background: 'rgba(255,255,255, 0.4)',
     display: 'flex',

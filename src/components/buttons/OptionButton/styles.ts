@@ -6,8 +6,8 @@ const styles = {
   root: (selected: boolean, isSubtitle: boolean) => ({
     display: 'flex',
     gap: 1.25,
-    padding: theme.spacing(2, 1.75),
-    ...(isSubtitle && { paddingBottom: 1.5 }),
+    padding: isSubtitle ? theme.spacing(1.875, 1.625, 1.375) : theme.spacing(1.875, 1.625),
+    borderRadius: 1.2,
     alignItems: isSubtitle ? 'start' : 'center',
     boxShadow: theme.shadows[2],
     ...(selected && { border: `1.5px solid ${theme.palette.primary.main}` }),
