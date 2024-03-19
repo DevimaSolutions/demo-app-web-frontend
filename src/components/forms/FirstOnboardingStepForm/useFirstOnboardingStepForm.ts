@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import { useDispatch, useSelector } from '@/hooks';
 import { onboardingDataSelector } from '@/redux/onboarding/selectors';
@@ -12,11 +12,14 @@ const useFirstOnboardingStepForm = () => {
   const data = useSelector(onboardingDataSelector);
   const dispatch = useDispatch();
 
-  const initialValues = {
-    name: data?.firstStep.name ?? '',
-    age: data?.firstStep.age ?? '',
-    gender: data?.firstStep.gender ?? '',
-  };
+  const initialValues = useMemo(
+    () => ({
+      name: data?.firstStep.name ?? '',
+      age: data?.firstStep.age ?? '',
+      gender: data?.firstStep.gender ?? '',
+    }),
+    [data?.firstStep],
+  );
 
   const calculateProgress = (object: Record<string, string | number>) =>
     Object.values(object).filter((value) => !!value).length;

@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 
-import { useDispatch } from '@/hooks';
+import { useDispatch, useSelector } from '@/hooks';
+import { onboardingDataSelector } from '@/redux/onboarding/selectors';
 import { prevStep } from '@/redux/onboarding/slice';
 import { updateOnboardingData } from '@/redux/onboarding/thunk';
 
@@ -8,6 +9,7 @@ import type { UserLearningPaceEnum } from '@/data-transfer/requests';
 
 const useThirdStep = () => {
   const dispatch = useDispatch();
+  const data = useSelector(onboardingDataSelector);
 
   const prev = () => dispatch(prevStep());
 
@@ -17,7 +19,7 @@ const useThirdStep = () => {
     },
     [dispatch],
   );
-  return { prev, handleOptionClick };
+  return { prev, handleOptionClick, data };
 };
 
 export default useThirdStep;

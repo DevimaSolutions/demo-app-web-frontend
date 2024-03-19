@@ -7,7 +7,7 @@ import styles from './styles';
 import useThirdStep from './useThirdStep';
 
 const ThirdStep = () => {
-  const { prev, handleOptionClick } = useThirdStep();
+  const { prev, handleOptionClick, data } = useThirdStep();
 
   return (
     <StyledContainer sx={styles.root}>
@@ -17,7 +17,7 @@ const ThirdStep = () => {
         you best?
       </Typography>
       <Box sx={styles.buttons}>
-        {learningPaceOptions.map((option, index) => (
+        {learningPaceOptions(data?.thirdStep.learningPace).map((option, index) => (
           <OptionButton
             key={index}
             icon={option.icon}

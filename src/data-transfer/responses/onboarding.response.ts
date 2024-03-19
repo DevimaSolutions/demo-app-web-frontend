@@ -19,7 +19,7 @@ export interface IThirdStep {
 }
 
 export interface IFourthStep {
-  softSkills: { id: string; name: string }[];
+  softSkills: ISoftSkillsObject[];
   complete: boolean;
 }
 

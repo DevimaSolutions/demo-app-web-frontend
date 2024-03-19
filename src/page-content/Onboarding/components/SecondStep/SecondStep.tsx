@@ -7,7 +7,7 @@ import styles from './styles';
 import useSecondStep from './useSecondStep';
 
 const SecondStep = () => {
-  const { prev, handleOptionClick } = useSecondStep();
+  const { prev, handleOptionClick, data } = useSecondStep();
 
   return (
     <StyledContainer sx={styles.root}>
@@ -17,7 +17,7 @@ const SecondStep = () => {
         you best?
       </Typography>
       <Box sx={styles.buttons}>
-        {socialStatusOptions.map((option, index) => (
+        {socialStatusOptions(data?.secondStep.profileType).map((option, index) => (
           <OptionButton
             key={index}
             icon={option.icon}

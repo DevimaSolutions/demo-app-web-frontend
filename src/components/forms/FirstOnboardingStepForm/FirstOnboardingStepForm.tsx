@@ -3,8 +3,8 @@ import { Formik, Form, Field } from 'formik';
 
 import { CalendarIcon, FillingButton, PersonCircleIcon, PersonIcon } from '@/components';
 import { SelectInput, TextInput } from '@/components/inputs';
+import { UserGenderEnum } from '@/data-transfer/requests';
 
-import { genderOptions } from './constants';
 import { schema } from './schema';
 import styles from './styles';
 import useFirstOnboardingStepForm from './useFirstOnboardingStepForm';
@@ -49,7 +49,7 @@ export const FirstOnboardingStepForm = () => {
                 placeholder="Gender"
                 fullWidth
                 component={SelectInput}
-                options={genderOptions}
+                options={Object.values(UserGenderEnum)}
                 startAdornment={<PersonCircleIcon width={20} height={20} />}
               />
             </Box>

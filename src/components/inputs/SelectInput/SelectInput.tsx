@@ -29,7 +29,7 @@ function SelectInput<FormValues extends Record<string, unknown> = Record<string,
         error={hasError}
         value={field.value}
         onChange={(e) => {
-          form.setFieldValue(field.name, (e.target.value as string).toLowerCase());
+          form.setFieldValue(field.name, e.target.value);
         }}
         renderValue={(selected) =>
           !selected && props.placeholder ? (
@@ -52,10 +52,8 @@ function SelectInput<FormValues extends Record<string, unknown> = Record<string,
       >
         {options.map((option, index) => (
           <MenuItem key={index} value={option} sx={styles.option}>
-            {option.toLowerCase() === field.value.toLowerCase() ? (
-              <CheckMarkIcon width={14} height={18} />
-            ) : null}
-            {option}
+            {option === field.value ? <CheckMarkIcon width={14} height={18} /> : null}
+            {capitalize(option)}
           </MenuItem>
         ))}
       </Select>

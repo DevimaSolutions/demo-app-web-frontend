@@ -1,3 +1,9 @@
+export enum UserGenderEnum {
+  Male = 'male',
+  Female = 'female',
+  Other = 'other',
+}
+
 export enum UserProfileTypeEnum {
   Student = 'student',
   Professional = 'professional',
