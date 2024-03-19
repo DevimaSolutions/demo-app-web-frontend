@@ -12,9 +12,9 @@ const ThirdStep = () => {
   return (
     <StyledContainer sx={styles.root}>
       <Typography variant="h2">
-        Which describes
+        What’s your preferred
         <br />
-        you best?
+        learning pace?
       </Typography>
       <Box sx={styles.buttons}>
         {learningPaceOptions(data?.thirdStep.learningPace).map((option, index) => (
