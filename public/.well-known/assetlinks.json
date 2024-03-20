@@ -3,6 +3,6 @@
   "target": {
     "namespace": "android_app",
     "package_name": "com.shaper.gap.android",
-    "sha256_cert_fingerprints": ["0C:F1:56:62:BC:EE:68:A9:B2:5F:03:AA:45:05:39:00:1B:00:FB:63"]
+    "sha256_cert_fingerprints": ["7D:8E:76:31:90:0D:68:81:39:E7:8A:4C:FA:BA:C6:85:38:50:81:EF:B4:8F:23:79:83:5D:4E:D9:34:36:54:80"]
   }
 }
