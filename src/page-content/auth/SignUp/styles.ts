@@ -27,6 +27,12 @@ const styles = {
     padding: theme.spacing(0, 5.25),
     gap: 1,
   },
+  formWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    textAlign: 'center',
+    gap: 2,
+  },
   socialsWrapper: {
     display: 'flex',
     alignItems: 'center',

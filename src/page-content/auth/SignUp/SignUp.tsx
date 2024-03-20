@@ -25,7 +25,13 @@ const SignUp = () => {
               </Typography>
             </Box>
           </Box>
-          <SignUpForm />
+          <Box sx={styles.formWrapper}>
+            <SignUpForm />
+            <Typography variant="subtitle1">
+              By signing up, I agree to the <Link href="privacy-policy">Privacy Policy</Link> and
+              <Link href="terms-and-conditions">Terms and Conditions</Link>
+            </Typography>
+          </Box>
           <Box sx={styles.socialsWrapper}>
             <Box sx={styles.buttonWrapper}>
               {auth.linkedinClientId && <LinkedinAuthButton fullWidth />}
