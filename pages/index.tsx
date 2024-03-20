@@ -1,12 +1,14 @@
+import { Typography } from '@mui/material';
+
 import { AuthAccessLevel } from '@/constants';
 import { withPageSettings } from '@/utils';
 
 const Home = () => {
   return (
     <>
-      <h1>
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </h1>
+      <Typography variant="h2" textAlign="center" marginTop={4}>
+        Welcome to Shaper GAP®
+      </Typography>
     </>
   );
 };

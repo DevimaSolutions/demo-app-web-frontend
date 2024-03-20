@@ -5,9 +5,13 @@ const styles = {
     width: 900,
     margin: 'auto',
     mt: 4,
+    mb: 4,
     display: 'flex',
     flexDirection: 'column',
     gap: 1,
+    [`& .${typographyClasses.h2}`]: {
+      mt: 3,
+    },
     [`& .${typographyClasses.h6}`]: {
       mt: 1,
       fontWeight: 600,
