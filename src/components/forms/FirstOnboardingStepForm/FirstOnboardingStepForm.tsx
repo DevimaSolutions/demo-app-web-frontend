@@ -8,7 +8,6 @@ import { UserGenderEnum } from '@/data-transfer/requests';
 import { schema } from './schema';
 import styles from './styles';
 import useFirstOnboardingStepForm from './useFirstOnboardingStepForm';
-import { theme } from '@/constants';
 
 export const FirstOnboardingStepForm = () => {
   const { calculateProgress, initialValues, submitHandler } = useFirstOnboardingStepForm();
@@ -26,7 +25,7 @@ export const FirstOnboardingStepForm = () => {
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <PersonIcon width={20} height={20} fill={theme.palette.primary.main} />
+                    <PersonIcon width={20} height={20} />
                   </InputAdornment>
                 ),
               }}
