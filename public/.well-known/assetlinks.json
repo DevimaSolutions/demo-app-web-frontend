@@ -1,0 +1,8 @@
+{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.shaper.gap.android",
+    "sha256_cert_fingerprints": ["0C:F1:56:62:BC:EE:68:A9:B2:5F:03:AA:45:05:39:00:1B:00:FB:63"]
+  }
+}
