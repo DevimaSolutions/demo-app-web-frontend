@@ -47,7 +47,7 @@ const moduleExports = withBundleAnalyzer({
       },
     ];
   },
-  output: "standalone",
+  output: 'standalone',
 });
 
 // Sentry setup
