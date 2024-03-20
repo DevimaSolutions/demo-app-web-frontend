@@ -1,0 +1,11 @@
+export { default as InterpretationAndDefinitions } from './InterpretationAndDefinitions';
+export { default as Acknowledgment } from './Acknowledgment';
+export { default as LinksToOtherWebsites } from './LinksToOtherWebsites';
+export { default as Termination } from './Termination';
+export { default as LimitationOfLiability } from './LimitationOfLiability';
+export { default as Disclaimer } from './Disclaimer';
+export { default as GoverningLaw } from './GoverningLaw';
+export { default as SeverabilityAndWaiver } from './SeverabilityAndWaiver';
+export { default as TranslationInterpretation } from './TranslationInterpretation';
+export { default as ChangesToTerms } from './ChangesToTerms';
+export { default as ContactUs } from './ContactUs';
