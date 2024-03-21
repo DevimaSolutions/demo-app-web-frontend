@@ -12,9 +12,15 @@ export interface IEnvAuthOptions {
   linkedinClientId: string;
 }
 
+export interface IEnvLinksOptions {
+  appStoreLink: string;
+  googlePLayLink: string;
+}
+
 export interface IEnv {
   appName: string;
   frontendUrl: string;
   backendUrl: string;
   auth: IEnvAuthOptions;
+  links: IEnvLinksOptions;
 }

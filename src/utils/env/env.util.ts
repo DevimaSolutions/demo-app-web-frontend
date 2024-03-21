@@ -29,6 +29,10 @@ const mapEnv = () => {
       linkedinRedirect: envRuntime('NEXT_PUBLIC_LINKEDIN_REDIRECT') || '',
       linkedinClientId: envRuntime('NEXT_PUBLIC_LINKEDIN_CLIENT_ID') || '',
     },
+    links: {
+      appStoreLink: envRuntime('NEXT_PUBLIC_APP_STORE_LINK') || '',
+      googlePLayLink: envRuntime('NEXT_PUBLIC_GOOGLE_PLAY_LINK') || '',
+    },
   };
 
   return Object.freeze(parsed);

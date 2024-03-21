@@ -11,3 +11,5 @@ export { default as CheckMarkIcon } from './CheckMarkIcon';
 export { default as CheckMarkCircleIcon } from './CheckMarkCircleIcon';
 export { default as ArrowLineIcon } from './ArrowLineIcon';
 export { default as CalendarIcon } from './CalendarIcon';
+export { default as AppStoreIcon } from './AppStoreIcon';
+export { default as GooglePlayIcon } from './GooglePlayIcon';

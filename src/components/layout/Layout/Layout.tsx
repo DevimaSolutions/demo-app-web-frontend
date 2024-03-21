@@ -1,5 +1,8 @@
+import { useMediaQuery } from '@mui/material';
 import dynamic from 'next/dynamic';
 
+import { theme } from '@/constants';
+import { StubPage } from '@/page-content';
 import { Layout as LayoutTypes } from '@/types';
 
 import type { ILayoutProps } from './types';
@@ -18,6 +21,10 @@ const layoutMap = {
 
 const Layout = ({ children, layoutType = LayoutTypes.Main }: ILayoutProps) => {
   const LayoutComponent = layoutMap[layoutType];
+  const isDesktop = useMediaQuery(theme.breakpoints.up('xl'));
+
+  if (!isDesktop) return <StubPage />;
+
   return <LayoutComponent>{children}</LayoutComponent>;
 };
 
