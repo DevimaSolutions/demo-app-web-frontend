@@ -1,3 +1,5 @@
+import { toolbarClasses } from '@mui/material';
+
 import { theme } from '@/constants';
 
 const styles = {
@@ -6,11 +8,20 @@ const styles = {
     boxShadow: 'none',
     top: 0,
     bottom: 0,
+    width: 96,
     right: 'calc(100% - 96px)',
   },
   toolbar: {
     display: 'flex',
     flexDirection: 'column',
+    gap: 3,
+    [`&.${toolbarClasses.root}`]: {
+      padding: 3,
+    },
+  },
+  divider: {
+    borderColor: '#F4F4F4',
+    width: '100%',
   },
 } as const;
 
