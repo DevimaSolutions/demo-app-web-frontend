@@ -379,7 +379,7 @@ export const theme = createTheme({
       '200': '#A5D8FF',
       '300': '#D2CFD7', //input placeholder
       '400': '#F1EBF9', //menu option hover
-      '500': '#007FFF',
+      '500': '#BDAFFF', //dashboard
       '600': '#0072E5',
       '700': '#0059B2',
       '800': '#38229F', // selected text
@@ -408,14 +408,14 @@ export const theme = createTheme({
       white: '#fff',
     },
     text: {
-      primary: '#20262D',
+      primary: '#2C2535',
       secondary: '#2F3A45',
       disabled: '#BDBDBD',
     },
     grey: {
       '50': '#f2f2f2',
-      '100': '#EAEEF3',
-      '200': '#E5E8EC',
+      '100': '#eaeaeb', //avatar background
+      '200': '#D6D6D6',
       '300': '#A09BA8',
       '400': '#BFC7CF',
       '500': '#AAB4BE',

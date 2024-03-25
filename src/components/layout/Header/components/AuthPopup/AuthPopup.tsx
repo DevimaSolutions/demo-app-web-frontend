@@ -1,6 +1,6 @@
-import { Avatar, Box, Divider, IconButton, Menu, MenuItem, Typography } from '@mui/material';
+import { Box, Divider, IconButton, Menu, MenuItem, Typography } from '@mui/material';
 
-import { NextLinkButton } from '@/components';
+import { Avatar, NextLinkButton } from '@/components';
 
 import styles from './styles';
 import { useAuthPopup } from './useAuthPopup';

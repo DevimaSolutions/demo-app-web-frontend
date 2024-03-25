@@ -13,3 +13,7 @@ export { default as ArrowLineIcon } from './ArrowLineIcon';
 export { default as CalendarIcon } from './CalendarIcon';
 export { default as AppStoreIcon } from './AppStoreIcon';
 export { default as GooglePlayIcon } from './GooglePlayIcon';
+export { default as DashboardIcon } from './DashboardIcon';
+export { default as ArcadeIcon } from './ArcadeIcon';
+export { default as NotificationIcon } from './NotificationIcon';
+export { default as AvatarIcon } from './AvatarIcon';

@@ -8,6 +8,7 @@ export { default as PagesBackground } from './PagesBackground';
 export { default as StyledContainer } from './StyledContainer';
 export { default as StyledToastContainer } from './StyledToastContainer';
 export { default as SelectableChip } from './SelectableChip';
+export { default as Avatar } from './Avatar';
 
 export * from './auth';
 export * from './inputs';
