@@ -21,9 +21,9 @@ const layoutMap = {
 
 const Layout = ({ children, layoutType = LayoutTypes.Main }: ILayoutProps) => {
   const LayoutComponent = layoutMap[layoutType];
-  const isDesktop = useMediaQuery(theme.breakpoints.up('xl'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('xl'));
 
-  if (!isDesktop) return <StubPage />;
+  if (isMobile) return <StubPage />;
 
   return <LayoutComponent>{children}</LayoutComponent>;
 };

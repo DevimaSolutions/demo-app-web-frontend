@@ -1,16 +1,9 @@
-import { Typography } from '@mui/material';
-
 import { AuthAccessLevel } from '@/constants';
+import { Dashboard } from '@/page-content';
 import { withPageSettings } from '@/utils';
 
 const Home = () => {
-  return (
-    <>
-      <Typography variant="h2" textAlign="center" marginTop={4}>
-        Welcome to Shaper GAP®
-      </Typography>
-    </>
-  );
+  return <Dashboard />;
 };
 
 export const getServerSideProps = withPageSettings({

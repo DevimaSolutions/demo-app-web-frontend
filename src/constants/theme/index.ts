@@ -413,7 +413,7 @@ export const theme = createTheme({
       disabled: '#BDBDBD',
     },
     grey: {
-      '50': '#F3F6F9',
+      '50': '#f2f2f2',
       '100': '#EAEEF3',
       '200': '#E5E8EC',
       '300': '#A09BA8',

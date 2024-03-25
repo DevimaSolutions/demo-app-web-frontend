@@ -1,17 +1,12 @@
 import { AppBar, Toolbar } from '@mui/material';
 
-import { AppLogo, NextLinkIconButton } from '@/components';
-
 import { AuthPopup } from './components';
 import styles from './styles';
 
 const Header = () => {
   return (
-    <AppBar position="static" sx={styles.appBar}>
-      <Toolbar>
-        <NextLinkIconButton href="/">
-          <AppLogo />
-        </NextLinkIconButton>
+    <AppBar sx={styles.appBar}>
+      <Toolbar sx={styles.toolbar}>
         <AuthPopup />
       </Toolbar>
     </AppBar>
