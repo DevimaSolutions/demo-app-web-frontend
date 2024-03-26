@@ -10,7 +10,6 @@ const GooglePlayIcon = ({
   viewBox = '0, 0, 180, 54',
   width = '120',
   height = '40',
-  fill = 'currentColor',
   direction = 'up',
   sx,
   ...rest

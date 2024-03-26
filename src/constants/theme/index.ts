@@ -98,6 +98,13 @@ export const theme = createTheme({
         },
       },
     },
+    MuiLinearProgress: {
+      styleOverrides: {
+        barColorPrimary: {
+          background: '#886FFF',
+        },
+      },
+    },
     MuiDivider: {
       styleOverrides: {
         root: {
@@ -376,12 +383,12 @@ export const theme = createTheme({
     primary: {
       '50': '#E6E1EE',
       '100': '#D2CDDA',
-      '200': '#A5D8FF',
+      '200': '#242229',
       '300': '#D2CFD7', //input placeholder
       '400': '#F1EBF9', //menu option hover
       '500': '#BDAFFF', //dashboard
       '600': '#0072E5',
-      '700': '#0059B2',
+      '700': '#886FFF',
       '800': '#38229F', // selected text
       '900': '#886FFF', // check mark icon
       main: '#8A80B9',
