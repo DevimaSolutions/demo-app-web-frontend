@@ -8,6 +8,7 @@ const styles = {
     width: 48,
     height: 48,
     position: 'relative',
+    flexShrink: 0,
   },
   progress: {
     [`& .${circularProgressClasses.svg}`]: {
