@@ -4,6 +4,7 @@ const styles = {
     minHeight: '100vh',
     p: 6,
     display: 'flex',
+    justifyContent: 'center',
     gap: 4,
   },
   leftTable: {

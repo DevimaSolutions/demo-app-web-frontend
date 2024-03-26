@@ -425,7 +425,7 @@ export const theme = createTheme({
       '200': '#D6D6D6',
       '300': '#A09BA8',
       '400': '#F4F4F4', //selected categories
-      '500': '#AAB4BE',
+      '500': '#EFEFEF',
       '600': '#7F8E9D',
       '700': '#46505A',
       '800': '#2F3A45',
