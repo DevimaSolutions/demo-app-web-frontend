@@ -20,7 +20,7 @@ const styles = {
     },
   },
   divider: {
-    borderColor: '#F4F4F4',
+    borderColor: theme.palette.grey[400],
     width: '100%',
   },
 } as const;

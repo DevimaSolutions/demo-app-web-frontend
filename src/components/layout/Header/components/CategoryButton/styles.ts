@@ -1,8 +1,10 @@
 import { buttonBaseClasses } from '@mui/material';
 
+import { theme } from '@/constants';
+
 const styles = {
   root: (selected: boolean) => ({
-    ...(selected && { background: '#F4F4F4' }), //move to theme
+    ...(selected && { background: theme.palette.grey[400] }), //move to theme
     [`&.${buttonBaseClasses.root}`]: {
       minWidth: 48,
       width: 48,

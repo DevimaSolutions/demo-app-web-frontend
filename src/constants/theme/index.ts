@@ -417,7 +417,7 @@ export const theme = createTheme({
       '100': '#eaeaeb', //avatar background
       '200': '#D6D6D6',
       '300': '#A09BA8',
-      '400': '#BFC7CF',
+      '400': '#F4F4F4', //selected categories
       '500': '#AAB4BE',
       '600': '#7F8E9D',
       '700': '#46505A',
