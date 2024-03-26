@@ -4,7 +4,7 @@ import { theme } from '@/constants';
 
 const styles = {
   root: (selected: boolean) => ({
-    ...(selected && { background: theme.palette.grey[400] }), //move to theme
+    ...(selected && { background: theme.palette.grey[400] }),
     [`&.${buttonBaseClasses.root}`]: {
       minWidth: 48,
       width: 48,

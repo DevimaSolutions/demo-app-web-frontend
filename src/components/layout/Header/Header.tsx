@@ -9,7 +9,7 @@ import styles from './styles';
 const Header = () => {
   const router = useRouter();
 
-  const handleClick = (redirectUrl: string) => () => router.push(redirectUrl);
+  const handleRedirect = (redirectUrl: string) => () => router.push(redirectUrl);
 
   return (
     <AppBar sx={styles.appBar}>
@@ -17,19 +17,19 @@ const Header = () => {
         <AuthPopup />
         <CategoryButton
           disabled
-          onClick={handleClick('/notification')}
-          selected={router.pathname === '/notification'}
+          onClick={handleRedirect('/notifications')}
+          selected={router.pathname === '/notifications'}
         >
           <NotificationIcon width={32} height={32} disabled />
         </CategoryButton>
         <Divider sx={styles.divider} />
-        <CategoryButton onClick={handleClick('/')} selected={router.pathname === '/'}>
+        <CategoryButton onClick={handleRedirect('/')} selected={router.pathname === '/'}>
           <DashboardIcon width={32} height={32} />
         </CategoryButton>
         <CategoryButton
           disabled
-          onClick={handleClick('/arcade')}
-          selected={router.pathname === '/arcade'}
+          onClick={handleRedirect('/arcades')}
+          selected={router.pathname === '/arcades'}
         >
           <ArcadeIcon width={32} height={32} disabled />
         </CategoryButton>
