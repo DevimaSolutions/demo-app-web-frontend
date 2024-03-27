@@ -43,7 +43,7 @@ const styles = {
   contentContainer: {
     background: alpha(theme.palette.grey[400], 0.8),
     borderRadius: 0.8,
-    height: 352,
+    maxHeight: 352,
     padding: 3,
     display: 'flex',
     flexDirection: 'column',
