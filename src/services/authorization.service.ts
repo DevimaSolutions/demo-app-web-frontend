@@ -7,7 +7,7 @@ import {
 import { getAuthManager } from '@/utils';
 
 import type {
-  IFullUserResponse,
+  IUserResponse,
   ISuccessAuthorizeResponse,
   ISuccessResponse,
 } from '@/data-transfer/responses';
@@ -37,7 +37,7 @@ const authorizeWithSocial = async <AuthType>({
     .then((res) => res.data);
 
   const user = await auth.axios
-    .get<IFullUserResponse>('/auth/profile', {
+    .get<IUserResponse>('/auth/profile', {
       headers: { Authorization: `Bearer ${authToken.accessToken}` },
     })
     .then((res) => res.data);
@@ -62,7 +62,7 @@ const signUp = async (data: ISignUpRequest) => {
     .then((res) => res.data);
 
   const user = await auth.axios
-    .get<IFullUserResponse>('/auth/profile', {
+    .get<IUserResponse>('/auth/profile', {
       headers: { Authorization: `Bearer ${authToken.accessToken}` },
     })
     .then((res) => res.data);
@@ -75,7 +75,7 @@ const confirmEmail = async (code: string) => {
 
   await auth.axios.post<ISuccessResponse>('/auth/confirm/email', { code }).then((res) => res.data);
 
-  const user = await auth.axios.get<IFullUserResponse>('/auth/profile').then((res) => res.data);
+  const user = await auth.axios.get<IUserResponse>('/auth/profile').then((res) => res.data);
 
   auth.updateUser(user);
 };

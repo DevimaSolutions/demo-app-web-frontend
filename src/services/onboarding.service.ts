@@ -2,7 +2,7 @@ import { getAuthManager } from '@/utils';
 
 import type { IUpdateOnboardingRequest } from '@/data-transfer/requests';
 import type {
-  IFullUserResponse,
+  IUserResponse,
   IGetOnboardingDataResponse,
   ISoftSkillsObject,
   IUpdateOnboardingResponse,
@@ -16,7 +16,7 @@ const updateOnboarding = async (data: IUpdateOnboardingRequest) => {
     .then((res) => res.data);
 
   if (response.complete) {
-    const user = await auth.axios.get<IFullUserResponse>('/auth/profile').then((res) => res.data);
+    const user = await auth.axios.get<IUserResponse>('/auth/profile').then((res) => res.data);
 
     auth.updateUser(user);
   }

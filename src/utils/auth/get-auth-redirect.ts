@@ -1,8 +1,8 @@
 import { UserRole, UserStatus } from '@/constants';
 
-import type { IFullUserResponse } from '@/data-transfer/responses';
+import type { IUserResponse } from '@/data-transfer/responses';
 
-const getAuthRedirect = (user?: IFullUserResponse | null) => {
+const getAuthRedirect = (user?: IUserResponse | null) => {
   if (!user) {
     return '/sign-in';
   }

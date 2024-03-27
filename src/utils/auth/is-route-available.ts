@@ -1,7 +1,7 @@
 import { AuthAccessLevel } from '@/constants';
 
 import type { UserRole, UserStatus } from '@/constants';
-import type { IFullUserResponse } from '@/data-transfer/responses';
+import type { IUserResponse } from '@/data-transfer/responses';
 import type { IAuthInitialProps } from '@/types';
 
 const checkUserPermissions = (role: UserRole, permissions?: UserRole[]) => {
@@ -14,10 +14,7 @@ const statusCheck = (status: UserStatus, requiredStatuses?: UserStatus[]) =>
   requiredStatuses?.length ? requiredStatuses?.includes(status) : true;
 
 // Feel free to place additional authorization checks here
-const isUserAuthenticatedForRoute = (
-  user: IFullUserResponse | null,
-  authSettings: IAuthInitialProps,
-) =>
+const isUserAuthenticatedForRoute = (user: IUserResponse | null, authSettings: IAuthInitialProps) =>
   // This route is private
   authSettings.accessLevel === AuthAccessLevel.Authorized &&
   // The user is signed in
@@ -28,7 +25,7 @@ const isUserAuthenticatedForRoute = (
   statusCheck(user.status, authSettings.statuses);
 
 const isRouteAvailable = (
-  user: IFullUserResponse | null,
+  user: IUserResponse | null,
   isLoading: boolean,
   authSettings: IAuthInitialProps,
 ) => {

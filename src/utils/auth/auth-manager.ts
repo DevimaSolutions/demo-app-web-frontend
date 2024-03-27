@@ -2,19 +2,19 @@ import auth from '@devimasolutions/auth';
 
 import { createAuthOptions } from '@/constants';
 
-import type { IFullUserResponse } from '@/data-transfer/responses';
+import type { IUserResponse } from '@/data-transfer/responses';
 import type { ISignInParams } from '@/types';
 import type { IAuthManager } from '@devimasolutions/auth';
 
 // Create a singleton to use in any part of your project
-export let authManager: IAuthManager<IFullUserResponse, ISignInParams> | null = null;
+export let authManager: IAuthManager<IUserResponse, ISignInParams> | null = null;
 
-export const setAuthManager = (manager: IAuthManager<IFullUserResponse, ISignInParams>) => {
+export const setAuthManager = (manager: IAuthManager<IUserResponse, ISignInParams>) => {
   authManager = manager;
   return authManager;
 };
 
-let initializationPromise: Promise<IAuthManager<IFullUserResponse, ISignInParams>> | null = null;
+let initializationPromise: Promise<IAuthManager<IUserResponse, ISignInParams>> | null = null;
 export const getAuthManager = async () => {
   if (authManager) {
     // if another authentication manager is initializing, we need to wait for it.

@@ -48,6 +48,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: 2,
+    overflowY: 'auto',
   },
   friend: {
     width: '100%',
@@ -74,6 +75,9 @@ const styles = {
     width: 20,
     height: 20,
     color: theme.palette.grey[200],
+  },
+  extraContent: {
+    alignSelf: 'center',
   },
 } as const;
 
