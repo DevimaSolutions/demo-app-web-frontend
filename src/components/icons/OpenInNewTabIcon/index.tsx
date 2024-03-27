@@ -6,7 +6,7 @@ import styles from '../styles';
 
 import type { ISvgProps } from '../types';
 
-const SocialLinkIcon = ({
+const OpenInNewTabIcon = ({
   viewBox = '0, 0, 24, 24',
   width = '24',
   height = '24',
@@ -35,4 +35,4 @@ const SocialLinkIcon = ({
   );
 };
 
-export default SocialLinkIcon;
+export default OpenInNewTabIcon;

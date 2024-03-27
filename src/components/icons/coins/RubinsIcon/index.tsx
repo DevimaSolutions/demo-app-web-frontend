@@ -2,9 +2,9 @@ import { SvgIcon } from '@mui/material';
 
 import { combineSx } from '@/utils';
 
-import styles from '../styles';
+import styles from '../../styles';
 
-import type { ISvgProps } from '../types';
+import type { ISvgProps } from '../../types';
 
 const RubinsIcon = ({
   viewBox = '0, 0, 20, 20',

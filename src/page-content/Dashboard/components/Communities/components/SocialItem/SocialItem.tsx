@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
 
-import { SocialLinkIcon } from '@/components';
+import { OpenInNewTabIcon } from '@/components';
 
 import styles from './styles';
 
@@ -15,7 +15,7 @@ const SocialItem = ({ social }: ISocialItemProps) => {
         <Box sx={styles.root}>
           <Icon />
           <Typography sx={styles.text}>{social.name}</Typography>
-          <SocialLinkIcon sx={styles.socialLinkIcon} />
+          <OpenInNewTabIcon sx={styles.socialLinkIcon} />
         </Box>
       </Link>
     </Box>
