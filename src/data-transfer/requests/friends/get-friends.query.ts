@@ -1,3 +1,5 @@
 import type { IBasePaginationQuery } from '../pagination.query';
 
-export type IFriendsPaginationQuery = IBasePaginationQuery;
+export interface IFriendsPaginationQuery extends IBasePaginationQuery {
+  search?: string;
+}

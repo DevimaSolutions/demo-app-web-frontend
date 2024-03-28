@@ -7,10 +7,17 @@ import type { RootState } from '../store';
 import type { IFullUserResponse, IPaginationResponse } from '@/data-transfer/responses';
 import type { Action, AsyncThunkPayloadCreator } from '@reduxjs/toolkit';
 
+export interface ISearch {
+  search?: string;
+}
+
 export const getFriends = createAsyncThunk(
   'onboarding/getFriends',
-  handleThunkApiError<undefined, IPaginationResponse<IFullUserResponse> | undefined>(
-    async (_, thunkAPI?: Parameters<AsyncThunkPayloadCreator<Response, Action>>[1]) => {
+  handleThunkApiError<ISearch, IPaginationResponse<IFullUserResponse> | undefined>(
+    async (
+      { search }: ISearch,
+      thunkAPI?: Parameters<AsyncThunkPayloadCreator<Response, Action>>[1],
+    ) => {
       if (!thunkAPI) {
         return;
       }
@@ -19,6 +26,7 @@ export const getFriends = createAsyncThunk(
       const result = await friendsService.getFriends({
         page: state.friends.page,
         limit: state.friends.limit,
+        search: search,
       });
       return result;
     },

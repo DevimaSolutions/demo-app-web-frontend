@@ -19,7 +19,6 @@ export { default as NotificationIcon } from './NotificationIcon';
 export { default as AvatarIcon } from './AvatarIcon';
 export { default as PlayIcon } from './PlayIcon';
 export { default as OpenInNewTabIcon } from './OpenInNewTabIcon';
-export { default as InfoIcon } from './InfoIcon';
 
 export * from './socials';
 export * from './coins';

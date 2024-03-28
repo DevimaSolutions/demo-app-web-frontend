@@ -1,4 +1,4 @@
-import { alpha, typographyClasses } from '@mui/material';
+import { alpha, buttonClasses, typographyClasses } from '@mui/material';
 
 import { theme } from '@/constants';
 
@@ -12,6 +12,9 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: 1.5,
+    [`& .${typographyClasses.subtitle2}`]: {
+      color: alpha(theme.palette.text.primary, 0.4),
+    },
   },
   titleContainer: {
     display: 'flex',
@@ -40,15 +43,33 @@ const styles = {
   greyColor: {
     color: theme.palette.grey[200],
   },
-  contentContainer: {
-    background: alpha(theme.palette.grey[400], 0.8),
-    borderRadius: 0.8,
-    maxHeight: 352,
-    padding: 3,
+  contentContainer: (isFriends: boolean) => ({
+    ...(isFriends
+      ? {}
+      : {
+          background: alpha(theme.palette.grey[400], 0.6),
+          borderRadius: 0.8,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }),
+    height: 421,
     display: 'flex',
     flexDirection: 'column',
-    gap: 2,
+    gap: 2.25,
+  }),
+  loadingWrapper: {
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  friendsWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
     overflowY: 'auto',
+    gap: 2,
+    marginTop: 0.75,
+    padding: theme.spacing(0, 2, 1),
   },
   friend: {
     width: '100%',
@@ -76,8 +97,12 @@ const styles = {
     height: 20,
     color: theme.palette.grey[200],
   },
-  extraContent: {
-    alignSelf: 'center',
+  addFriendButton: {
+    [`&.${buttonClasses.root}`]: {
+      background: alpha(theme.palette.primary[900], 0.1),
+      color: theme.palette.primary[900],
+      padding: theme.spacing(1.5, 4),
+    },
   },
 } as const;
 

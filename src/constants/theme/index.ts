@@ -571,6 +571,11 @@ export const theme = createTheme({
       fontWeight: 400,
       color: '#908C97',
     },
+    subtitle2: {
+      fontWeight: 500,
+      fontSize: '16px',
+      lineHeight: 1.25,
+    },
     body1: {
       fontSize: '1rem',
       lineHeight: 1.5,
@@ -591,11 +596,6 @@ export const theme = createTheme({
       lineHeight: 1.5,
       letterSpacing: 0,
       fontWeight: 500,
-    },
-    subtitle2: {
-      fontWeight: 500,
-      fontSize: '0.875rem',
-      lineHeight: 1.57,
     },
     overline: {
       fontWeight: 400,

@@ -1,57 +1,57 @@
-import { Box, CircularProgress, Link, Typography } from '@mui/material';
+import { Box, Button, CircularProgress, Typography } from '@mui/material';
 
-import { ArrowIcon, Avatar, InfoIcon } from '@/components';
+import { ArrowIcon, Avatar } from '@/components';
 
 import styles from './styles';
+import useFriendsSection from './useFriendsSection';
 
-import type { IFriendsSectionProps } from './types';
+const FriendsSection = () => {
+  const { isFriendsLoading, friends, handleRedirect } = useFriendsSection();
 
-const FriendsSection = ({ friends, isLoading = false }: IFriendsSectionProps) => {
   return (
     <Box sx={styles.root}>
       <Box sx={styles.titleContainer}>
         <Box sx={styles.titleWrapper}>
           <Typography>Friends</Typography>
-          {friends.length && !isLoading ? (
-            <>
-              <Typography sx={styles.greyColor}>|</Typography>
-              <Typography sx={styles.onlineColor}>
-                {/* {friends.filter((friend) => friend.isOnline).length} online */}0 online
-              </Typography>
-            </>
-          ) : null}
+          {/*TODO: add online status*/}
         </Box>
-        <InfoIcon />
-        {/* TODO: add info functionality */}
       </Box>
-      {friends.length ? (
-        <Box sx={styles.contentContainer}>
-          {isLoading ? (
-            <CircularProgress sx={styles.extraContent} />
-          ) : (
-            //TODO: make friends clickable
-            friends.map((friend, index) => (
-              <Box key={index} sx={styles.friend}>
-                <Avatar
-                  src={friend.avatar}
-                  //TODO: add online
-                />
-                <Box sx={styles.friendTextWrapper}>
-                  <Typography>{friend.name.full}</Typography>
-                  {/*TODO: add user level*/}
-                  <Typography variant="subtitle1">LVL 0</Typography>
-                </Box>
-                <ArrowIcon direction="left" sx={styles.arrow} />
-              </Box>
-            ))
-          )}
-        </Box>
-      ) : (
-        <Link href={'/friends'} sx={styles.extraContent}>
-          Add friends
-        </Link>
-        // TODO: add placeholder screen
-      )}
+      <Box sx={styles.contentContainer(!!friends.length)}>
+        {isFriendsLoading ? (
+          <Box sx={styles.loadingWrapper}>
+            <CircularProgress />
+          </Box>
+        ) : friends.length ? (
+          <>
+            <Box sx={styles.friendsWrapper}>
+              {
+                //TODO: make friends clickable
+                friends.map((friend, index) => (
+                  <Box key={index} sx={styles.friend}>
+                    <Avatar
+                      src={friend.avatar}
+                      //TODO: add online status
+                    />
+                    <Box sx={styles.friendTextWrapper}>
+                      <Typography>{friend.name.full}</Typography>
+                      {/*TODO: add user level*/}
+                      <Typography variant="subtitle1">LVL 0</Typography>
+                    </Box>
+                    <ArrowIcon direction="left" sx={styles.arrow} />
+                  </Box>
+                ))
+              }
+            </Box>
+          </>
+        ) : (
+          <>
+            <Typography variant="subtitle2">Wow, it’s really cold here...</Typography>
+            <Button sx={styles.addFriendButton} onClick={handleRedirect('/friends')}>
+              Add friend
+            </Button>
+          </>
+        )}
+      </Box>
     </Box>
   );
 };
