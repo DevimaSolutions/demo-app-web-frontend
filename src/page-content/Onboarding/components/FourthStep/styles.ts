@@ -4,7 +4,7 @@ import { theme } from '@/constants';
 
 const styles = {
   root: {
-    width: 480,
+    width: 600,
     height: 'auto',
     padding: theme.spacing(6, 5),
     textAlign: 'center',

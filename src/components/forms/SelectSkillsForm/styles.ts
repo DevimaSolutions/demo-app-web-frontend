@@ -4,7 +4,7 @@ import { theme } from '@/constants';
 
 const styles = {
   container: {
-    width: 408,
+    width: 550,
   },
   form: {
     display: 'flex',
