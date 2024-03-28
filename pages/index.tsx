@@ -7,7 +7,7 @@ const Home = () => {
 };
 
 export const getServerSideProps = withPageSettings({
-  auth: { accessLevel: AuthAccessLevel.Public },
+  auth: { accessLevel: AuthAccessLevel.Authorized },
   metaData: {
     meta: [
       {

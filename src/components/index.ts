@@ -9,6 +9,7 @@ export { default as StyledContainer } from './StyledContainer';
 export { default as StyledToastContainer } from './StyledToastContainer';
 export { default as SelectableChip } from './SelectableChip';
 export { default as Avatar } from './Avatar';
+export { default as QrCode } from './QrCode';
 
 export * from './auth';
 export * from './inputs';

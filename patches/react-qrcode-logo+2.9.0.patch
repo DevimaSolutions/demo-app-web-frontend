@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-qrcode-logo/dist/index.js b/node_modules/react-qrcode-logo/dist/index.js
+index cfca6de..467875c 100644
+--- a/node_modules/react-qrcode-logo/dist/index.js
++++ b/node_modules/react-qrcode-logo/dist/index.js
+@@ -264,7 +264,7 @@ var QRCode = /** @class */ (function (_super) {
+                         ctx.fill();
+                     }
+                     else {
+-                        ctx.fillRect(dxLogoPadding, dyLogoPadding, dWidthLogoPadding, dHeightLogoPadding);
++                        ctx.clearRect(dxLogoPadding, dyLogoPadding, dWidthLogoPadding, dHeightLogoPadding);
+                     }
+                 }
+                 ctx.globalAlpha = logoOpacity;
