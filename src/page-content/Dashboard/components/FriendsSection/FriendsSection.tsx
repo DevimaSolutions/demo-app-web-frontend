@@ -1,13 +1,19 @@
 import { Box, Button, CircularProgress, Typography } from '@mui/material';
 
-import { ArrowIcon, Avatar } from '@/components';
+import { ArrowIcon, Avatar, SearchInput } from '@/components';
 
 import styles from './styles';
 import useFriendsSection from './useFriendsSection';
 
 const FriendsSection = () => {
-  const { isFriendsLoading, friends, handleRedirect } = useFriendsSection();
+  const { hasFriendsInit, friends, isFriendsLoading, handleRedirect, handleSearch } =
+    useFriendsSection();
 
+  const LoadingComponent = (
+    <Box sx={styles.loadingWrapper}>
+      <CircularProgress />
+    </Box>
+  );
   return (
     <Box sx={styles.root}>
       <Box sx={styles.titleContainer}>
@@ -16,16 +22,15 @@ const FriendsSection = () => {
           {/*TODO: add online status*/}
         </Box>
       </Box>
-      <Box sx={styles.contentContainer(!!friends.length)}>
-        {isFriendsLoading ? (
-          <Box sx={styles.loadingWrapper}>
-            <CircularProgress />
-          </Box>
-        ) : friends.length ? (
+      <Box sx={styles.contentContainer(!!hasFriendsInit)}>
+        {hasFriendsInit ? (
           <>
+            <SearchInput onSearch={handleSearch} />
             <Box sx={styles.friendsWrapper}>
-              {
-                //TODO: make friends clickable
+              {isFriendsLoading ? (
+                LoadingComponent
+              ) : //TODO: navigate to game session or friend profile
+              friends.length ? (
                 friends.map((friend, index) => (
                   <Box key={index} sx={styles.friend}>
                     <Avatar
@@ -40,7 +45,9 @@ const FriendsSection = () => {
                     <ArrowIcon direction="left" sx={styles.arrow} />
                   </Box>
                 ))
-              }
+              ) : (
+                <>No results</>
+              )}
             </Box>
           </>
         ) : (

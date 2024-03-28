@@ -21,7 +21,6 @@ export const getFriends = createAsyncThunk(
       if (!thunkAPI) {
         return;
       }
-      console.log(thunkAPI);
       const state = thunkAPI.getState() as RootState;
       const result = await friendsService.getFriends({
         page: state.friends.page,
