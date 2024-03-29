@@ -1,25 +1,27 @@
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from '@/hooks';
-import { friendsSelector, isLoadingSelector } from '@/redux/friends/selectors';
+import { friendsSelector } from '@/redux/friends/selectors';
 import { resetState } from '@/redux/friends/slice';
 import { getFriends } from '@/redux/friends/thunk';
 
 const useFriendsSection = () => {
-  const friends = useSelector(friendsSelector);
-  const isLoading = useSelector(isLoadingSelector);
+  const { friends, isLoading, hasMore } = useSelector(friendsSelector);
   const [hasFriendsInit, setHasFriendsInit] = useState<boolean>(true);
+  const [search, setSearch] = useState<string>('');
   const dispatch = useDispatch();
   const router = useRouter();
 
   const handleSearch = (searchValue: string) => {
-    if (!searchValue.length) {
-      dispatch(getFriends({})).unwrap();
-      return;
-    }
-    dispatch(getFriends({ search: searchValue })).unwrap();
+    setSearch(searchValue);
+    dispatch(resetState());
+    dispatch(getFriends(searchValue.length ? { search: searchValue } : {})).unwrap();
   };
+
+  const loadMore = useCallback(() => {
+    dispatch(getFriends(search.length ? { search } : {})).unwrap();
+  }, [dispatch, search]);
 
   useEffect(() => {
     dispatch(getFriends({}))
@@ -32,7 +34,15 @@ const useFriendsSection = () => {
 
   const handleRedirect = (redirectUrl: string) => () => router.push(redirectUrl);
 
-  return { hasFriendsInit, friends, isFriendsLoading: isLoading, handleRedirect, handleSearch };
+  return {
+    hasFriendsInit,
+    friends,
+    isFriendsLoading: isLoading,
+    handleRedirect,
+    handleSearch,
+    loadMore,
+    hasMore,
+  };
 };
 
 export default useFriendsSection;

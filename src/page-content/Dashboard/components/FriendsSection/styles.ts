@@ -67,9 +67,9 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     overflowY: 'auto',
-    gap: 2,
-    marginTop: 0.75,
-    padding: theme.spacing(0, 2, 1),
+    gap: '16px',
+    marginTop: '6px',
+    padding: '0px 16px 8px',
   },
   friend: {
     width: '100%',

@@ -4,8 +4,11 @@ import { useCallback, useMemo, useState } from 'react';
 import type { ISearchInputProps } from './types';
 import type { ChangeEvent, KeyboardEvent } from 'react';
 
-const useSearchInput = ({ value, onSearch }: Pick<ISearchInputProps, 'value' | 'onSearch'>) => {
-  const [inputValue, setInputValue] = useState<string>(value ?? '');
+const useSearchInput = ({
+  initInputValue,
+  onSearch,
+}: Pick<ISearchInputProps, 'initInputValue' | 'onSearch'>) => {
+  const [inputValue, setInputValue] = useState<string>(initInputValue ?? '');
 
   const handleDebounceSearch = useCallback(
     (newInputValue: string) => {

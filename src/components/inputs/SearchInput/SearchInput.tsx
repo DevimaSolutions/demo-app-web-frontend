@@ -9,14 +9,14 @@ import useSearchInput from './useSearchInput';
 import type { ISearchInputProps } from './types';
 
 const SearchInput = ({
-  value,
+  initInputValue,
   onSearch,
   sx,
   placeholder = 'Email or nick name...',
   ...props
 }: ISearchInputProps) => {
   const { inputValue, handleChange, handleEnterSearch } = useSearchInput({
-    value,
+    initInputValue,
     onSearch,
   });
   return (

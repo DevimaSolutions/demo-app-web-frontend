@@ -1,4 +1,5 @@
 import { Box, Button, CircularProgress, Typography } from '@mui/material';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 import { ArrowIcon, Avatar, SearchInput } from '@/components';
 
@@ -6,14 +7,16 @@ import styles from './styles';
 import useFriendsSection from './useFriendsSection';
 
 const FriendsSection = () => {
-  const { hasFriendsInit, friends, isFriendsLoading, handleRedirect, handleSearch } =
-    useFriendsSection();
+  const {
+    hasFriendsInit,
+    friends,
+    isFriendsLoading,
+    handleRedirect,
+    handleSearch,
+    loadMore,
+    hasMore,
+  } = useFriendsSection();
 
-  const LoadingComponent = (
-    <Box sx={styles.loadingWrapper}>
-      <CircularProgress />
-    </Box>
-  );
   return (
     <Box sx={styles.root}>
       <Box sx={styles.titleContainer}>
@@ -26,29 +29,41 @@ const FriendsSection = () => {
         {hasFriendsInit ? (
           <>
             <SearchInput onSearch={handleSearch} />
-            <Box sx={styles.friendsWrapper}>
-              {isFriendsLoading ? (
-                LoadingComponent
-              ) : //TODO: navigate to game session or friend profile
-              friends.length ? (
-                friends.map((friend, index) => (
-                  <Box key={index} sx={styles.friend}>
-                    <Avatar
-                      src={friend.avatar}
-                      //TODO: add online status
-                    />
-                    <Box sx={styles.friendTextWrapper}>
-                      <Typography>{friend.name.full}</Typography>
-                      {/*TODO: add user level*/}
-                      <Typography variant="subtitle1">LVL 0</Typography>
+            <InfiniteScroll
+              style={styles.friendsWrapper}
+              dataLength={friends.length}
+              scrollableTarget="infinite-scroll-parent"
+              next={loadMore}
+              hasMore={hasMore}
+              loader={<></>}
+            >
+              {
+                //TODO: navigate to game session or friend profile
+                friends.length ? (
+                  friends.map((friend, index) => (
+                    <Box key={index} sx={styles.friend}>
+                      <Avatar
+                        src={friend.avatar}
+                        //TODO: add online status
+                      />
+                      <Box sx={styles.friendTextWrapper}>
+                        <Typography>{friend.name.full}</Typography>
+                        {/*TODO: add user level*/}
+                        <Typography variant="subtitle1">LVL 0</Typography>
+                      </Box>
+                      <ArrowIcon direction="left" sx={styles.arrow} />
                     </Box>
-                    <ArrowIcon direction="left" sx={styles.arrow} />
-                  </Box>
-                ))
-              ) : (
-                <>No results</>
-              )}
-            </Box>
+                  ))
+                ) : (
+                  <>No results</>
+                )
+              }
+            </InfiniteScroll>
+            {isFriendsLoading && (
+              <Box sx={styles.loadingWrapper}>
+                <CircularProgress />
+              </Box>
+            )}
           </>
         ) : (
           <>
