@@ -10,7 +10,7 @@ export default function EmailVerifyPage() {
 export const getServerSideProps = withPageSettings({
   auth: {
     accessLevel: AuthAccessLevel.Authorized,
-    onlyForStatus: [UserStatus.Pending],
+    statuses: [UserStatus.Pending],
   },
   metaData: { title: 'Verify email' },
   layout: Layout.Auth,

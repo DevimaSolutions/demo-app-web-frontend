@@ -8,7 +8,7 @@ export default function OnboardingPage() {
 }
 
 export const getServerSideProps = withPageSettings({
-  auth: { accessLevel: AuthAccessLevel.Authorized, onlyForStatus: [UserStatus.Verified] },
+  auth: { accessLevel: AuthAccessLevel.Authorized, statuses: [UserStatus.Verified] },
   metaData: { title: 'Onboarding' },
   layout: Layout.Onboarding,
 });

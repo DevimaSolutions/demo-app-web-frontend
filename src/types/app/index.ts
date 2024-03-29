@@ -12,7 +12,7 @@ export interface AppAdditionalProps {
 export interface IAuthInitialProps {
   accessLevel: AuthAccessLevel;
   permissions?: UserRole[];
-  onlyForStatus?: UserStatus[];
+  statuses?: UserStatus[];
 }
 
 export interface IPageSettings {

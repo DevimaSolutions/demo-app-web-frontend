@@ -25,7 +25,7 @@ const isUserAuthenticatedForRoute = (
   // The user has a corresponding role
   checkUserPermissions(user.role, authSettings.permissions) &&
   // Checks if the user can access with current status
-  statusCheck(user.status, authSettings.onlyForStatus);
+  statusCheck(user.status, authSettings.statuses);
 
 const isRouteAvailable = (
   user: IFullUserResponse | null,
