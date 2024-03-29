@@ -422,7 +422,7 @@ export const theme = createTheme({
     grey: {
       '50': '#f2f2f2',
       '100': '#eaeaeb', //avatar background
-      '200': '#D6D6D6',
+      '200': '#D6D6D6', //disabled categories
       '300': '#A09BA8',
       '400': '#F4F4F4', //selected categories
       '500': '#EFEFEF',

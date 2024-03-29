@@ -12,6 +12,8 @@ const styles = {
     right: 'calc(100% - 96px)',
   },
   toolbar: {
+    width: 96,
+    height: '100%',
     display: 'flex',
     flexDirection: 'column',
     gap: 3,
@@ -22,6 +24,9 @@ const styles = {
   divider: {
     borderColor: theme.palette.grey[400],
     width: '100%',
+  },
+  signOutOption: {
+    marginTop: 'auto',
   },
 } as const;
 

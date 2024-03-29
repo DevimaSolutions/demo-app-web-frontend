@@ -13,9 +13,6 @@ export { default as ArrowLineIcon } from './ArrowLineIcon';
 export { default as CalendarIcon } from './CalendarIcon';
 export { default as AppStoreIcon } from './AppStoreIcon';
 export { default as GooglePlayIcon } from './GooglePlayIcon';
-export { default as DashboardIcon } from './DashboardIcon';
-export { default as ArcadeIcon } from './ArcadeIcon';
-export { default as NotificationIcon } from './NotificationIcon';
 export { default as AvatarIcon } from './AvatarIcon';
 export { default as PlayIcon } from './PlayIcon';
 export { default as OpenInNewTabIcon } from './OpenInNewTabIcon';
@@ -23,3 +20,4 @@ export { default as SearchIcon } from './SearchIcon';
 
 export * from './socials';
 export * from './coins';
+export * from './sidebar';

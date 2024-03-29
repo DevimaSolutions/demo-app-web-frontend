@@ -1,15 +1,19 @@
 import { AppBar, Divider, Toolbar } from '@mui/material';
-import { useRouter } from 'next/router';
 
-import { ArcadeIcon, DashboardIcon, NotificationIcon } from '@/components/icons';
+import {
+  ArcadeIcon,
+  DashboardIcon,
+  NotificationIcon,
+  SignOutIcon,
+  StoreIcon,
+} from '@/components/icons';
 
 import { AuthPopup, CategoryButton } from './components';
 import styles from './styles';
+import useHeader from './useHeader';
 
 const Header = () => {
-  const router = useRouter();
-
-  const handleRedirect = (redirectUrl: string) => () => router.push(redirectUrl);
+  const { router, handleRedirect, handleSignOut } = useHeader();
 
   return (
     <AppBar sx={styles.appBar}>
@@ -32,6 +36,16 @@ const Header = () => {
           selected={router.pathname === '/arcades'}
         >
           <ArcadeIcon width={32} height={32} disabled />
+        </CategoryButton>
+        <CategoryButton
+          onClick={handleRedirect('/store')}
+          selected={router.pathname === '/store'}
+          disabled
+        >
+          <StoreIcon width={32} height={32} disabled />
+        </CategoryButton>
+        <CategoryButton onClick={handleSignOut} sx={styles.signOutOption}>
+          <SignOutIcon width={32} height={32} />
         </CategoryButton>
       </Toolbar>
     </AppBar>
