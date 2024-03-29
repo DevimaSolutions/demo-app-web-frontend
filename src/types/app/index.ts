@@ -1,5 +1,5 @@
 import type { IHtmlHeadProps } from '@/components/HtmlHead';
-import type { AuthAccessLevel, UserRole } from '@/constants';
+import type { AuthAccessLevel, UserRole, UserStatus } from '@/constants';
 import type { RootState } from '@/redux/store';
 import type { Layout } from '@/types';
 import type { EmotionCache } from '@emotion/react';
@@ -12,8 +12,7 @@ export interface AppAdditionalProps {
 export interface IAuthInitialProps {
   accessLevel: AuthAccessLevel;
   permissions?: UserRole[];
-  isOnboardingRequired?: boolean;
-  verificationRequired?: boolean;
+  onlyForStatus?: UserStatus[];
 }
 
 export interface IPageSettings {

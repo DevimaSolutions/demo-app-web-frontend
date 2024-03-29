@@ -1,4 +1,4 @@
-import { AuthAccessLevel } from '@/constants';
+import { AuthAccessLevel, UserStatus } from '@/constants';
 import { Onboarding } from '@/page-content';
 import { Layout } from '@/types';
 import { withPageSettings } from '@/utils';
@@ -8,7 +8,7 @@ export default function OnboardingPage() {
 }
 
 export const getServerSideProps = withPageSettings({
-  auth: { accessLevel: AuthAccessLevel.Authorized, isOnboardingRequired: false },
+  auth: { accessLevel: AuthAccessLevel.Authorized, onlyForStatus: [UserStatus.Verified] },
   metaData: { title: 'Onboarding' },
   layout: Layout.Onboarding,
 });

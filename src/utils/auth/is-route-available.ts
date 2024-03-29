@@ -1,6 +1,6 @@
 import { AuthAccessLevel } from '@/constants';
 
-import type { UserRole } from '@/constants';
+import type { UserRole, UserStatus } from '@/constants';
 import type { IFullUserResponse } from '@/data-transfer/responses';
 import type { IAuthInitialProps } from '@/types';
 
@@ -9,17 +9,9 @@ const checkUserPermissions = (role: UserRole, permissions?: UserRole[]) => {
   return permissions?.length ? permissions.includes(role) : true;
 };
 
-const checkOnboardingPermission = (
-  isOnboardingCompleted: boolean,
-  isOnboardingRequired?: boolean,
-) =>
-  // Checks if the user can access with current onboarding status
-  (isOnboardingCompleted && (isOnboardingRequired === undefined || isOnboardingRequired)) ||
-  (!isOnboardingCompleted && !isOnboardingRequired);
-
-const checkEmailPermission = (isEmailVerified: boolean, verificationRequired?: boolean) =>
-  (isEmailVerified && (verificationRequired === undefined || verificationRequired)) ||
-  (!isEmailVerified && !verificationRequired);
+const statusCheck = (status: UserStatus, requiredStatuses?: UserStatus[]) =>
+  // Checks if the user can access with current status
+  requiredStatuses?.length ? requiredStatuses?.includes(status) : true;
 
 // Feel free to place additional authorization checks here
 const isUserAuthenticatedForRoute = (
@@ -30,12 +22,10 @@ const isUserAuthenticatedForRoute = (
   authSettings.accessLevel === AuthAccessLevel.Authorized &&
   // The user is signed in
   !!user &&
-  // Check if the user email is verified
-  checkEmailPermission(user.isEmailVerified, authSettings.verificationRequired) &&
   // The user has a corresponding role
   checkUserPermissions(user.role, authSettings.permissions) &&
-  // Checks if the user can access with current onboarding status
-  checkOnboardingPermission(user.isOnboardingCompleted, authSettings.isOnboardingRequired);
+  // Checks if the user can access with current status
+  statusCheck(user.status, authSettings.onlyForStatus);
 
 const isRouteAvailable = (
   user: IFullUserResponse | null,

@@ -1,4 +1,4 @@
-import { UserRole } from '@/constants';
+import { UserRole, UserStatus } from '@/constants';
 
 import type { IFullUserResponse } from '@/data-transfer/responses';
 
@@ -12,11 +12,11 @@ const getAuthRedirect = (user?: IFullUserResponse | null) => {
     return '/admin';
   }
 
-  if (!user.isEmailVerified) {
+  if (user.status === UserStatus.Pending) {
     return '/email-verify';
   }
 
-  if (!user.isOnboardingCompleted) {
+  if (user.status === UserStatus.Verified) {
     return '/onboarding';
   }
 

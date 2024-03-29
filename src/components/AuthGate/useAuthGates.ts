@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-import { AuthAccessLevel } from '@/constants';
+import { AuthAccessLevel, UserStatus } from '@/constants';
 import { getAuthRedirect, isRouteAvailable } from '@/utils';
 
 import type { IAuthContext, IAuthInitialProps } from '@/types';
@@ -11,8 +11,7 @@ const useAuthGate = (auth: IAuthContext, authSettings?: IAuthInitialProps) => {
   const ensureAuthSettings = {
     accessLevel: authSettings?.accessLevel || AuthAccessLevel.Public,
     permissions: authSettings?.permissions,
-    isOnboardingRequired: authSettings?.isOnboardingRequired ?? true,
-    verificationRequired: authSettings?.verificationRequired ?? true,
+    onlyForStatus: authSettings?.onlyForStatus || [UserStatus.Active],
   };
 
   const { isAvailable, shouldRedirect } = isRouteAvailable(
