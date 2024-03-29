@@ -43,7 +43,7 @@ const FriendsSection = () => {
                   friends.map((friend, index) => (
                     <Box key={index} sx={styles.friend}>
                       <Avatar
-                        src={friend.avatar}
+                        src={friend.avatar?.path}
                         //TODO: add online status
                       />
                       <Box sx={styles.friendTextWrapper}>

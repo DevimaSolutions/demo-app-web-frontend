@@ -30,7 +30,7 @@ const AuthPopup = () => {
         onClick={onOpenMenu}
         color="inherit"
       >
-        <Avatar src={user.avatar} />
+        <Avatar src={user.avatar?.path} />
       </IconButton>
       <Menu
         sx={styles.menu}
