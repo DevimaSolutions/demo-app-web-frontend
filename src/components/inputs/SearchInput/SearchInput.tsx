@@ -30,7 +30,7 @@ const SearchInput = ({
       onKeyDown={handleEnterSearch}
       InputProps={{
         endAdornment: (
-          <InputAdornment position="end" variant="standard" sx={styles.endAdornment}>
+          <InputAdornment position="end" variant="standard">
             <SearchIcon />
           </InputAdornment>
         ),

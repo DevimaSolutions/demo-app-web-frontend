@@ -12,7 +12,7 @@ export interface ISearch {
 }
 
 export const getFriends = createAsyncThunk(
-  'onboarding/getFriends',
+  'friends/getFriends',
   handleThunkApiError<ISearch, IPaginationResponse<IFullUserResponse> | undefined>(
     async (
       { search }: ISearch,

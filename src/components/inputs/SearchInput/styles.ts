@@ -28,8 +28,6 @@ const styles = {
       },
     },
   },
-
-  endAdornment: {},
 } as const;
 
 export default styles;
