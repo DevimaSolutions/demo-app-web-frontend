@@ -15,6 +15,7 @@ export interface IEnvAuthOptions {
 export interface IEnvLinksOptions {
   appStoreLink: string;
   googlePLayLink: string;
+  iosAppBundleLink: string;
 }
 
 export interface IEnv {

@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { AuthGate, HtmlHead, Layout, AuthProvider, StyledToastContainer } from '@/components';
 import { theme, createEmotionCache } from '@/constants';
+import { useDetectIos } from '@/hooks';
 import { initializeStore } from '@/redux/store';
 import { setYupLocale } from '@/utils/yup-setup.util';
 
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps, emotionCache }: MyAppProps) {
   const store = useMemo(() => {
     return initializeStore(pageProps.internal?.initialReduxState);
   }, [pageProps.internal?.initialReduxState]);
+  useDetectIos();
 
   return (
     <Provider store={store}>

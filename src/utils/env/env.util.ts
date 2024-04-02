@@ -32,6 +32,7 @@ const mapEnv = () => {
     links: {
       appStoreLink: envRuntime('NEXT_PUBLIC_APP_STORE_LINK') || '',
       googlePLayLink: envRuntime('NEXT_PUBLIC_GOOGLE_PLAY_LINK') || '',
+      iosAppBundleLink: envRuntime('NEXT_PUBLIC_IOS_CFBUNDLE_NAME') || '',
     },
   };
 
