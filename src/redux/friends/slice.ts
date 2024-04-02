@@ -1,17 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import { initialPagination, resetPaginationBase } from '../pagination';
+
 import { getFriends } from './thunk';
 
 import type IFriendsState from './types';
 
 const initialState: IFriendsState = {
   friends: [],
-  isLoading: false,
-  page: 1,
-  limit: 10,
-  hasMore: true,
-  total: 0,
   search: '',
+  ...initialPagination,
 };
 
 export const friendsSlice = createSlice({
@@ -19,6 +17,7 @@ export const friendsSlice = createSlice({
   initialState,
   reducers: {
     resetState: () => initialState,
+    resetPagination: (state) => resetPaginationBase(state, initialState),
   },
   extraReducers: (builder) => {
     builder.addCase(getFriends.fulfilled, (state, { payload }) => {
@@ -29,7 +28,8 @@ export const friendsSlice = createSlice({
         const existingFriendsIdSet = new Set(state.friends.map((item) => item.id));
         state.friends.push(...payload.items.filter((item) => !existingFriendsIdSet.has(item.id)));
       } else {
-        state.friends = payload.items;
+        //search request has no results
+        state.friends = [];
       }
       state.hasMore = payload.hasMore;
       state.page = payload.hasMore ? payload.page + 1 : state.page;
@@ -40,11 +40,7 @@ export const friendsSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(getFriends.rejected, (state) => {
-      state.isLoading = false;
-      state.page = 1;
-      state.limit = 10;
-      state.hasMore = false;
-      state.total = 0;
+      resetPaginationBase(state, initialState);
     });
   },
 });

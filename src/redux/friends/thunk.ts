@@ -4,27 +4,23 @@ import friendsService from '@/services/friends.service';
 import { handleThunkApiError } from '@/utils';
 
 import type { RootState } from '../store';
+import type { IFriendsPaginationQuery } from '@/data-transfer/queries';
 import type { IFullUserResponse, IPaginationResponse } from '@/data-transfer/responses';
-import type { Action, AsyncThunkPayloadCreator } from '@reduxjs/toolkit';
-
-export interface ISearch {
-  search?: string;
-}
 
 export const getFriends = createAsyncThunk(
   'friends/getFriends',
-  handleThunkApiError<ISearch, IPaginationResponse<IFullUserResponse> | undefined>(
-    async (
-      { search }: ISearch,
-      thunkAPI?: Parameters<AsyncThunkPayloadCreator<Response, Action>>[1],
-    ) => {
-      if (!thunkAPI) {
-        return;
-      }
-      const state = thunkAPI.getState() as RootState;
+  handleThunkApiError<
+    Pick<IFriendsPaginationQuery, 'search'>,
+    IPaginationResponse<IFullUserResponse> | undefined
+  >(
+    async (params, thunkAPI) => {
+      const state = thunkAPI?.getState() as RootState;
+      const { page, limit } = state?.friends;
+      const search = params.search;
+
       const result = await friendsService.getFriends({
-        page: state.friends.page,
-        limit: state.friends.limit,
+        page,
+        limit,
         search: search,
       });
       return result;

@@ -1,11 +1,7 @@
+import type { IBasePaginationState } from '../types';
 import type { IFullUserResponse } from '@/data-transfer/responses';
 
-export default interface IFriendsState {
+export default interface IFriendsState extends IBasePaginationState {
   friends: IFullUserResponse[];
-  isLoading: boolean;
-  page: number;
-  limit: number;
-  hasMore: boolean;
-  total: number;
   search: string;
 }
