@@ -9,7 +9,7 @@ const useDetectIos = () => {
 
   useEffect(() => {
     if (router.query.deviceType === 'iOS') {
-      router.push(links.iosAppBundleLink);
+      router.push(links.iosAppBundleLink + router.asPath.slice(1));
     }
   }, [links.iosAppBundleLink, router]);
 };
