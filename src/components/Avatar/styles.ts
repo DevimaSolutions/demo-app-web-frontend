@@ -37,10 +37,12 @@ const styles = {
     bottom: -2,
     right: 0,
     background: theme.palette.text.primary,
+    color: theme.palette.common.white,
     fontSize: 12,
     fontWeight: 600,
     lineHeight: '12px',
     alignContent: 'center',
+    textAlign: 'center',
   },
   online: {
     borderRadius: '50%',

@@ -1,35 +1,35 @@
 import { Box, Button, CircularProgress, Typography } from '@mui/material';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-import { ArrowIcon, Avatar, SearchInput } from '@/components';
+import { Avatar } from '@/components';
 
+import { LevelHalfCircle } from './components';
 import styles from './styles';
 import useFriendsSection from './useFriendsSection';
 
 const FriendsSection = () => {
   const {
-    friends,
-    hasMore,
-    isLoading,
     hasFriendsInit,
+    friends,
+    isFriendsLoading,
     handleRedirect,
-    handleSearch,
     loadMore,
+    hasMore,
     checkOnline,
   } = useFriendsSection();
 
   return (
     <Box sx={styles.root}>
       <Box sx={styles.titleContainer}>
-        <Box sx={styles.titleWrapper}>
-          <Typography>Friends</Typography>
-          {/*TODO: add online status*/}
-        </Box>
+        <Typography variant="h3">Friends</Typography>
+        <Button sx={styles.addFriendButton} onClick={handleRedirect('/friends')}>
+          Add friend
+        </Button>
       </Box>
+      {/*TODO: add tabs*/}
       <Box sx={styles.contentContainer(!!hasFriendsInit)}>
         {hasFriendsInit ? (
           <>
-            <SearchInput onSearch={handleSearch} />
             <InfiniteScroll
               style={styles.friendsWrapper}
               dataLength={friends.length}
@@ -43,13 +43,17 @@ const FriendsSection = () => {
                 friends.length ? (
                   friends.map((friend, index) => (
                     <Box key={index} sx={styles.friend}>
+                      <Typography variant="subtitle1" sx={styles.number}>
+                        {index + 1}
+                      </Typography>
                       <Avatar src={friend.avatar?.path} isOnline={checkOnline(friend.id)} />
                       <Box sx={styles.friendTextWrapper}>
                         <Typography>{friend.name.full}</Typography>
-                        {/*TODO: add user level*/}
-                        <Typography variant="subtitle1">LVL 0</Typography>
+                        <Typography variant="subtitle1" sx={styles.nickname}>
+                          @{friend.nickname}
+                        </Typography>
                       </Box>
-                      <ArrowIcon direction="left" sx={styles.arrow} />
+                      <LevelHalfCircle level={friend.level} xpProgress={friend.experience} />
                     </Box>
                   ))
                 ) : (
@@ -57,7 +61,7 @@ const FriendsSection = () => {
                 )
               }
             </InfiniteScroll>
-            {isLoading && (
+            {isFriendsLoading && (
               <Box sx={styles.loadingWrapper}>
                 <CircularProgress />
               </Box>

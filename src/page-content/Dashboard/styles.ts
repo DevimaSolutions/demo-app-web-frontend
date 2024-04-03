@@ -13,13 +13,13 @@ const styles = {
     fontWeight: 600,
   },
   leftTable: {
-    width: 661,
+    width: 675,
     display: 'flex',
     flexDirection: 'column',
     gap: 4,
   },
   rightTable: {
-    width: 315,
+    width: 325,
     display: 'flex',
     flexDirection: 'column',
     gap: 4,

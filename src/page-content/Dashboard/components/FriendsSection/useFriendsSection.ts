@@ -14,20 +14,13 @@ const useFriendsSection = () => {
   const dispatch = useDispatch();
 
   const [hasFriendsInit, setHasFriendsInit] = useState<boolean>(true);
-  const [search, setSearch] = useState<string>('');
   const [onlineUsers, setOnlineUsers] = useState<IUserOnlineResponse>({});
 
   const { friends, isLoading, hasMore } = useSelector(friendsSelector);
 
-  const handleSearch = (searchValue: string) => {
-    setSearch(searchValue);
-    dispatch(resetState());
-    dispatch(getFriends(searchValue.length ? { search: searchValue } : {})).unwrap();
-  };
-
   const loadMore = useCallback(() => {
-    dispatch(getFriends(search.length ? { search } : {})).unwrap();
-  }, [dispatch, search]);
+    dispatch(getFriends({})).unwrap();
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getFriends({}))
@@ -63,10 +56,9 @@ const useFriendsSection = () => {
   return {
     friends,
     hasMore,
-    isLoading,
+    isFriendsLoading: isLoading,
     hasFriendsInit,
     handleRedirect,
-    handleSearch,
     loadMore,
     checkOnline,
   };
