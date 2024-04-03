@@ -1,20 +1,33 @@
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
-import { Balance, HeroSection, XPSection, Communities, Energy, FriendsSection } from './components';
+import {
+  HeroSection,
+  XPSection,
+  Communities,
+  Energy,
+  FriendsSection,
+  BalanceSection,
+} from './components';
 import styles from './styles';
 
 const Dashboard = () => {
   return (
     <Box sx={styles.root}>
-      <Box sx={styles.leftTable}>
-        <HeroSection />
-        <Communities />
-      </Box>
-      <Box sx={styles.rightTable}>
-        <Balance />
-        <XPSection />
-        <Energy />
-        <FriendsSection />
+      <Box sx={styles.container}>
+        <Box sx={styles.leftTable}>
+          <Typography sx={styles.title}>Overview</Typography>
+          <Box sx={styles.rowContainer}>
+            <Energy />
+            <XPSection />
+          </Box>
+          {/* <HeroSection /> */}
+          <Communities />
+        </Box>
+        <Box sx={styles.rightTable}>
+          <BalanceSection />
+          <HeroSection />
+          <FriendsSection />
+        </Box>
       </Box>
     </Box>
   );

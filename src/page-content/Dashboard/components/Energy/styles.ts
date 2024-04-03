@@ -5,6 +5,7 @@ const styles = {
     background: theme.palette.common.white,
     borderRadius: 1.6,
     p: theme.spacing(2.5, 3),
+    width: '100%',
   },
   title: {
     fontSize: 14,

@@ -3,7 +3,7 @@ import { theme } from '@/constants';
 const styles = {
   root: {
     width: '100%',
-    borderRadius: 1.6,
+    borderRadius: '16px 16px 43px 16px',
     overflow: 'hidden',
     position: 'relative',
   },
@@ -22,7 +22,7 @@ const styles = {
   imageContainer: {
     position: 'relative',
     width: '100%',
-    height: 300,
+    height: 239,
     ['img']: {
       objectFit: 'cover',
     },

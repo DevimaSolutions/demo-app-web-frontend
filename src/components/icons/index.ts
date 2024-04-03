@@ -17,7 +17,8 @@ export { default as AvatarIcon } from './AvatarIcon';
 export { default as PlayIcon } from './PlayIcon';
 export { default as OpenInNewTabIcon } from './OpenInNewTabIcon';
 export { default as SearchIcon } from './SearchIcon';
-export { default as EnergyIcon } from './EnergyIcon';
+export { default as PlusIcon } from './PlusIcon';
+export { default as LongArrowIcon } from './LongArrowIcon';
 
 export * from './socials';
 export * from './coins';
