@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 
-import { Balance, HeroSection, XPSection, Communities, FriendsSection } from './components';
+import { Balance, HeroSection, XPSection, Communities, Energy, FriendsSection } from './components';
 import styles from './styles';
 
 const Dashboard = () => {
@@ -13,6 +13,7 @@ const Dashboard = () => {
       <Box sx={styles.rightTable}>
         <Balance />
         <XPSection />
+        <Energy />
         <FriendsSection />
       </Box>
     </Box>
