@@ -34,6 +34,15 @@ const mapEnv = () => {
       googlePLayLink: envRuntime('NEXT_PUBLIC_GOOGLE_PLAY_LINK') || '',
       iosAppBundleLink: envRuntime('NEXT_PUBLIC_IOS_CFBUNDLE_NAME') || '',
     },
+    firebase: {
+      apiKey: envRuntime('NEXT_PUBLIC_FIREBASE_API_KEY') || '',
+      authDomain: envRuntime('NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN') || '',
+      projectId: envRuntime('NEXT_PUBLIC_FIREBASE_PROJECT_ID') || '',
+      storageBucket: envRuntime('NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET') || '',
+      messagingSenderId: envRuntime('NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID') || '',
+      appId: envRuntime('NEXT_PUBLIC_FIREBASE_APP_ID') || '',
+      measurementId: envRuntime('NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID') || '',
+    },
   };
 
   return Object.freeze(parsed);

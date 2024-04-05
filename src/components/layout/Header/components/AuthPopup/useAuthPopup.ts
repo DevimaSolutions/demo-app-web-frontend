@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { useAuthContext } from '@/context';
-import { getAuthManager } from '@/utils';
+import { signOut } from '@/utils';
 
 export const useAuthPopup = () => {
   const { user, isLoading } = useAuthContext();
@@ -17,7 +17,7 @@ export const useAuthPopup = () => {
   };
 
   const onSignOut = () => {
-    getAuthManager().then((auth) => auth.signOut());
+    signOut();
     onCloseMenu();
   };
 

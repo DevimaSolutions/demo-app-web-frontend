@@ -11,7 +11,9 @@ const getFriends = async (params: IFriendsPaginationQuery) => {
 
   return response;
 };
+
 const friendsService = {
   getFriends,
 };
+
 export default friendsService;

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-import { getAuthManager } from '@/utils';
+import { signOut } from '@/utils';
 
 const useHeader = () => {
   const router = useRouter();
@@ -8,7 +8,7 @@ const useHeader = () => {
   const handleRedirect = (redirectUrl: string) => () => router.push(redirectUrl);
 
   const handleSignOut = () => {
-    getAuthManager().then((auth) => auth.signOut());
+    signOut();
   };
 
   return {

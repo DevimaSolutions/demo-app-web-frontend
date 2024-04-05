@@ -18,10 +18,21 @@ export interface IEnvLinksOptions {
   iosAppBundleLink: string;
 }
 
+export interface IFirestoreConfigs {
+  apiKey: string;
+  authDomain: string;
+  projectId: string;
+  storageBucket: string;
+  messagingSenderId: string;
+  appId: string;
+  measurementId: string;
+}
+
 export interface IEnv {
   appName: string;
   frontendUrl: string;
   backendUrl: string;
   auth: IEnvAuthOptions;
   links: IEnvLinksOptions;
+  firebase: IFirestoreConfigs;
 }

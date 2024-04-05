@@ -5,13 +5,19 @@ import { useDispatch, useSelector } from '@/hooks';
 import { friendsSelector } from '@/redux/friends/selectors';
 import { resetState } from '@/redux/friends/slice';
 import { getFriends } from '@/redux/friends/thunk';
+import { presenceService } from '@/services';
+
+import type { IUserOnlineResponse } from '@/modules';
 
 const useFriendsSection = () => {
-  const { friends, isLoading, hasMore } = useSelector(friendsSelector);
+  const router = useRouter();
+  const dispatch = useDispatch();
+
   const [hasFriendsInit, setHasFriendsInit] = useState<boolean>(true);
   const [search, setSearch] = useState<string>('');
-  const dispatch = useDispatch();
-  const router = useRouter();
+  const [onlineUsers, setOnlineUsers] = useState<IUserOnlineResponse>({});
+
+  const { friends, isLoading, hasMore } = useSelector(friendsSelector);
 
   const handleSearch = (searchValue: string) => {
     setSearch(searchValue);
@@ -34,14 +40,37 @@ const useFriendsSection = () => {
 
   const handleRedirect = (redirectUrl: string) => () => router.push(redirectUrl);
 
+  const fetchUsersOnline = useCallback((ids: string[]) => {
+    return presenceService.fetchUsersOnline({
+      ids,
+      callback: (value) => setOnlineUsers((s) => ({ ...s, ...value })),
+    });
+  }, []);
+
+  const checkOnline = useCallback(
+    (id: string) => onlineUsers[id]?.state === 'online',
+    [onlineUsers],
+  );
+
+  useEffect(() => {
+    if (friends.length) {
+      const unsubscribe = fetchUsersOnline(friends.map(({ id }) => id));
+
+      return unsubscribe;
+    }
+  }, [fetchUsersOnline, friends]);
+
+  console.log(onlineUsers);
+
   return {
-    hasFriendsInit,
     friends,
-    isFriendsLoading: isLoading,
+    hasMore,
+    isLoading,
+    hasFriendsInit,
     handleRedirect,
     handleSearch,
     loadMore,
-    hasMore,
+    checkOnline,
   };
 };
 

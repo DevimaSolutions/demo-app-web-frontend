@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 
+import { firebaseAuthService } from '@/services';
 import { getAuthManager } from '@/utils';
 
 import type { IEmailSignInFormProps } from './types';
@@ -14,7 +15,10 @@ const useEmailSignInForm = () => {
       { setErrors }: FormikHelpers<IEmailSignInFormProps>,
     ) =>
       getAuthManager()
-        .then((auth) => auth.signIn({ email, password }))
+        .then(async (auth) => {
+          await auth.signIn({ email, password });
+          await firebaseAuthService.authorizeUser();
+        })
         .catch((error: AxiosError<IFormErrorResponse<IEmailSignInFormProps>>) => {
           setErrors({
             email: ' ',

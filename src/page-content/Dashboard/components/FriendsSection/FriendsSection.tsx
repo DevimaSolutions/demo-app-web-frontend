@@ -8,13 +8,14 @@ import useFriendsSection from './useFriendsSection';
 
 const FriendsSection = () => {
   const {
-    hasFriendsInit,
     friends,
-    isFriendsLoading,
+    hasMore,
+    isLoading,
+    hasFriendsInit,
     handleRedirect,
     handleSearch,
     loadMore,
-    hasMore,
+    checkOnline,
   } = useFriendsSection();
 
   return (
@@ -42,10 +43,7 @@ const FriendsSection = () => {
                 friends.length ? (
                   friends.map((friend, index) => (
                     <Box key={index} sx={styles.friend}>
-                      <Avatar
-                        src={friend.avatar?.path}
-                        //TODO: add online status
-                      />
+                      <Avatar src={friend.avatar?.path} isOnline={checkOnline(friend.id)} />
                       <Box sx={styles.friendTextWrapper}>
                         <Typography>{friend.name.full}</Typography>
                         {/*TODO: add user level*/}
@@ -59,7 +57,7 @@ const FriendsSection = () => {
                 )
               }
             </InfiniteScroll>
-            {isFriendsLoading && (
+            {isLoading && (
               <Box sx={styles.loadingWrapper}>
                 <CircularProgress />
               </Box>

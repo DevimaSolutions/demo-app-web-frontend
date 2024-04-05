@@ -41,4 +41,5 @@ const onboardingService = {
   getOnboardingData,
   getSoftSkills,
 };
+
 export default onboardingService;

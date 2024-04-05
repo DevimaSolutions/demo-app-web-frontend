@@ -1,5 +1,6 @@
 import { PageAuthSettingsContextProvider } from '@/context';
 import { useAuthContext } from '@/context/auth';
+import { useUserPresence } from '@/hooks';
 
 import useAuthGate from './useAuthGates';
 
@@ -12,6 +13,8 @@ const AuthGate = ({
 }: PropsWithChildren<{ auth?: IAuthInitialProps }>) => {
   const auth = useAuthContext();
   const { ensureAuthSettings, isAvailable } = useAuthGate(auth, authSettings);
+
+  useUserPresence(auth.user?.id || '');
 
   if (!isAvailable) {
     return null;

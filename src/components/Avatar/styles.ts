@@ -49,7 +49,7 @@ const styles = {
     position: 'absolute',
     bottom: 0,
     right: 0,
-    background: theme.palette.primary[900],
+    background: '#0ADC8E',
     border: `2px solid ${theme.palette.common.white}`,
   },
 } as const;
