@@ -10,7 +10,7 @@ const styles = {
   title: {
     fontSize: 14,
     lineHeight: '17px',
-    fontWeight: 400,
+    fontWeight: 500,
     opacity: 0.4,
   },
   dataSection: {

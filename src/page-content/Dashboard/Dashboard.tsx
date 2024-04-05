@@ -7,6 +7,7 @@ import {
   Energy,
   FriendsSection,
   BalanceSection,
+  StreakDelights,
 } from './components';
 import styles from './styles';
 
@@ -20,7 +21,7 @@ const Dashboard = () => {
             <Energy />
             <XPSection />
           </Box>
-          {/* <HeroSection /> */}
+          <StreakDelights />
           <Communities />
         </Box>
         <Box sx={styles.rightTable}>

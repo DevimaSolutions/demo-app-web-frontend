@@ -25,9 +25,9 @@ const PlusIcon = ({
       <path
         d="M6.5 2V7M6.5 12V7M6.5 7H1.5M6.5 7H11.5"
         stroke="white"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </SvgIcon>
   );

@@ -25,9 +25,9 @@ const LongArrowIcon = ({
       <path
         d="M2 6L6 2M6 2L10 6M6 2V12"
         stroke="white"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </SvgIcon>
   );
