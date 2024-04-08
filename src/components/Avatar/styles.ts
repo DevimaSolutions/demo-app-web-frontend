@@ -2,14 +2,24 @@ import { circularProgressClasses } from '@mui/material';
 
 import { theme } from '@/constants';
 
+import type { IAvatarSize } from './types';
+
+export const avatarSizesMapping: Record<
+  IAvatarSize,
+  { size: number; levelWidth: number; levelHeight: number; levelFontSize: number }
+> = {
+  medium: { size: 48, levelWidth: 20, levelHeight: 19, levelFontSize: 12 },
+  large: { size: 80, levelWidth: 27, levelHeight: 23, levelFontSize: 16 },
+};
+
 const styles = {
-  root: {
+  root: (size: IAvatarSize) => ({
     borderRadius: '50%',
-    width: 48,
-    height: 48,
+    width: avatarSizesMapping[size].size,
+    height: avatarSizesMapping[size].size,
     position: 'relative',
     flexShrink: 0,
-  },
+  }),
   progress: {
     [`& .${circularProgressClasses.svg}`]: {
       transform: 'rotate(145deg)',
@@ -17,43 +27,45 @@ const styles = {
       strokeLinecap: 'round',
     },
   },
-  avatar: {
-    width: 48,
-    height: 48,
+  avatar: (size: IAvatarSize) => ({
+    width: avatarSizesMapping[size].size,
+    height: avatarSizesMapping[size].size,
     position: 'absolute',
     background: theme.palette.grey[100],
     color: theme.palette.primary[500],
     svg: {
-      width: 40,
-      height: 40,
+      width: avatarSizesMapping[size].size - avatarSizesMapping[size].size / 6,
+      height: avatarSizesMapping[size].size - avatarSizesMapping[size].size / 6,
       alignSelf: 'end',
     },
-  },
-  level: {
+  }),
+  level: (size: IAvatarSize) => ({
     borderRadius: '50%',
-    width: 20,
-    height: 19,
+    width: avatarSizesMapping[size].levelWidth,
+    height: avatarSizesMapping[size].levelHeight,
     position: 'absolute',
     bottom: -2,
     right: 0,
     background: theme.palette.text.primary,
-    color: theme.palette.common.white,
-    fontSize: 12,
+    fontSize: avatarSizesMapping[size].levelFontSize,
     fontWeight: 600,
     lineHeight: '12px',
     alignContent: 'center',
     textAlign: 'center',
-  },
-  online: {
+    color: theme.palette.common.white,
+  }),
+  online: (size: IAvatarSize) => ({
     borderRadius: '50%',
-    width: 16,
-    height: 16,
+    width: avatarSizesMapping[size].size / 4,
+    height: avatarSizesMapping[size].size / 4,
     position: 'absolute',
     bottom: 0,
     right: 0,
-    background: '#0ADC8E',
-    border: `2px solid ${theme.palette.common.white}`,
-  },
+    background: theme.palette.success[500],
+    border: `${Math.floor(avatarSizesMapping[size].size / 24)}px solid ${
+      theme.palette.common.white
+    }`,
+  }),
 } as const;
 
 export default styles;

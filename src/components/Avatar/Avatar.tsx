@@ -4,7 +4,7 @@ import { combineSx } from '@/utils';
 
 import { AvatarIcon } from '../icons';
 
-import styles from './styles';
+import styles, { avatarSizesMapping } from './styles';
 
 import type { IAvatarProps } from './types';
 
@@ -17,13 +17,14 @@ const Avatar = ({
   level,
   isOnline,
   children,
+  size = 'medium',
   ...rest
 }: IAvatarProps) => {
   return (
-    <Box sx={combineSx(styles.root, boxSx)}>
+    <Box sx={combineSx(styles.root(size), boxSx)}>
       <MuiAvatar
         src={src}
-        sx={combineSx(styles.avatar, avatarSx)}
+        sx={combineSx(styles.avatar(size), avatarSx)}
         variant="circular"
         alt={alt}
         {...rest}
@@ -35,10 +36,15 @@ const Avatar = ({
           variant="determinate"
           sx={styles.progress}
           value={xpProgress}
-          size="48px"
+          size={avatarSizesMapping[size].size}
+          thickness={3}
         />
       ) : null}
-      {level ? <Box sx={styles.level}>{level}</Box> : isOnline ? <Box sx={styles.online} /> : null}
+      {level ? (
+        <Box sx={styles.level(size)}>{level}</Box>
+      ) : isOnline ? (
+        <Box sx={styles.online(size)} />
+      ) : null}
     </Box>
   );
 };
