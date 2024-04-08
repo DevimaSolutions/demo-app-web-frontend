@@ -3,9 +3,11 @@ import { signInWithCustomToken } from 'firebase/auth';
 import { firebaseAuth } from '@/modules';
 import { getAuthManager } from '@/utils';
 
+import presenceService from './presence.service';
+
 const getCustomToken = async () => {
   const auth = await getAuthManager();
-  return auth.axios.get<string>('/firebase').then((res) => res.data);
+  return auth.axios.get<string>('/auth/firebase/token').then((res) => res.data);
 };
 
 const authorizeUser = async () => {
@@ -13,6 +15,14 @@ const authorizeUser = async () => {
   signInWithCustomToken(firebaseAuth, token);
 };
 
-const firebaseAuthService = { authorizeUser };
+const signOutUser = async () => {
+  if (!firebaseAuth.currentUser?.uid) {
+    return;
+  }
+  await presenceService.setUserOffline(firebaseAuth.currentUser.uid);
+  await firebaseAuth.signOut();
+};
+
+const firebaseAuthService = { authorizeUser, signOutUser };
 
 export default firebaseAuthService;

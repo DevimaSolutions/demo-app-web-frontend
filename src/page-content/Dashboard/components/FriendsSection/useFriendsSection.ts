@@ -60,8 +60,6 @@ const useFriendsSection = () => {
     }
   }, [fetchUsersOnline, friends]);
 
-  console.log(onlineUsers);
-
   return {
     friends,
     hasMore,

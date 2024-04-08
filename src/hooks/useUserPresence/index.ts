@@ -1,12 +1,10 @@
-// import { useFirebaseAuth } from 'context/firebaseAuth';
 import { useEffect } from 'react';
 
+import { firebaseAuth } from '@/modules';
 import { presenceService } from '@/services';
-// import chatService from 'services/chat.service';
 
-// TODO: add firebase auth provider
-const useUserPresence = (userId: string) => {
-  //   const { user } = useFirebaseAuth();
+const useUserPresence = () => {
+  const userId = firebaseAuth.currentUser?.uid;
 
   useEffect(() => {
     if (!userId) {

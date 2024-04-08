@@ -6,6 +6,8 @@ import {
 } from '@/data-transfer/requests';
 import { getAuthManager } from '@/utils';
 
+import { firebaseAuthService } from './firebase';
+
 import type {
   IUserResponse,
   ISuccessAuthorizeResponse,
@@ -43,6 +45,8 @@ const authorizeWithSocial = async <AuthType>({
     .then((res) => res.data);
 
   auth.setAuth(user, authToken);
+
+  await firebaseAuthService.authorizeUser();
 };
 
 const resetPassword = async ({ token, password }: IResetPasswordRequest) => {

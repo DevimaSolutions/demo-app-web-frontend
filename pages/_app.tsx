@@ -5,9 +5,10 @@ import { useMemo } from 'react';
 import { Provider } from 'react-redux';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { AuthGate, HtmlHead, Layout, AuthProvider, StyledToastContainer } from '@/components';
+import { AuthGate, HtmlHead, Layout, StyledToastContainer } from '@/components';
 import { theme, createEmotionCache } from '@/constants';
 import { useDetectIos } from '@/hooks';
+import { AuthProvider } from '@/providers';
 import { initializeStore } from '@/redux/store';
 import { setYupLocale } from '@/utils/yup-setup.util';
 

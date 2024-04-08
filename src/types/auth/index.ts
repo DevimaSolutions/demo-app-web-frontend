@@ -7,6 +7,7 @@ export interface IAuthContext {
   refreshToken: string | null;
   isSignedIn: boolean;
 }
+
 export interface ISignInParams {
   email: string;
   password: string;

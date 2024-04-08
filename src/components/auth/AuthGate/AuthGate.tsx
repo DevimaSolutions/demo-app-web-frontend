@@ -14,7 +14,7 @@ const AuthGate = ({
   const auth = useAuthContext();
   const { ensureAuthSettings, isAvailable } = useAuthGate(auth, authSettings);
 
-  useUserPresence(auth.user?.id || '');
+  useUserPresence();
 
   if (!isAvailable) {
     return null;
