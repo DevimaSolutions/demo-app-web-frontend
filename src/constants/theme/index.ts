@@ -180,7 +180,7 @@ export const theme = createTheme({
             color: '#2C2535',
           },
           '&:-webkit-autofill': {
-            '-webkit-box-shadow': '0 0 0 30px #FFFFFF inset',
+            WebkitBoxShadow: '0 0 0 30px #FFFFFF inset',
           },
         },
       },

@@ -8,7 +8,7 @@ import {
   StoreIcon,
 } from '@/components/icons';
 
-import { AuthPopup, CategoryButton } from './components';
+import { UserAvatar, CategoryButton } from './components';
 import styles from './styles';
 import useHeader from './useHeader';
 
@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <AppBar sx={styles.appBar}>
       <Toolbar sx={styles.toolbar}>
-        <AuthPopup />
+        <UserAvatar />
         <CategoryButton
           disabled
           onClick={handleRedirect('/notifications')}
