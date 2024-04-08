@@ -4,3 +4,4 @@ export * from './user.response';
 export * from './auth.response';
 export * from './onboarding.response';
 export * from './pagination.response';
+export * from './profile.response';
