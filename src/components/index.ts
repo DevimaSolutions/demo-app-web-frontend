@@ -9,6 +9,7 @@ export { default as SelectableChip } from './SelectableChip';
 export { default as Avatar } from './Avatar';
 export { default as QrCode } from './QrCode';
 export { default as RoundTabsGroup } from './RoundTabsGroup';
+export { default as TabPanel } from './TabPanel';
 
 export * from './auth';
 export * from './inputs';

@@ -1,72 +1,41 @@
-import { Box, Button, CircularProgress, Typography } from '@mui/material';
-import InfiniteScroll from 'react-infinite-scroll-component';
+import { Box, Button, Tab, Tabs, Typography } from '@mui/material';
+import React from 'react';
 
-import { Avatar } from '@/components';
-
-import { LevelHalfCircle } from './components';
+import { AllTabPanel } from './components';
 import styles from './styles';
 import useFriendsSection from './useFriendsSection';
 
 const FriendsSection = () => {
-  const {
-    hasFriendsInit,
-    friends,
-    isFriendsLoading,
-    handleRedirect,
-    loadMore,
-    hasMore,
-    checkOnline,
-  } = useFriendsSection();
+  const { hasFriendsInit, handleRedirect } = useFriendsSection();
 
+  const [value, setValue] = React.useState(0);
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
   return (
     <Box sx={styles.root}>
       <Box sx={styles.titleContainer}>
         <Typography variant="h3">Friends</Typography>
-        <Button sx={styles.addFriendButton} onClick={handleRedirect('/friends')}>
-          Add friend
-        </Button>
+        {hasFriendsInit && (
+          <Button sx={styles.addFriendButton} onClick={handleRedirect('/friends')}>
+            Add friend
+          </Button>
+        )}
       </Box>
-      {/*TODO: add tabs*/}
-      <Box sx={styles.contentContainer(!!hasFriendsInit)}>
+      <Box sx={styles.contentContainer(hasFriendsInit)}>
         {hasFriendsInit ? (
-          <>
-            <InfiniteScroll
-              style={styles.friendsWrapper}
-              dataLength={friends.length}
-              scrollableTarget="infinite-scroll-parent"
-              next={loadMore}
-              hasMore={hasMore}
-              loader={<></>}
-            >
-              {
-                //TODO: navigate to game session or friend profile
-                friends.length ? (
-                  friends.map((friend, index) => (
-                    <Box key={index} sx={styles.friend}>
-                      <Typography variant="subtitle1" sx={styles.number}>
-                        {index + 1}
-                      </Typography>
-                      <Avatar src={friend.avatar?.path} isOnline={checkOnline(friend.id)} />
-                      <Box sx={styles.friendTextWrapper}>
-                        <Typography>{friend.name.full}</Typography>
-                        <Typography variant="subtitle1" sx={styles.nickname}>
-                          @{friend.nickname}
-                        </Typography>
-                      </Box>
-                      <LevelHalfCircle level={friend.level} xpProgress={friend.experience} />
-                    </Box>
-                  ))
-                ) : (
-                  <>No results</>
-                )
-              }
-            </InfiniteScroll>
-            {isFriendsLoading && (
-              <Box sx={styles.loadingWrapper}>
-                <CircularProgress />
-              </Box>
-            )}
-          </>
+          <Box>
+            <Box sx={{ marginLeft: 2 }}>
+              <Tabs value={value} onChange={handleChange} sx={{}}>
+                <Tab label="All" />
+                <Tab label="Online X" />
+                <Tab label="Offline" />
+              </Tabs>
+            </Box>
+            <AllTabPanel value={value} index={0}>
+              Item One
+            </AllTabPanel>
+          </Box>
         ) : (
           <>
             <Typography variant="subtitle2">Wow, it’s really cold here...</Typography>

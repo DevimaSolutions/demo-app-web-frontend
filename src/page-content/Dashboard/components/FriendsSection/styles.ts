@@ -39,6 +39,7 @@ const styles = {
           borderRadius: 0.8,
           alignItems: 'center',
           justifyContent: 'center',
+          marginLeft: 2,
         }),
     height: 240,
     display: 'flex',
@@ -51,29 +52,6 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
   },
-  friendsWrapper: {
-    display: 'flex',
-    flexDirection: 'column',
-    overflowY: 'auto',
-    gap: '16px',
-    marginTop: '6px',
-    padding: '0px 16px 8px',
-  },
-  friend: {
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    gap: 1.5,
-    [`& .${typographyClasses.root}`]: {
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: '20px',
-    },
-  },
-  friendTextWrapper: {
-    flexGrow: 2,
-    wordBreak: 'break-word',
-  },
   addFriendButton: {
     [`&.${buttonClasses.root}`]: {
       background: alpha(theme.palette.primary[900], 0.1),
@@ -84,20 +62,6 @@ const styles = {
       fontSize: 14,
       fontWeight: 500,
       lineHeight: '20px',
-    },
-  },
-  number: {
-    [`&.${typographyClasses.subtitle1}`]: {
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: '20px',
-    },
-  },
-  nickname: {
-    [`&.${typographyClasses.subtitle1}`]: {
-      fontSize: 12,
-      fontWeight: 500,
-      lineHeight: '14px',
     },
   },
 } as const;
