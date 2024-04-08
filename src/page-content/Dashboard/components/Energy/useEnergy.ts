@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useTimer } from '@/hooks';
 
 const useEnergy = () => {
+  // TODO: Change to real data
   const [energy, setEnergy] = useState(3);
   const [timerMinutes, setTimerMinutes] = useState(5);
 

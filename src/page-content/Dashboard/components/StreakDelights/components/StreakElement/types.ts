@@ -1,10 +1,5 @@
+import type { StreakStatus } from './enums';
 import type { StaticImageData } from 'next/image';
-
-export enum StreakStatus {
-  Elite,
-  Active,
-  Disabled,
-}
 
 export interface IStreakElement {
   dayNumber: number;

@@ -1,4 +1,6 @@
-import { StreakStatus } from './components/StreakElement/types';
+import { StreakStatus } from './components/StreakElement/enums';
+
+// TODO: Change to real data
 
 export const streaks = [
   {

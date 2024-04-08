@@ -12,6 +12,7 @@ const BalanceSection = () => {
           <RubinsSimpleIcon />
         </Box>
         <Box sx={styles.innerBox}>
+          {/* TODO: Change to real data */}
           315
           <Box sx={styles.actionButton}>
             <PlusIcon />
@@ -23,7 +24,7 @@ const BalanceSection = () => {
           <EnergySimpleIcon />
         </Box>
         <Box sx={styles.innerBox}>
-          2
+          {/* TODO: Change to real data */}2
           <Box sx={styles.actionButton}>
             <LongArrowIcon />
           </Box>

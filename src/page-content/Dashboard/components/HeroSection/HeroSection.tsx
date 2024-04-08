@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 
 import { PlayIcon } from '@/components';
-import dailyChallenge from '@/public/dailyChallenge.png';
+import dailyChallenge from '@/public/assets/dailyChallenge.png';
 
 import styles from './styles';
 

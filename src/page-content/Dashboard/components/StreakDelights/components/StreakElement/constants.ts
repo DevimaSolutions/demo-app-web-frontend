@@ -1,9 +1,9 @@
 import { theme } from '@/constants';
-import activeImage from '@/public/streakIcons/active.png';
-import disabledImage from '@/public/streakIcons/disabled.png';
-import eliteImage from '@/public/streakIcons/elite.png';
+import activeImage from '@/public/assets/icons/active.png';
+import disabledImage from '@/public/assets/icons/disabled.png';
+import eliteImage from '@/public/assets/icons/elite.png';
 
-import { StreakStatus } from './types';
+import { StreakStatus } from './enums';
 
 export const streakElementSettings = {
   [StreakStatus.Active]: {
