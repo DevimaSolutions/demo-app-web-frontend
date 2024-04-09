@@ -5,7 +5,7 @@ import { Avatar, NextLinkButton, ProfileModal } from '@/components';
 import styles from './styles';
 import { useUserAvatar } from './useUserAvatar';
 
-const AuthPopup = () => {
+const UserAvatar = () => {
   const { user, isUserLoading, profile, open, onOpenProfileModal, onCloseProfileModal } =
     useUserAvatar();
 
@@ -42,4 +42,4 @@ const AuthPopup = () => {
   );
 };
 
-export default AuthPopup;
+export default UserAvatar;
