@@ -399,7 +399,7 @@ export const theme = createTheme({
     divider: '#E5E8EC',
     primaryDark: {
       '50': '#E2EDF8',
-      '100': '#CEE0F3',
+      '100': '#6A51E1',
       '200': '#91B9E3',
       '300': '#5090D3',
       '400': '#265D97',

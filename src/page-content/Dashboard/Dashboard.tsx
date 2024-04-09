@@ -3,11 +3,11 @@ import { Box, Typography } from '@mui/material';
 import {
   HeroSection,
   XPSection,
-  Communities,
   Energy,
   FriendsSection,
   BalanceSection,
   StreakDelights,
+  SkillProgress,
 } from './components';
 import styles from './styles';
 
@@ -22,7 +22,7 @@ const Dashboard = () => {
             <XPSection />
           </Box>
           <StreakDelights />
-          <Communities />
+          <SkillProgress />
         </Box>
         <Box sx={styles.rightTable}>
           <BalanceSection />
