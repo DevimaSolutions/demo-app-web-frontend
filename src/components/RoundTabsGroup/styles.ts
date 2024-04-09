@@ -1,4 +1,4 @@
-import { tabClasses, tabsClasses } from '@mui/material';
+import { alpha, tabClasses, tabsClasses } from '@mui/material';
 
 import { theme } from '@/constants';
 
@@ -13,7 +13,7 @@ const styles = {
       border: 'none',
     },
   },
-  tab: {
+  tab: (disabled?: boolean) => ({
     [`&.${tabClasses.root}`]: {
       p: theme.spacing(0.75, 3.375),
       minHeight: 'unset',
@@ -21,12 +21,12 @@ const styles = {
       fontSize: 14,
       fontWeight: 500,
       lineHeight: '20px',
-      color: theme.palette.grey[600],
+      color: disabled ? alpha(theme.palette.grey[600], 0.4) : theme.palette.grey[600],
     },
     [`&.${tabClasses.root}.Mui-selected`]: {
       color: theme.palette.primaryDark[100],
     },
-  },
+  }),
   indicator: {
     backgroundColor: theme.palette.common.white,
     height: 32,

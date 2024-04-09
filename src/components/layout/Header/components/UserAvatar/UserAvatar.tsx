@@ -31,7 +31,11 @@ const AuthPopup = () => {
         onClick={onOpenProfileModal}
         color="inherit"
       >
-        <Avatar src={profile.avatar?.path} level={profile.level} xpProgress={profile.experience} />
+        <Avatar
+          src={profile.avatar?.path}
+          level={profile.level ?? undefined}
+          xpProgress={profile.experience ?? undefined}
+        />
       </IconButton>
       <ProfileModal open={open} onClose={onCloseProfileModal} />
     </Box>

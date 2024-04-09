@@ -4,7 +4,7 @@ import styles from './styles';
 
 import type { IRoundTabsGroupProps } from './types';
 
-const RoundTabsGroup = ({ options, value, onChange }: IRoundTabsGroupProps) => {
+const RoundTabsGroup = <T,>({ options, value, onChange }: IRoundTabsGroupProps<T>) => {
   return (
     <Box>
       <Tabs
@@ -14,9 +14,19 @@ const RoundTabsGroup = ({ options, value, onChange }: IRoundTabsGroupProps) => {
         sx={styles.root}
         TabIndicatorProps={{ sx: styles.indicator }}
       >
-        {options.map((option) => (
-          <Tab key={option.value} label={option.label} value={option.value} sx={styles.tab} />
-        ))}
+        {options.map((option, index) => {
+          return (
+            <Tab
+              key={index}
+              label={option.label}
+              value={option.value}
+              sx={styles.tab(option.disabled)}
+              disabled={option.disabled}
+              icon={option.endAdornment?.()}
+              iconPosition="end"
+            />
+          );
+        })}
       </Tabs>
     </Box>
   );
