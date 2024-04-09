@@ -8,14 +8,10 @@ export const useUserAvatar = () => {
   const { user, isLoading: isUserLoading } = useAuthContext();
   const { profile, isLoading } = useSelector(selectors.profileSelector);
 
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<string | null>('');
 
-  const onOpenProfileModal = () => {
-    setOpen(true);
-  };
-
-  const onCloseProfileModal = () => {
-    setOpen(false);
+  const handleModalState = (modal?: string) => () => {
+    setOpen(modal ?? null);
   };
 
   return {
@@ -24,8 +20,7 @@ export const useUserAvatar = () => {
     isUserLoading,
     isLoading,
     open,
-    onOpenProfileModal,
-    onCloseProfileModal,
+    handleModalState,
   };
 };
 

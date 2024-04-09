@@ -7,7 +7,6 @@ import type { AuthCallbackUnsubscriber } from '@devimasolutions/auth';
 
 const useAuthProvider = () => {
   const [value, setValue] = useState<IAuthContext>(getDefaultAuthContext());
-
   useEffect(() => {
     let unsubscribeStateChanged: AuthCallbackUnsubscriber;
     // Initialize library

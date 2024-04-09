@@ -1,8 +1,8 @@
-import type { IUserResponse } from '@/data-transfer/responses';
+import type { IFullUserResponse } from '@/data-transfer/responses';
 
 export interface IAuthContext {
   isLoading: boolean;
-  user: IUserResponse | null;
+  user: IFullUserResponse | null;
   accessToken: string | null;
   refreshToken: string | null;
   isSignedIn: boolean;

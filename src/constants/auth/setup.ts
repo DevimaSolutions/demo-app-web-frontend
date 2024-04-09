@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { envUtil } from '@/utils';
 
-import type { IUserResponse } from '@/data-transfer/responses';
+import type { IFullUserResponse } from '@/data-transfer/responses';
 import type { ISignInParams } from '@/types';
 import type { IAuthOptions } from '@devimasolutions/auth';
 
@@ -18,7 +18,7 @@ const createAxiosInstance = () => {
 
 const createAuthOptions = () => {
   const axiosInstance = createAxiosInstance();
-  const authOptions: IAuthOptions<IUserResponse, ISignInParams> = {
+  const authOptions: IAuthOptions<IFullUserResponse, ISignInParams> = {
     axiosInstance,
     signIn: (signInParams, manager) => manager.axios.post('/auth/sign-in', signInParams),
     signOut: () => Promise.resolve(),

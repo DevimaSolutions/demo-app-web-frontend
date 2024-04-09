@@ -1,13 +1,12 @@
 import { Box, IconButton } from '@mui/material';
 
-import { Avatar, NextLinkButton, ProfileModal } from '@/components';
+import { Avatar, NextLinkButton, ProfileModal, ShareProfileModal } from '@/components';
 
 import styles from './styles';
 import { useUserAvatar } from './useUserAvatar';
 
-const UserAvatar = () => {
-  const { user, isUserLoading, profile, open, onOpenProfileModal, onCloseProfileModal } =
-    useUserAvatar();
+const AuthPopup = () => {
+  const { user, isUserLoading, profile, open, handleModalState } = useUserAvatar();
 
   if (isUserLoading) {
     return <Box sx={styles.container} />;
@@ -28,7 +27,7 @@ const UserAvatar = () => {
         aria-label="account of current user"
         aria-controls="auth-menu"
         aria-haspopup="true"
-        onClick={onOpenProfileModal}
+        onClick={handleModalState('profile')}
         color="inherit"
       >
         <Avatar
@@ -37,7 +36,12 @@ const UserAvatar = () => {
           xpProgress={profile.experience ?? undefined}
         />
       </IconButton>
-      <ProfileModal open={open} onClose={onCloseProfileModal} />
+      <ProfileModal
+        open={open === 'profile'}
+        onClose={handleModalState()}
+        openShare={handleModalState('share')}
+      />
+      <ShareProfileModal open={open === 'share'} profile={user} onClose={handleModalState()} />
     </Box>
   );
 };

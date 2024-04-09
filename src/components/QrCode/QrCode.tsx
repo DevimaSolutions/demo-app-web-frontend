@@ -2,14 +2,15 @@ import { Box } from '@mui/material';
 import { QRCode } from 'react-qrcode-logo';
 
 import { theme } from '@/constants';
+import { combineSx } from '@/utils';
 
 import styles from './styles';
 
 import type { IQrCodeProps } from './types';
 
-const QrCode = ({ value }: IQrCodeProps) => {
+const QrCode = ({ value, sx }: IQrCodeProps) => {
   return (
-    <Box sx={styles.root}>
+    <Box sx={combineSx(styles.root, sx)}>
       <QRCode
         value={value}
         size={227}
