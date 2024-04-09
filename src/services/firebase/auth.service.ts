@@ -12,7 +12,7 @@ const getCustomToken = async () => {
 
 const authorizeUser = async () => {
   const token = await getCustomToken();
-  signInWithCustomToken(firebaseAuth, token);
+  await signInWithCustomToken(firebaseAuth, token);
 };
 
 const signOutUser = async () => {
