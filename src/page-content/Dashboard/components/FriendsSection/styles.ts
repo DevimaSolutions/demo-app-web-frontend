@@ -64,6 +64,9 @@ const styles = {
       lineHeight: '20px',
     },
   },
+  tabs: {
+    marginLeft: 2,
+  },
 } as const;
 
 export default styles;

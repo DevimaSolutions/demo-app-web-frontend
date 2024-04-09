@@ -13,7 +13,7 @@ const styles = {
   },
   progress: {
     [`& .${circularProgressClasses.svg}`]: {
-      transform: 'rotate(-90deg) translate(-2px,-2px)',
+      transform: `rotate(-90deg) translate(-${theme.spacing(0.25)},-${theme.spacing(0.25)})`,
       color: theme.palette.primary[900],
       strokeLinecap: 'round',
     },

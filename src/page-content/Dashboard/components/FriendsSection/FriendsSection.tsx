@@ -6,12 +6,8 @@ import styles from './styles';
 import useFriendsSection from './useFriendsSection';
 
 const FriendsSection = () => {
-  const { hasFriendsInit, handleRedirect } = useFriendsSection();
+  const { tabValue, handleTabChange, hasFriendsInit, handleRedirect } = useFriendsSection();
 
-  const [value, setValue] = React.useState(0);
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
   return (
     <Box sx={styles.root}>
       <Box sx={styles.titleContainer}>
@@ -25,16 +21,12 @@ const FriendsSection = () => {
       <Box sx={styles.contentContainer(hasFriendsInit)}>
         {hasFriendsInit ? (
           <Box>
-            <Box sx={{ marginLeft: 2 }}>
-              <Tabs value={value} onChange={handleChange} sx={{}}>
-                <Tab label="All" />
-                <Tab label="Online X" />
-                <Tab label="Offline" />
-              </Tabs>
-            </Box>
-            <AllTabPanel value={value} index={0}>
-              Item One
-            </AllTabPanel>
+            <Tabs value={tabValue} sx={styles.tabs} onChange={handleTabChange}>
+              <Tab label="All" />
+              <Tab label="Online X" disabled />
+              <Tab label="Offline" disabled />
+            </Tabs>
+            <AllTabPanel value={tabValue} index={0} />
           </Box>
         ) : (
           <>

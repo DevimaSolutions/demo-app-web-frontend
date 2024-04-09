@@ -6,10 +6,11 @@ import { resetState } from '@/redux/friends/slice';
 import { getFriends } from '@/redux/friends/thunk';
 
 const useFriendsSection = () => {
-  const router = useRouter();
-  const dispatch = useDispatch();
-
   const [hasFriendsInit, setHasFriendsInit] = useState<boolean>(true);
+  const [tabValue, setTabValue] = useState<number>(0);
+
+  const dispatch = useDispatch();
+  const router = useRouter();
 
   useEffect(() => {
     dispatch(getFriends({}))
@@ -22,7 +23,13 @@ const useFriendsSection = () => {
 
   const handleRedirect = (redirectUrl: string) => () => router.push(redirectUrl);
 
+  const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+    setTabValue(newValue);
+  };
+
   return {
+    tabValue,
+    handleTabChange,
     hasFriendsInit,
     handleRedirect,
   };
