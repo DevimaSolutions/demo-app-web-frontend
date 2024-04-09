@@ -2,7 +2,6 @@ import {
   alpha,
   buttonBaseClasses,
   dialogContentClasses,
-  paperClasses,
   tabClasses,
   tabsClasses,
   typographyClasses,
@@ -12,9 +11,6 @@ import { theme } from '@/constants';
 
 const styles = {
   root: {
-    [`& .${paperClasses.root}`]: {
-      height: 404,
-    },
     [`& .${dialogContentClasses.root}`]: {
       display: 'flex',
       flexDirection: 'column',
