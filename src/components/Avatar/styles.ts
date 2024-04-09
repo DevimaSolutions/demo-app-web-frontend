@@ -6,10 +6,16 @@ import type { IAvatarSize } from './types';
 
 export const avatarSizesMapping: Record<
   IAvatarSize,
-  { size: number; levelWidth: number; levelHeight: number; levelFontSize: number }
+  {
+    size: number;
+    levelWidth: number;
+    levelHeight: number;
+    levelFontSize: number;
+    levelRadius: number;
+  }
 > = {
-  medium: { size: 48, levelWidth: 20, levelHeight: 19, levelFontSize: 12 },
-  large: { size: 80, levelWidth: 27, levelHeight: 23, levelFontSize: 16 },
+  medium: { size: 48, levelWidth: 20, levelHeight: 19, levelFontSize: 12, levelRadius: 1 },
+  large: { size: 80, levelWidth: 27, levelHeight: 23, levelFontSize: 16, levelRadius: 2 },
 };
 
 const styles = {
@@ -40,7 +46,7 @@ const styles = {
     },
   }),
   level: (size: IAvatarSize) => ({
-    borderRadius: '50%',
+    borderRadius: avatarSizesMapping[size].levelRadius,
     width: avatarSizesMapping[size].levelWidth,
     height: avatarSizesMapping[size].levelHeight,
     position: 'absolute',

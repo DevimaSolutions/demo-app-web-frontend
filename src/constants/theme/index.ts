@@ -452,7 +452,7 @@ export const theme = createTheme({
       '400': '#F4F4F4', //selected categories
       '500': '#EFEFEF',
       '600': '#161419', //search input border
-      '700': '#46505A',
+      '700': '#EAEAEA', //profile inputs bottom line
       '800': '#2F3A45',
       '900': '#20262D',
       A100: '#f5f5f5',
@@ -559,9 +559,8 @@ export const theme = createTheme({
       color: '#2C2535',
     },
     h3: {
-      fontSize: '2.25rem',
-      lineHeight: 1.2222222222222223,
-      letterSpacing: 0,
+      fontSize: '24px',
+      lineHeight: 1,
       fontWeight: 400,
     },
     h4: {

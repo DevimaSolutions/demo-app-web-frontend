@@ -1,18 +1,16 @@
-import { useEffect } from 'react';
-
-import { useDispatch, useSelector } from '@/hooks';
+import { useSelector } from '@/hooks';
 import { profileSelector } from '@/redux/profile/selectors';
-import { getProfile } from '@/redux/profile/thunk';
+import { getAuthManager } from '@/utils';
 
 const useProfileModal = () => {
   const { profile, isLoading } = useSelector(profileSelector);
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getProfile({})).unwrap();
-  }, [dispatch]);
+  const handleSignOut = () => {
+    console.log('sign out');
+    getAuthManager().then((auth) => auth.signOut());
+  };
 
-  return { profile, isLoading };
+  return { profile, isLoading, handleSignOut };
 };
 
 export default useProfileModal;

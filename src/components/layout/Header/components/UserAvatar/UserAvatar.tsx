@@ -6,9 +6,10 @@ import styles from './styles';
 import { useUserAvatar } from './useUserAvatar';
 
 const AuthPopup = () => {
-  const { user, isLoading, open, onOpenProfileModal, onCloseProfileModal } = useUserAvatar();
+  const { user, isUserLoading, profile, open, onOpenProfileModal, onCloseProfileModal } =
+    useUserAvatar();
 
-  if (isLoading) {
+  if (isUserLoading) {
     return <Box sx={styles.container} />;
   }
 
@@ -30,7 +31,7 @@ const AuthPopup = () => {
         onClick={onOpenProfileModal}
         color="inherit"
       >
-        <Avatar src={user.avatar?.path} />
+        <Avatar src={profile.avatar?.path} level={profile.level} xpProgress={profile.experience} />
       </IconButton>
       <ProfileModal open={open} onClose={onCloseProfileModal} />
     </Box>

@@ -20,6 +20,7 @@ export { default as SearchIcon } from './SearchIcon';
 export { default as PlusIcon } from './PlusIcon';
 export { default as LongArrowIcon } from './LongArrowIcon';
 export { default as ShareIcon } from './ShareIcon';
+export { default as EditPencilIcon } from './EditPencilIcon';
 
 export * from './socials';
 export * from './coins';
