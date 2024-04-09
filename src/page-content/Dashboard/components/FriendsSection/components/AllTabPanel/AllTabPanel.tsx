@@ -37,7 +37,9 @@ const AllTabPanel = ({ value, index }: ITabPanelProps) => {
                     @{friend.nickname}
                   </Typography>
                 </Box>
-                <LevelHalfCircle level={friend.level} xpProgress={friend.experience} />
+                {friend.level && friend.experience ? (
+                  <LevelHalfCircle level={friend.level} xpProgress={friend.experience} />
+                ) : null}
               </Box>
             ))
           ) : (
