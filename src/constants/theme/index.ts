@@ -245,9 +245,34 @@ export const theme = createTheme({
         },
       },
     },
+    MuiTabs: {
+      styleOverrides: {
+        root: {
+          minHeight: '38px',
+        },
+        flexContainer: {
+          borderBottom: '2px solid',
+          borderColor: '#E5E8EC',
+        },
+        indicator: {
+          backgroundColor: '#886FFF',
+        },
+      },
+    },
     MuiTab: {
-      defaultProps: {
-        disableTouchRipple: true,
+      styleOverrides: {
+        root: {
+          padding: '8px 16px 6px',
+          minWidth: '52px',
+          minHeight: '38px',
+          fontWeight: 500,
+          fontSize: '16px',
+          lineHeight: '24px',
+          color: '#16141966',
+          '&.Mui-selected': {
+            color: '#161419',
+          },
+        },
       },
     },
     MuiPaper: {

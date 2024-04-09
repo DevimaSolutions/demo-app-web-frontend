@@ -29,6 +29,8 @@ export interface IFullUserResponse extends IUserResponse {
   gender: string | null;
   role: UserRole;
   status: UserStatus;
+  level: number | null;
+  experience: number | null;
   createdAt: Date;
   updatedAt: Date;
   softSkills: ISoftSkillsObject[];
