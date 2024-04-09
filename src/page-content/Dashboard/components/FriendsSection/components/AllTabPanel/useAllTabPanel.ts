@@ -13,7 +13,7 @@ const useAllTabPanel = () => {
   const [onlineUsers, setOnlineUsers] = useState<IUserOnlineResponse>({});
 
   const loadMore = useCallback(() => {
-    dispatch(getFriends({})).unwrap();
+    dispatch(getFriends({}));
   }, [dispatch]);
 
   const fetchUsersOnline = useCallback((ids: string[]) => {
