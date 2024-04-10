@@ -22,6 +22,7 @@ export { default as LongArrowIcon } from './LongArrowIcon';
 export { default as ShareIcon } from './ShareIcon';
 export { default as EditPencilIcon } from './EditPencilIcon';
 export { default as ExitIcon } from './ExitIcon';
+export { default as RewardPlaceholderIcon } from './RewardPlaceholderIcon';
 
 export * from './socials';
 export * from './coins';

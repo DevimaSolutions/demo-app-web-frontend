@@ -24,6 +24,8 @@ const Dashboard = () => {
               Hello, <b>{profile.name}!</b>
             </Typography>
           </Box>
+          <Typography sx={styles.title}>Overview</Typography>
+          <HeroSection type="grid" />
           <Box sx={styles.rowContainer}>
             <XPSection level={profile.level ?? 0} xpPoints={profile.experience ?? 0} />
             <Energy />
@@ -33,7 +35,6 @@ const Dashboard = () => {
         </Box>
         <Box sx={styles.rightTable}>
           <BalanceSection />
-          <HeroSection />
           <FriendsSection />
         </Box>
       </Box>

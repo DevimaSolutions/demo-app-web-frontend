@@ -33,12 +33,12 @@ export const theme = createTheme({
           fontWeight: 500,
           fontSize: '16px',
           lineHeight: '20px',
-          backgroundColor: '#8A80B9',
+          backgroundColor: '#886FFF',
           color: '#FFFFFF',
           borderRadius: '8px',
           padding: '13px 20px 15px',
           '&:active, &:focus, &:hover': {
-            backgroundColor: '#6C629B',
+            backgroundColor: '#6A51E1',
           },
           '&:disabled': {
             backgroundColor: '#D2CDDA',
