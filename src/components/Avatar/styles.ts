@@ -2,18 +2,9 @@ import { circularProgressClasses } from '@mui/material';
 
 import { theme } from '@/constants';
 
-import type { IAvatarSize } from './types';
+import type { IAvatarSize, IAvatarSizeProps } from './types';
 
-export const avatarSizesMapping: Record<
-  IAvatarSize,
-  {
-    size: number;
-    levelWidth: number;
-    levelHeight: number;
-    levelFontSize: number;
-    levelRadius: number;
-  }
-> = {
+export const avatarSizesMapping: Record<IAvatarSize, IAvatarSizeProps> = {
   medium: { size: 48, levelWidth: 20, levelHeight: 19, levelFontSize: 12, levelRadius: 1 },
   large: { size: 80, levelWidth: 27, levelHeight: 23, levelFontSize: 16, levelRadius: 2 },
 };

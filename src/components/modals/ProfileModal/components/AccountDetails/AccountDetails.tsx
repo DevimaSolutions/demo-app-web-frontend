@@ -2,6 +2,7 @@ import { Box, IconButton, InputAdornment, TextField } from '@mui/material';
 
 import { EditPencilIcon, TabPanel } from '@/components';
 
+import accountFields from './constants';
 import styles from './styles';
 import useAccountDetails from './useAccountDetails';
 
@@ -19,43 +20,20 @@ const AccountDetails = ({ value, index }: ITabPanelProps) => {
   return (
     <TabPanel value={value} index={index}>
       <Box sx={styles.inputGrid}>
-        <TextField
-          label="Name"
-          defaultValue={profile.name.full}
-          InputProps={{
-            readOnly: true,
-            endAdornment: EditEndAdornment,
-          }}
-          variant="standard"
-        />
-        <TextField
-          label="Username"
-          defaultValue={`@${profile.nickname}`}
-          InputProps={{
-            readOnly: true,
-            endAdornment: EditEndAdornment,
-          }}
-          variant="standard"
-        />
-        <TextField
-          label="Email"
-          defaultValue={profile.email}
-          InputProps={{
-            readOnly: true,
-          }}
-          disabled
-          variant="standard"
-        />
-        <TextField
-          label="Password"
-          defaultValue={'password'}
-          InputProps={{
-            readOnly: true,
-            endAdornment: EditEndAdornment,
-          }}
-          type="password"
-          variant="standard"
-        />
+        {accountFields(profile).map((field, fieldIndex) => (
+          <TextField
+            key={fieldIndex}
+            label={field.label}
+            defaultValue={field.defaultValue}
+            InputProps={{
+              readOnly: true,
+              ...(field.isEditable && { endAdornment: EditEndAdornment }),
+            }}
+            type={field.type}
+            disabled={field.disabled}
+            variant="standard"
+          />
+        ))}
       </Box>
     </TabPanel>
   );

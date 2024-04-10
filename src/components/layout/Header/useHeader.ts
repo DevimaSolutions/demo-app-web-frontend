@@ -16,7 +16,7 @@ const useHeader = () => {
   };
 
   useEffect(() => {
-    dispatch(getProfile({})).unwrap();
+    dispatch(getProfile({}));
   }, [dispatch]);
 
   return {
