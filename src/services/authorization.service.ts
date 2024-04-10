@@ -72,6 +72,8 @@ const signUp = async (data: ISignUpRequest) => {
     .then((res) => res.data);
 
   auth.setAuth(user, authToken);
+
+  await firebaseAuthService.authorizeUser();
 };
 
 const confirmEmail = async (code: string) => {
