@@ -1,8 +1,8 @@
 import { useSelector } from '@/hooks';
-import { resetPasswordSent } from '@/redux/authorization/selectors';
+import { selectors } from '@/redux/authorization';
 
 const useForgotPassword = () => {
-  const isPasswordSend = useSelector(resetPasswordSent);
+  const isPasswordSend = useSelector(selectors.resetPasswordSent);
 
   return { isPasswordSend };
 };

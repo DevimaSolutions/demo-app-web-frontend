@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 import { useSelector } from '@/hooks';
-import { profileSelector } from '@/redux/profile/selectors';
+import { selectors } from '@/redux/profile';
 import { signOut } from '@/utils';
 
 const useProfileModal = () => {
-  const { profile, isLoading } = useSelector(profileSelector);
+  const { profile, isLoading } = useSelector(selectors.profileSelector);
   const [tabValue, setTabValue] = useState<number>(0);
 
   const handleSignOut = () => {

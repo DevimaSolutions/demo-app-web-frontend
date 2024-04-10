@@ -1,15 +1,14 @@
 import { useCallback, useMemo } from 'react';
 
 import { useDispatch, useSelector } from '@/hooks';
-import { updateOnboardingData } from '@/redux/onboarding';
-import { onboardingDataSelector } from '@/redux/onboarding/selectors';
+import { thunks, selectors } from '@/redux/onboarding';
 
 import type { IFormErrorResponse } from '@/data-transfer/responses';
 import type { AxiosError } from 'axios';
 import type { FormikHelpers } from 'formik';
 
 const useFirstOnboardingStepForm = () => {
-  const data = useSelector(onboardingDataSelector);
+  const data = useSelector(selectors.onboardingDataSelector);
   const dispatch = useDispatch();
 
   const initialValues = useMemo(
@@ -29,7 +28,7 @@ const useFirstOnboardingStepForm = () => {
       values: typeof initialValues,
       { setErrors, setSubmitting }: FormikHelpers<typeof initialValues>,
     ) => {
-      dispatch(updateOnboardingData({ firstStep: { ...values, age: Number(values.age) } }))
+      dispatch(thunks.updateOnboardingData({ firstStep: { ...values, age: Number(values.age) } }))
         .unwrap()
         .catch((error: AxiosError<IFormErrorResponse<typeof initialValues>>) => {
           setErrors({

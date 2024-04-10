@@ -1,19 +1,18 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from '@/hooks';
-import { getFriends } from '@/redux/friends';
-import { friendsSelector } from '@/redux/friends/selectors';
+import { thunks, selectors } from '@/redux/friends';
 import { presenceService } from '@/services';
 
 import type { IUserOnlineResponse } from '@/modules';
 
 const useAllTabPanel = () => {
-  const { friends, isLoading, hasMore } = useSelector(friendsSelector);
+  const { friends, isLoading, hasMore } = useSelector(selectors.friendsSelector);
   const dispatch = useDispatch();
   const [onlineUsers, setOnlineUsers] = useState<IUserOnlineResponse>({});
 
   const loadMore = useCallback(() => {
-    dispatch(getFriends({}));
+    dispatch(thunks.getFriends({}));
   }, [dispatch]);
 
   const fetchUsersOnline = useCallback((ids: string[]) => {

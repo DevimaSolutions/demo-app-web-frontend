@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 import { successMessages } from '@/constants';
 import { useDispatch } from '@/hooks';
-import { sendForgotPassword } from '@/redux/authorization';
+import { thunks } from '@/redux/authorization';
 
 import type { IForgotPasswordFormProps } from './types';
 import type { FormikHelpers } from 'formik';
@@ -23,7 +23,7 @@ const useForgotPasswordForm = (toastIcon: ReactElement) => {
       { email }: IForgotPasswordFormProps,
       { setErrors }: FormikHelpers<IForgotPasswordFormProps>,
     ) => {
-      dispatch(sendForgotPassword(email))
+      dispatch(thunks.sendForgotPassword(email))
         .unwrap()
         .then(() => {
           toast.info(successMessages.emailSent(email), {

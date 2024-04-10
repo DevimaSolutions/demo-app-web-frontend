@@ -2,10 +2,10 @@ import { useMemo } from 'react';
 
 import { SegmentProgressStatus } from '@/constants';
 import { useSelector } from '@/hooks';
-import { onboardingCurrentStep } from '@/redux/onboarding/selectors';
+import { selectors } from '@/redux/onboarding';
 
 const useOnboardingProgress = () => {
-  const currentStep = useSelector(onboardingCurrentStep);
+  const currentStep = useSelector(selectors.onboardingCurrentStep);
 
   const stepSettings = useMemo(
     () =>

@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 import { useDispatch } from '@/hooks';
-import { getFriends } from '@/redux/friends';
+import { thunks } from '@/redux/friends';
 import { resetState } from '@/redux/friends/slice';
 
 const useFriendsSection = () => {
@@ -13,7 +13,7 @@ const useFriendsSection = () => {
   const router = useRouter();
 
   useEffect(() => {
-    dispatch(getFriends({}))
+    dispatch(thunks.getFriends({}))
       .unwrap()
       .then((res) => setHasFriendsInit(!!res?.items.length));
     return () => {

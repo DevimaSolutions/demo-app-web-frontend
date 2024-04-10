@@ -1,8 +1,8 @@
 import { useSelector } from '@/hooks';
-import { isInitialLoadingSelector } from '@/redux/onboarding/selectors';
+import { selectors } from '@/redux/onboarding';
 
 const useOnboardingLayout = () => {
-  const isLoading = useSelector(isInitialLoadingSelector);
+  const isLoading = useSelector(selectors.isInitialLoadingSelector);
 
   return { isLoading };
 };

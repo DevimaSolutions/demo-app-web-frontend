@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { useDispatch } from '@/hooks';
-import { updateOnboardingData } from '@/redux/onboarding';
+import { thunks } from '@/redux/onboarding';
 import { prevStep } from '@/redux/onboarding/slice';
 import onboardingService from '@/services/onboarding.service';
 
@@ -23,7 +23,7 @@ const useSelectSkillsForm = () => {
       values: ISelectSkillsFormProps,
       { setErrors, setSubmitting }: FormikHelpers<ISelectSkillsFormProps>,
     ) => {
-      dispatch(updateOnboardingData({ fourthStep: { softSkills: values.skills } }))
+      dispatch(thunks.updateOnboardingData({ fourthStep: { softSkills: values.skills } }))
         .unwrap()
         .catch((error: AxiosError<IFormErrorResponse<ISelectSkillsFormProps>>) => {
           setErrors({
