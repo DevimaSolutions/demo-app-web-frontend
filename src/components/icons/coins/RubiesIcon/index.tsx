@@ -6,7 +6,7 @@ import styles from '../../styles';
 
 import type { ISvgProps } from '../../types';
 
-const RubinsIcon = ({
+const RubiesIcon = ({
   viewBox = '0, 0, 20, 20',
   width = '20',
   height = '20',
@@ -64,4 +64,4 @@ const RubinsIcon = ({
   );
 };
 
-export default RubinsIcon;
+export default RubiesIcon;
