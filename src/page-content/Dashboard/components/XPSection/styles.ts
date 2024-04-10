@@ -9,12 +9,6 @@ const styles = {
     p: theme.spacing(2.5, 3),
     width: '100%',
   },
-  title: {
-    fontSize: 14,
-    lineHeight: '17px',
-    fontWeight: 500,
-    opacity: 0.4,
-  },
   mainInfo: {
     display: 'flex',
     mt: 0.5,

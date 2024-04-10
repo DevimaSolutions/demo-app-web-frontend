@@ -2,18 +2,20 @@ import { Box, LinearProgress, Typography } from '@mui/material';
 
 import styles from './styles';
 
-const XPSection = () => {
+import type IXPSectionProps from './types';
+
+const XPSection = ({ level, xpPoints }: IXPSectionProps) => {
   return (
     <Box sx={styles.root}>
-      <Typography sx={styles.title}>You’re on a way to</Typography>
       <Box sx={styles.mainInfo}>
-        <Typography sx={styles.xpStats}>lvl. 18</Typography>
+        <Typography sx={styles.xpStats}>lvl. {level}</Typography>
         <Typography sx={styles.xpStats}>
-          515<span>/600 XP</span>
+          {xpPoints}
+          <span>/1000 XP</span>
         </Typography>
       </Box>
       <Box sx={styles.progressContainer}>
-        <LinearProgress variant="determinate" value={60} sx={styles.progress} />
+        <LinearProgress variant="determinate" value={xpPoints / 10} sx={styles.progress} />
       </Box>
     </Box>
   );

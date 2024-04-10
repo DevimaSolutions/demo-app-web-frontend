@@ -10,7 +10,10 @@ const styles = {
   title: {
     fontSize: 40,
     lineHeight: '48px',
-    fontWeight: 600,
+    fontWeight: 400,
+    b: {
+      fontWeight: 600,
+    },
   },
   leftTable: {
     width: 675,

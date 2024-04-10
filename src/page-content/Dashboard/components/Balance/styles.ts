@@ -55,7 +55,7 @@ const styles = {
     lineHeight: '20px',
     width: '100%',
   },
-  rubinsContainer: {
+  rubiesContainer: {
     background: '#FF3F571A',
     display: 'flex',
     alignItems: 'center',

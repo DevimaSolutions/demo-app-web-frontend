@@ -1,34 +1,27 @@
 import { Box } from '@mui/material';
 
-import { EnergySimpleIcon, LongArrowIcon, PlusIcon, RubinsSimpleIcon } from '@/components';
+import { PlusIcon, RubiesSimpleIcon } from '@/components';
 
 import styles from './styles';
+import useBalanceSection from './useBalanceSection';
 
 const BalanceSection = () => {
+  const { handleRedirect } = useBalanceSection();
+
   return (
     <Box sx={styles.root}>
-      <Box sx={styles.sectionBox}>
-        <Box sx={styles.iconContainer('#FC3952')}>
-          <RubinsSimpleIcon />
-        </Box>
-        <Box sx={styles.innerBox}>
+      <Box sx={styles.innerBox}>
+        Diamonds
+        <Box sx={styles.countContainer}>
           {/* TODO: Change to real data */}
-          315
-          <Box sx={styles.actionButton}>
+          {Number(2145).toLocaleString()}
+          <Box sx={styles.actionButton} onClick={handleRedirect('/store')}>
             <PlusIcon />
           </Box>
         </Box>
       </Box>
-      <Box sx={styles.sectionBox}>
-        <Box sx={styles.iconContainer('#FEC943')}>
-          <EnergySimpleIcon />
-        </Box>
-        <Box sx={styles.innerBox}>
-          {/* TODO: Change to real data */}2
-          <Box sx={styles.actionButton}>
-            <LongArrowIcon />
-          </Box>
-        </Box>
+      <Box sx={styles.iconContainer}>
+        <RubiesSimpleIcon />
       </Box>
     </Box>
   );

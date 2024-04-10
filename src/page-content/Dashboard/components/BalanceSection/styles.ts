@@ -1,48 +1,62 @@
+import { alpha } from '@mui/material';
+
 import { theme } from '@/constants';
 
 const styles = {
   root: {
     display: 'flex',
-    gap: 1.5,
-    width: '100%',
-  },
-  sectionBox: {
-    width: '100%',
-    background: theme.palette.common.white,
-    p: 0.5,
-    borderRadius: 0.8,
-    display: 'flex',
-    alignItems: 'center',
-  },
-  iconContainer: (color: string) => ({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 24,
-    width: 24,
-    borderRadius: '6px 2px 2px 6px',
-    background: color,
-    mr: 1,
-  }),
-  innerBox: {
-    display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
-    flex: 1,
-    fontSize: 18,
+    background: theme.palette.common.white,
+    padding: theme.spacing(2.75, 2.75, 2.75, 3),
+    borderRadius: 1.6,
+  },
+  innerBox: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 0.5,
+    fontSize: 14,
+    lineHeight: '17px',
+    fontWeight: 500,
+    color: alpha(theme.palette.text.primary, 0.4),
+  },
+  countContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 0.5,
+    fontSize: 24,
     lineHeight: '24px',
     fontWeight: 600,
+    color: theme.palette.text.primary,
   },
   actionButton: {
     background: theme.palette.primary[700],
-    width: 24,
-    height: 24,
+    width: 20,
+    height: 20,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: '2px 6px 6px 2px',
+    borderRadius: 0.4,
     cursor: 'pointer',
+    svg: {
+      width: 11,
+      height: 11,
+    },
+  },
+  iconContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 64,
+    height: 64,
+    borderRadius: '50%',
+    background: alpha(theme.palette.error[100], 0.2),
+    color: theme.palette.error[100],
+    svg: {
+      width: 27,
+      height: 25,
+    },
   },
 } as const;
 

@@ -462,7 +462,7 @@ export const theme = createTheme({
     },
     error: {
       '50': '#FFF0F1',
-      '100': '#FFDBDE',
+      '100': '#FC3952', //rubies
       '200': '#FFBDC2',
       '300': '#FF99A2',
       '400': '#FF7A86',

@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 
-import { CoinIcon, RubinsIcon } from '@/components';
+import { CoinIcon, RubiesIcon } from '@/components';
 
 import styles from './styles';
 
@@ -14,9 +14,9 @@ const Balance = () => {
             12,150
             <CoinIcon />
           </Box>
-          <Box sx={styles.rubinsContainer}>
+          <Box sx={styles.rubiesContainer}>
             315
-            <RubinsIcon />
+            <RubiesIcon />
           </Box>
         </Box>
       </Box>
