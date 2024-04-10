@@ -5,7 +5,7 @@ import { Avatar, NextLinkButton, ProfileModal, ShareProfileModal } from '@/compo
 import styles from './styles';
 import { useUserAvatar } from './useUserAvatar';
 
-const AuthPopup = () => {
+const UserAvatar = () => {
   const { user, isUserLoading, profile, open, handleModalState } = useUserAvatar();
 
   if (isUserLoading) {

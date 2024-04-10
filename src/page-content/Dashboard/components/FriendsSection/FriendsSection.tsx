@@ -20,41 +20,14 @@ const FriendsSection = () => {
       </Box>
       <Box sx={styles.contentContainer(hasFriendsInit)}>
         {hasFriendsInit ? (
-          <>
-            <SearchInput onSearch={handleSearch} />
-            <InfiniteScroll
-              style={styles.friendsWrapper}
-              dataLength={friends.length}
-              scrollableTarget="infinite-scroll-parent"
-              next={loadMore}
-              hasMore={hasMore}
-              loader={<></>}
-            >
-              {
-                //TODO: navigate to game session or friend profile
-                friends.length ? (
-                  friends.map((friend, index) => (
-                    <Box key={index} sx={styles.friend}>
-                      <Avatar src={friend.avatar?.path} isOnline={checkOnline(friend.id)} />
-                      <Box sx={styles.friendTextWrapper}>
-                        <Typography>{friend.name}</Typography>
-                        {/*TODO: add user level*/}
-                        <Typography variant="subtitle1">LVL 0</Typography>
-                      </Box>
-                      <ArrowIcon direction="left" sx={styles.arrow} />
-                    </Box>
-                  ))
-                ) : (
-                  <>No results</>
-                )
-              }
-            </InfiniteScroll>
-            {isLoading && (
-              <Box sx={styles.loadingWrapper}>
-                <CircularProgress />
-              </Box>
-            )}
-          </>
+          <Box>
+            <Tabs value={tabValue} sx={styles.tabs} onChange={handleTabChange}>
+              <Tab label="All" />
+              <Tab label="Online X" disabled />
+              <Tab label="Offline" disabled />
+            </Tabs>
+            <AllTabPanel value={tabValue} index={0} />
+          </Box>
         ) : (
           <>
             <Typography variant="subtitle2">Wow, it’s really cold here...</Typography>

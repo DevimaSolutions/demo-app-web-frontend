@@ -2,14 +2,11 @@ import { circularProgressClasses } from '@mui/material';
 
 import { theme } from '@/constants';
 
-import type { IAvatarSize } from './types';
+import type { IAvatarSize, IAvatarSizeProps } from './types';
 
-export const avatarSizesMapping: Record<
-  IAvatarSize,
-  { size: number; levelWidth: number; levelHeight: number; levelFontSize: number }
-> = {
-  medium: { size: 48, levelWidth: 20, levelHeight: 19, levelFontSize: 12 },
-  large: { size: 80, levelWidth: 27, levelHeight: 23, levelFontSize: 16 },
+export const avatarSizesMapping: Record<IAvatarSize, IAvatarSizeProps> = {
+  medium: { size: 48, levelWidth: 20, levelHeight: 19, levelFontSize: 12, levelRadius: 1 },
+  large: { size: 80, levelWidth: 27, levelHeight: 23, levelFontSize: 16, levelRadius: 2 },
 };
 
 const styles = {
@@ -40,7 +37,7 @@ const styles = {
     },
   }),
   level: (size: IAvatarSize) => ({
-    borderRadius: '50%',
+    borderRadius: avatarSizesMapping[size].levelRadius,
     width: avatarSizesMapping[size].levelWidth,
     height: avatarSizesMapping[size].levelHeight,
     position: 'absolute',
@@ -56,13 +53,13 @@ const styles = {
   }),
   online: (size: IAvatarSize) => ({
     borderRadius: '50%',
-    width: avatarSizesMapping[size].size / 4,
-    height: avatarSizesMapping[size].size / 4,
+    width: avatarSizesMapping[size].size / 4 + Math.floor(avatarSizesMapping[size].size / 24),
+    height: avatarSizesMapping[size].size / 4 + Math.floor(avatarSizesMapping[size].size / 24),
     position: 'absolute',
     bottom: 0,
     right: 0,
     background: theme.palette.success[500],
-    border: `${Math.floor(avatarSizesMapping[size].size / 24)}px solid ${
+    border: `${Math.floor(avatarSizesMapping[size].size / 40)}px solid ${
       theme.palette.common.white
     }`,
   }),

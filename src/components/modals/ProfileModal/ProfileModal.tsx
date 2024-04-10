@@ -33,7 +33,7 @@ const ProfileModal = (props: IProfileModalProps) => {
               <Box sx={styles.userNamesWrapper}>
                 <Box sx={styles.nameWrapper}>
                   <Typography variant="h3">{profile.name}</Typography>
-                  <Button sx={styles.shareButton}>
+                  <Button sx={styles.shareButton} onClick={props.openShare}>
                     <ShareIcon />
                   </Button>
                 </Box>
