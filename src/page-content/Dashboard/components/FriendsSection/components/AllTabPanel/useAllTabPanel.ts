@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from '@/hooks';
+import { getFriends } from '@/redux/friends';
 import { friendsSelector } from '@/redux/friends/selectors';
-import { getFriends } from '@/redux/friends/thunk';
 import { presenceService } from '@/services';
 
 import type { IUserOnlineResponse } from '@/modules';

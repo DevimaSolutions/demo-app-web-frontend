@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { getProfile } from './thunk';
+import { getProfile } from './thunks';
 
 import type IProfileState from './types';
 

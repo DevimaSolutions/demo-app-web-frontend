@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { OnboardingStepEnum, stepperMap } from '@/constants';
 
-import { getOnboardingData, updateOnboardingData } from './thunk';
+import { getOnboardingData, updateOnboardingData } from './thunks';
 
 import type IOnboardingState from './types';
 

@@ -1,8 +1,8 @@
 import { useCallback, useMemo } from 'react';
 
 import { useDispatch, useSelector } from '@/hooks';
+import { updateOnboardingData } from '@/redux/onboarding';
 import { onboardingDataSelector } from '@/redux/onboarding/selectors';
-import { updateOnboardingData } from '@/redux/onboarding/thunk';
 
 import type { IFormErrorResponse } from '@/data-transfer/responses';
 import type { AxiosError } from 'axios';

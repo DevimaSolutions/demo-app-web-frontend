@@ -2,8 +2,8 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 import { useDispatch } from '@/hooks';
+import { getFriends } from '@/redux/friends';
 import { resetState } from '@/redux/friends/slice';
-import { getFriends } from '@/redux/friends/thunk';
 
 const useFriendsSection = () => {
   const [hasFriendsInit, setHasFriendsInit] = useState<boolean>(true);

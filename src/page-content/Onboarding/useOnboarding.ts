@@ -1,9 +1,9 @@
 import { useEffect, useMemo } from 'react';
 
 import { useDispatch, useSelector } from '@/hooks';
+import { getOnboardingData } from '@/redux/onboarding';
 import { onboardingCurrentStep, isInitialLoadingSelector } from '@/redux/onboarding/selectors';
 import { resetState } from '@/redux/onboarding/slice';
-import { getOnboardingData } from '@/redux/onboarding/thunk';
 
 import { Loading } from './components';
 import { stepsMap } from './constants';

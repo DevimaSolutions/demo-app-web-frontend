@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { useDispatch } from '@/hooks';
+import { updateOnboardingData } from '@/redux/onboarding';
 import { prevStep } from '@/redux/onboarding/slice';
-import { updateOnboardingData } from '@/redux/onboarding/thunk';
 import onboardingService from '@/services/onboarding.service';
 
 import type { ISelectSkillsFormProps } from './types';

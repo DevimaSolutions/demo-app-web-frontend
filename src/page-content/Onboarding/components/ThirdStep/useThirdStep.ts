@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 
 import { useDispatch, useSelector } from '@/hooks';
+import { updateOnboardingData } from '@/redux/onboarding';
 import { onboardingDataSelector } from '@/redux/onboarding/selectors';
 import { prevStep } from '@/redux/onboarding/slice';
-import { updateOnboardingData } from '@/redux/onboarding/thunk';
 
 import type { UserLearningPaceEnum } from '@/data-transfer/requests';
 

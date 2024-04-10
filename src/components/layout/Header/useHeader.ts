@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
 import { useDispatch } from '@/hooks';
-import { getProfile } from '@/redux/profile/thunk';
+import { getProfile } from '@/redux/profile';
 import { signOut } from '@/utils';
 
 const useHeader = () => {

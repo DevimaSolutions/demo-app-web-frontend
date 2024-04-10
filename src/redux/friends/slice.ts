@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { initialPagination, resetPaginationBase } from '../pagination';
 
-import { getFriends } from './thunk';
+import { getFriends } from './thunks';
 
 import type IFriendsState from './types';
 

@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 import { successMessages } from '@/constants';
 import { useDispatch } from '@/hooks';
-import { sendForgotPassword } from '@/redux/authorization/thunks';
+import { sendForgotPassword } from '@/redux/authorization';
 
 import type { IForgotPasswordFormProps } from './types';
 import type { FormikHelpers } from 'formik';
