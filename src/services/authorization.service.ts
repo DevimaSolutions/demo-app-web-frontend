@@ -9,11 +9,7 @@ import { getAuthManager } from '@/utils';
 import { firebaseAuthService } from './firebase';
 import profileService from './profile.service';
 
-import type {
-  ISuccessAuthorizeResponse,
-  ISuccessResponse,
-  IFullUserResponse,
-} from '@/data-transfer/responses';
+import type { ISuccessAuthorizeResponse, ISuccessResponse } from '@/data-transfer/responses';
 
 const sendForgotPassword = async (email: string) => {
   const auth = await getAuthManager();
@@ -62,11 +58,7 @@ const signUp = async (data: ISignUpRequest) => {
     .post<ISuccessAuthorizeResponse>('/auth/sign-up', data)
     .then((res) => res.data);
 
-  const user = await auth.axios
-    .get<IFullUserResponse>('/auth/profile', {
-      headers: { Authorization: `Bearer ${authToken.accessToken}` },
-    })
-    .then((res) => res.data);
+  const user = await profileService.getProfile(authToken.accessToken);
 
   auth.setAuth(user, authToken);
 
