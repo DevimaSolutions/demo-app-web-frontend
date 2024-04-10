@@ -53,13 +53,13 @@ const styles = {
   }),
   online: (size: IAvatarSize) => ({
     borderRadius: '50%',
-    width: avatarSizesMapping[size].size / 4,
-    height: avatarSizesMapping[size].size / 4,
+    width: avatarSizesMapping[size].size / 4 + Math.floor(avatarSizesMapping[size].size / 24),
+    height: avatarSizesMapping[size].size / 4 + Math.floor(avatarSizesMapping[size].size / 24),
     position: 'absolute',
     bottom: 0,
     right: 0,
     background: theme.palette.success[500],
-    border: `${Math.floor(avatarSizesMapping[size].size / 24)}px solid ${
+    border: `${Math.floor(avatarSizesMapping[size].size / 40)}px solid ${
       theme.palette.common.white
     }`,
   }),
