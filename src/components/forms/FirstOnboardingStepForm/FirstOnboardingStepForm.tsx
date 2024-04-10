@@ -19,7 +19,7 @@ export const FirstOnboardingStepForm = () => {
             <Field
               type="name"
               name="name"
-              placeholder="User name"
+              placeholder="Name"
               fullWidth
               component={TextInput}
               InputProps={{

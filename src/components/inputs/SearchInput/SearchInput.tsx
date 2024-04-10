@@ -12,7 +12,7 @@ const SearchInput = ({
   initInputValue,
   onSearch,
   sx,
-  placeholder = 'Email or nick name...',
+  placeholder = 'Email or user name...',
   ...props
 }: ISearchInputProps) => {
   const { inputValue, handleChange, handleEnterSearch } = useSearchInput({

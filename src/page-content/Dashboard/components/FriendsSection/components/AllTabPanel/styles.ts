@@ -37,7 +37,7 @@ const styles = {
       lineHeight: '20px',
     },
   },
-  nickname: {
+  username: {
     [`&.${typographyClasses.subtitle1}`]: {
       fontSize: 12,
       fontWeight: 500,

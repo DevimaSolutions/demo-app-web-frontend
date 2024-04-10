@@ -32,9 +32,9 @@ const AllTabPanel = ({ value, index }: ITabPanelProps) => {
                 </Typography>
                 <Avatar src={friend.avatar?.path} isOnline={checkOnline(friend.id)} />
                 <Box sx={styles.friendTextWrapper}>
-                  <Typography>{friend.name.full}</Typography>
-                  <Typography variant="subtitle1" sx={styles.nickname}>
-                    @{friend.nickname}
+                  <Typography>{friend.name}</Typography>
+                  <Typography variant="subtitle1" sx={styles.username}>
+                    @{friend.username}
                   </Typography>
                 </Box>
                 {friend.level && friend.experience ? (

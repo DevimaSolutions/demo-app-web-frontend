@@ -1,11 +1,6 @@
 import type { ISoftSkillsObject } from './onboarding.response';
 import type { UserRole, UserStatus } from '@/constants';
 
-export interface IName {
-  first: string;
-  last: string;
-  full: string;
-}
 export interface IAvatar {
   id: string;
   name: string;
@@ -22,9 +17,9 @@ export interface IUserResponse {
   status: UserStatus;
 }
 export interface IFullUserResponse extends IUserResponse {
-  name: IName;
+  name: string;
   phoneNumber: string | null;
-  nickname: string;
+  username: string;
   age: number | null;
   gender: string | null;
   role: UserRole;
