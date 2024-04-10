@@ -4,13 +4,13 @@ const accountFields = (profile: IProfileStateDto) => {
   return [
     {
       label: 'Name',
-      defaultValue: profile.name.full,
+      defaultValue: profile.name,
       type: 'text',
       isEditable: true,
     },
     {
       label: 'Username',
-      defaultValue: `@${profile.nickname}`,
+      defaultValue: `@${profile.username}`,
       type: 'text',
       isEditable: true,
     },

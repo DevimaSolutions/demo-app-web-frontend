@@ -7,12 +7,9 @@ import {
 import { getAuthManager } from '@/utils';
 
 import { firebaseAuthService } from './firebase';
+import profileService from './profile.service';
 
-import type {
-  IUserResponse,
-  ISuccessAuthorizeResponse,
-  ISuccessResponse,
-} from '@/data-transfer/responses';
+import type { ISuccessAuthorizeResponse, ISuccessResponse } from '@/data-transfer/responses';
 
 const sendForgotPassword = async (email: string) => {
   const auth = await getAuthManager();
@@ -38,11 +35,7 @@ const authorizeWithSocial = async <AuthType>({
     .post<ISuccessAuthorizeResponse>(`/auth/${socialName}`, payload)
     .then((res) => res.data);
 
-  const user = await auth.axios
-    .get<IUserResponse>('/auth/profile', {
-      headers: { Authorization: `Bearer ${authToken.accessToken}` },
-    })
-    .then((res) => res.data);
+  const user = await profileService.getProfile(authToken.accessToken);
 
   auth.setAuth(user, authToken);
 
@@ -65,11 +58,7 @@ const signUp = async (data: ISignUpRequest) => {
     .post<ISuccessAuthorizeResponse>('/auth/sign-up', data)
     .then((res) => res.data);
 
-  const user = await auth.axios
-    .get<IUserResponse>('/auth/profile', {
-      headers: { Authorization: `Bearer ${authToken.accessToken}` },
-    })
-    .then((res) => res.data);
+  const user = await profileService.getProfile(authToken.accessToken);
 
   auth.setAuth(user, authToken);
 
@@ -81,7 +70,7 @@ const confirmEmail = async (code: string) => {
 
   await auth.axios.post<ISuccessResponse>('/auth/confirm/email', { code }).then((res) => res.data);
 
-  const user = await auth.axios.get<IUserResponse>('/auth/profile').then((res) => res.data);
+  const user = await profileService.getProfile();
 
   auth.updateUser(user);
 };

@@ -22,7 +22,6 @@ export interface IFullUserResponse extends IUserResponse {
   username: string;
   age: number | null;
   gender: string | null;
-  role: UserRole;
   level: number | null;
   experience: number | null;
   createdAt: Date;

@@ -6,14 +6,10 @@ import type IProfileState from './types';
 
 const initialState: IProfileState = {
   profile: {
-    name: {
-      first: '',
-      last: '',
-      full: '',
-    },
+    name: '',
     email: '',
     phoneNumber: '',
-    nickname: '',
+    username: '',
     level: 0,
     experience: 0,
     avatar: undefined,

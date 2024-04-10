@@ -16,7 +16,7 @@ const useHeader = () => {
   };
 
   useEffect(() => {
-    dispatch(getProfile({}));
+    dispatch(getProfile());
   }, [dispatch]);
 
   return {

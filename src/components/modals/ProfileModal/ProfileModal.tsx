@@ -32,12 +32,12 @@ const ProfileModal = (props: IProfileModalProps) => {
               />
               <Box sx={styles.userNamesWrapper}>
                 <Box sx={styles.nameWrapper}>
-                  <Typography variant="h3">{profile.name.full}</Typography>
+                  <Typography variant="h3">{profile.name}</Typography>
                   <Button sx={styles.shareButton}>
                     <ShareIcon />
                   </Button>
                 </Box>
-                <Typography variant="subtitle2">@{profile.nickname}</Typography>
+                <Typography variant="subtitle2">@{profile.username}</Typography>
               </Box>
             </Box>
             <IconButton sx={styles.signOutButton} onClick={handleSignOut}>

@@ -1,8 +1,9 @@
 import { getAuthManager } from '@/utils';
 
+import profileService from './profile.service';
+
 import type { IUpdateOnboardingRequest } from '@/data-transfer/requests';
 import type {
-  IUserResponse,
   IGetOnboardingDataResponse,
   ISoftSkillsObject,
   IUpdateOnboardingResponse,
@@ -16,7 +17,7 @@ const updateOnboarding = async (data: IUpdateOnboardingRequest) => {
     .then((res) => res.data);
 
   if (response.complete) {
-    const user = await auth.axios.get<IUserResponse>('/auth/profile').then((res) => res.data);
+    const user = await profileService.getProfile();
 
     auth.updateUser(user);
   }
