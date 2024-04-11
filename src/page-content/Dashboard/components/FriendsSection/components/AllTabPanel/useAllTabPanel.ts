@@ -13,7 +13,7 @@ const useAllTabPanel = () => {
   const [onlineUsers, setOnlineUsers] = useState<IUserOnlineResponse>({});
 
   const loadMore = useCallback(() => {
-    dispatch(thunks.getFriends({ order: SortDirection.DESC, sort: OrderByField.level }));
+    dispatch(thunks.getFriends({ order: SortDirection.DESC, sort: OrderByField.experience }));
   }, [dispatch]);
 
   const fetchUsersOnline = useCallback((ids: string[]) => {

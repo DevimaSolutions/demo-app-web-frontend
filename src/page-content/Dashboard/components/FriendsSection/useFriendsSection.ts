@@ -14,7 +14,7 @@ const useFriendsSection = () => {
   const router = useRouter();
 
   useEffect(() => {
-    dispatch(thunks.getFriends({ order: SortDirection.DESC, sort: OrderByField.level }))
+    dispatch(thunks.getFriends({ order: SortDirection.DESC, sort: OrderByField.experience }))
       .unwrap()
       .then((res) => setHasFriendsInit(!!res?.items.length));
     return () => {
