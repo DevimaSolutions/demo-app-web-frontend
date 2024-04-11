@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import { SortDirection } from '@/constants';
 import { useDispatch, useSelector } from '@/hooks';
-import { thunks, selectors } from '@/redux/friends';
+import { thunks, selectors, OrderByField } from '@/redux/friends';
 import { presenceService } from '@/services';
 
 import type { IUserOnlineResponse } from '@/modules';
@@ -12,7 +13,7 @@ const useAllTabPanel = () => {
   const [onlineUsers, setOnlineUsers] = useState<IUserOnlineResponse>({});
 
   const loadMore = useCallback(() => {
-    dispatch(thunks.getFriends({}));
+    dispatch(thunks.getFriends({ order: SortDirection.DESC, sort: OrderByField.level }));
   }, [dispatch]);
 
   const fetchUsersOnline = useCallback((ids: string[]) => {

@@ -1,8 +1,9 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
+import { SortDirection } from '@/constants';
 import { useDispatch } from '@/hooks';
-import { thunks } from '@/redux/friends';
+import { OrderByField, thunks } from '@/redux/friends';
 import { resetState } from '@/redux/friends/slice';
 
 const useFriendsSection = () => {
@@ -13,7 +14,7 @@ const useFriendsSection = () => {
   const router = useRouter();
 
   useEffect(() => {
-    dispatch(thunks.getFriends({}))
+    dispatch(thunks.getFriends({ order: SortDirection.DESC, sort: OrderByField.level }))
       .unwrap()
       .then((res) => setHasFriendsInit(!!res?.items.length));
     return () => {

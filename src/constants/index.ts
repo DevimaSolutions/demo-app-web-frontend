@@ -6,3 +6,4 @@ export * from './messages';
 export * from './fonts';
 export * from './enums';
 export * from './onboarding';
+export * from './sorting';
