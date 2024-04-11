@@ -1,11 +1,7 @@
-import type { OrderByField } from './enum';
-import type { IBasePaginationState } from '../types';
-import type { SortDirection } from '@/constants';
+import type { IBaseOrderState, IBasePaginationState } from '../types';
 import type { IFullUserResponse } from '@/data-transfer/responses';
 
-export default interface IFriendsState extends IBasePaginationState {
+export default interface IFriendsState extends IBasePaginationState, IBaseOrderState {
   friends: IFullUserResponse[];
   search: string;
-  order: SortDirection;
-  sort: OrderByField;
 }

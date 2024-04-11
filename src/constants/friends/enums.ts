@@ -1,4 +1,4 @@
-export enum OrderByField {
+export enum FriendsOrderBy {
   level = 'level',
   experience = 'experience',
   username = 'username',

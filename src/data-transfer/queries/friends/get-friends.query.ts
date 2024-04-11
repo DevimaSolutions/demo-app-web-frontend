@@ -1,9 +1,6 @@
+import type { IBaseOrderQuery } from '../order.query';
 import type { IBasePaginationQuery } from '../pagination.query';
-import type { SortDirection } from '@/constants';
-import type { OrderByField } from '@/redux/friends';
 
-export interface IFriendsPaginationQuery extends IBasePaginationQuery {
+export interface IFriendsPaginationQuery extends IBasePaginationQuery, IBaseOrderQuery {
   search?: string;
-  order?: SortDirection;
-  sort?: OrderByField;
 }

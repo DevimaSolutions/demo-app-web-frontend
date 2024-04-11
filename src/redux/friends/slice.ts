@@ -1,10 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { SortDirection } from '@/constants';
+import { FriendsOrderBy, OrderDirection } from '@/constants';
 
 import { initialPagination, resetPaginationBase } from '../pagination';
 
-import { OrderByField } from './enum';
 import { getFriends } from './thunks';
 
 import type IFriendsState from './types';
@@ -12,8 +11,8 @@ import type IFriendsState from './types';
 const initialState: IFriendsState = {
   friends: [],
   search: '',
-  order: SortDirection.ASC,
-  sort: OrderByField.level,
+  orderDirection: OrderDirection.ASC,
+  orderBy: FriendsOrderBy.level,
   ...initialPagination,
 };
 
