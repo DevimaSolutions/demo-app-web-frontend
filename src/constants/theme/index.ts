@@ -57,7 +57,7 @@ export const theme = createTheme({
           border: '1.5px solid #FFFFFF',
           '&:active, &:focus, &:hover': {
             backgroundColor: '#FFFFFF',
-            border: '1.5px solid #8A80B9',
+            border: '1.5px solid #886FFF',
           },
           '&:disabled': {
             backgroundColor: '#E6E1EE',

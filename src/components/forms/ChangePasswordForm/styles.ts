@@ -6,7 +6,7 @@ const styles = {
   container: {
     padding: theme.spacing(4, 4, 3),
     [`& .${buttonClasses.root}`]: {
-      mt: 3.5,
+      mt: 3,
     },
   },
   form: {
