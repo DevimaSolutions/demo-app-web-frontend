@@ -46,7 +46,11 @@ const ProfileModal = (props: IProfileModalProps) => {
           </Box>
           <Box sx={styles.bottomPart}>
             <RoundTabsGroup options={switchOptions} value={tabValue} onChange={handleTabChange} />
-            <AccountDetails value={tabValue} index={0} />
+            <AccountDetails
+              value={tabValue}
+              index={0}
+              onChangePassword={props.openChangePassword}
+            />
           </Box>
         </>
       )}

@@ -1,6 +1,6 @@
 import type { IProfileStateDto } from '@/redux/profile/types';
 
-const accountFields = (profile: IProfileStateDto) => {
+const accountFields = (profile: IProfileStateDto, changePassword: () => void) => {
   return [
     {
       label: 'Name',
@@ -26,6 +26,7 @@ const accountFields = (profile: IProfileStateDto) => {
       defaultValue: 'password',
       type: 'password',
       isEditable: true,
+      onClick: changePassword,
     },
   ];
 };

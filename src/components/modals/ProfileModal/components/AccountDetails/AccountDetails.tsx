@@ -6,13 +6,13 @@ import accountFields from './constants';
 import styles from './styles';
 import useAccountDetails from './useAccountDetails';
 
-import type ITabPanelProps from '../types';
+import type { IAccountDetailProps } from './types';
 
-const AccountDetails = ({ value, index }: ITabPanelProps) => {
+const AccountDetails = ({ value, index, onChangePassword }: IAccountDetailProps) => {
   const { profile } = useAccountDetails();
-  const EditEndAdornment = (
+  const EditEndAdornment = (handleClick?: () => void) => (
     <InputAdornment position="end" sx={styles.editEndAdornment}>
-      <IconButton>
+      <IconButton onClick={handleClick}>
         <EditPencilIcon />
       </IconButton>
     </InputAdornment>
@@ -20,14 +20,16 @@ const AccountDetails = ({ value, index }: ITabPanelProps) => {
   return (
     <TabPanel value={value} index={index}>
       <Box sx={styles.inputGrid}>
-        {accountFields(profile).map((field, fieldIndex) => (
+        {accountFields(profile, onChangePassword).map((field, fieldIndex) => (
           <TextField
             key={fieldIndex}
             label={field.label}
             defaultValue={field.defaultValue}
             InputProps={{
               readOnly: true,
-              ...(field.isEditable && { endAdornment: EditEndAdornment }),
+              ...(field.isEditable && {
+                endAdornment: EditEndAdornment(field.onClick),
+              }),
             }}
             type={field.type}
             disabled={field.disabled}

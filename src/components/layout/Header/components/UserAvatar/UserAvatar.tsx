@@ -1,6 +1,12 @@
 import { Box, IconButton } from '@mui/material';
 
-import { Avatar, NextLinkButton, ProfileModal, ShareProfileModal } from '@/components';
+import {
+  Avatar,
+  ChangePasswordModal,
+  NextLinkButton,
+  ProfileModal,
+  ShareProfileModal,
+} from '@/components';
 
 import styles from './styles';
 import { useUserAvatar } from './useUserAvatar';
@@ -40,8 +46,14 @@ const UserAvatar = () => {
         open={open === 'profile'}
         onClose={handleModalState()}
         openShare={handleModalState('share')}
+        openChangePassword={handleModalState('changePassword')}
       />
       <ShareProfileModal open={open === 'share'} profile={user} onClose={handleModalState()} />
+      <ChangePasswordModal
+        open={open === 'changePassword'}
+        profile={user}
+        onClose={handleModalState('profile')}
+      />
     </Box>
   );
 };
