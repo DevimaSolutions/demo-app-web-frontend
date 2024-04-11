@@ -22,7 +22,7 @@ const RewardPlaceholderIcon = ({
       sx={combineSx(styles.root, styles[direction], sx)}
       {...rest}
     >
-      <rect width="20" height="20" rx="10" fill="#886FFF" fill-opacity="0.1" />
+      <rect width="20" height="20" rx="10" fill="#886FFF" fillOpacity="0.1" />
       <path d="M7.75 6L4 14H11.5L7.75 6Z" fill="#BDAFFF" />
       <path d="M13.75 9.2L11.5 14H16L13.75 9.2Z" fill="#BDAFFF" />
     </SvgIcon>

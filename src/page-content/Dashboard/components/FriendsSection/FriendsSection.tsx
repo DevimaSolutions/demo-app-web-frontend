@@ -24,7 +24,6 @@ const FriendsSection = () => {
             <Tabs value={tabValue} sx={styles.tabs} onChange={handleTabChange}>
               <Tab label="All" />
               <Tab label="Online X" disabled />
-              <Tab label="Offline" disabled />
             </Tabs>
             <AllTabPanel value={tabValue} index={0} />
           </Box>

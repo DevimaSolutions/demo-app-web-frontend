@@ -438,6 +438,7 @@ export const theme = createTheme({
     common: {
       black: '#1D1D1D',
       white: '#fff',
+      rubies: '#FC3952',
     },
     text: {
       primary: '#2C2535',
@@ -462,7 +463,7 @@ export const theme = createTheme({
     },
     error: {
       '50': '#FFF0F1',
-      '100': '#FC3952', //rubies
+      '100': '#FFDBDE',
       '200': '#FFBDC2',
       '300': '#FF99A2',
       '400': '#FF7A86',

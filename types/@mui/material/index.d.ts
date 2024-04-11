@@ -4,7 +4,9 @@ declare module '@mui/material/styles/createPalette' {
   interface PaletteOptions {
     primaryDark?: PaletteColorOptions;
   }
-
+  interface CommonColors {
+    rubies: string;
+  }
   interface Palette {
     primaryDark: PaletteColor;
   }

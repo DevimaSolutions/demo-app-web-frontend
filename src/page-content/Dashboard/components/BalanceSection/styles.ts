@@ -51,8 +51,8 @@ const styles = {
     width: 64,
     height: 64,
     borderRadius: '50%',
-    background: alpha(theme.palette.error[100], 0.2),
-    color: theme.palette.error[100],
+    background: alpha(theme.palette.common.rubies, 0.2),
+    color: theme.palette.common.rubies,
     svg: {
       width: 27,
       height: 25,

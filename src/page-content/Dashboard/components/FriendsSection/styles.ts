@@ -5,7 +5,7 @@ import { theme } from '@/constants';
 const styles = {
   root: {
     width: '100%',
-    height: 'auto',
+    height: 628,
     padding: theme.spacing(3, 3, 3, 0.75),
     background: theme.palette.common.white,
     borderRadius: 1.6,
@@ -54,14 +54,15 @@ const styles = {
   },
   addFriendButton: {
     [`&.${buttonClasses.root}`]: {
-      background: alpha(theme.palette.primary[900], 0.1),
-      color: theme.palette.primary[900],
-      padding: theme.spacing(1.5, 2.25),
+      background: theme.palette.primary[900],
+      color: theme.palette.common.white,
+      padding: theme.spacing(0.5, 1.5, 0.625),
       borderRadius: 1.6,
-      height: 32,
-      fontSize: 14,
-      fontWeight: 500,
-      lineHeight: '20px',
+      height: 24,
+      fontSize: 12,
+      fontWeight: 700,
+      lineHeight: '14.52px',
+      textTransform: 'uppercase',
     },
   },
   tabs: {
