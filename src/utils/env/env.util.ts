@@ -37,6 +37,7 @@ const mapEnv = () => {
     firebase: {
       apiKey: envRuntime('NEXT_PUBLIC_FIREBASE_API_KEY') || '',
       authDomain: envRuntime('NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN') || '',
+      databaseUrl: envRuntime('NEXT_PUBLIC_FIREBASE_DATABASE_URL') || '',
       projectId: envRuntime('NEXT_PUBLIC_FIREBASE_PROJECT_ID') || '',
       storageBucket: envRuntime('NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET') || '',
       messagingSenderId: envRuntime('NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID') || '',

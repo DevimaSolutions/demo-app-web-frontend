@@ -21,6 +21,7 @@ export interface IEnvLinksOptions {
 export interface IFirestoreConfigs {
   apiKey: string;
   authDomain: string;
+  databaseUrl: string;
   projectId: string;
   storageBucket: string;
   messagingSenderId: string;
