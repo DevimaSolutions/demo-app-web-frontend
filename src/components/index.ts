@@ -10,6 +10,7 @@ export { default as Avatar } from './Avatar';
 export { default as QrCode } from './QrCode';
 export { default as RoundTabsGroup } from './RoundTabsGroup';
 export { default as TabPanel } from './TabPanel';
+export { default as AchievementsItem } from './AchievementsItem';
 
 export * from './auth';
 export * from './inputs';

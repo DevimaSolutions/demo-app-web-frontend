@@ -6,9 +6,10 @@ import {
   Energy,
   FriendsSection,
   BalanceSection,
-  StreakDelights,
   SkillProgress,
+  Achievements,
 } from './components';
+import { fakeAchievements } from './constants';
 import styles from './styles';
 import useDashboard from './useDashboard';
 
@@ -29,7 +30,7 @@ const Dashboard = () => {
             <XPSection level={user?.level ?? 0} xpPoints={user?.experience ?? 0} />
             <Energy />
           </Box>
-          <StreakDelights />
+          <Achievements achievements={fakeAchievements} />
           <SkillProgress />
         </Box>
         <Box sx={styles.rightTable}>

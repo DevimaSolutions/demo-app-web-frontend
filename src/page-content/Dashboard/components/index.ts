@@ -7,3 +7,4 @@ export { default as Energy } from './Energy';
 export { default as BalanceSection } from './BalanceSection';
 export { default as StreakDelights } from './StreakDelights';
 export { default as SkillProgress } from './SkillProgress';
+export { default as Achievements } from './Achievements';
