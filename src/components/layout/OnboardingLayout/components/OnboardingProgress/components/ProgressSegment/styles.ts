@@ -14,7 +14,7 @@ const styles = {
     left: 2,
     bottom: 2,
     right: offset,
-    background: theme.palette.primary.main,
+    background: theme.palette.primary[900],
     borderRadius: 0.4,
     transition: 'all 0.5s ease-in-out',
     transitionDelay: offset == '85%' ? '0.5s' : 0,

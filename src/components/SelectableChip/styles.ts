@@ -3,7 +3,7 @@ import { theme } from '@/constants';
 const styles = {
   root: (isSelected: boolean) => ({
     ...(isSelected && {
-      border: `1.5px solid ${theme.palette.primary.main}`,
+      border: `1.5px solid ${theme.palette.primary[900]}`,
       color: theme.palette.primary[800],
     }),
   }),

@@ -10,20 +10,16 @@ const styles = {
     borderRadius: 1.2,
     alignItems: isSubtitle ? 'start' : 'center',
     boxShadow: theme.shadows[2],
-    ...(selected && { border: `1.5px solid ${theme.palette.primary.main}` }),
-    '&:hover': {
+    ...(selected && { border: `1.5px solid ${theme.palette.primary[900]}` }),
+    '&:hover, &:active, &:focus': {
       backgroundColor: theme.palette.common.white,
-      border: `1.5px solid ${selected ? theme.palette.primary.main : theme.palette.common.white}`,
+      border: `1.5px solid ${theme.palette.primary[500]}`,
       boxShadow: theme.shadows[2],
-    },
-    '&:active, &:focus': {
-      backgroundColor: theme.palette.primary[400],
-      border: '1.5px solid rgba(138, 128, 185, 0.3)',
     },
     svg: {
       width: selected ? 22 : 14,
       height: 20,
-      color: selected ? theme.palette.primary.main : theme.palette.primary[900],
+      color: theme.palette.primary[900],
     },
   }),
   iconWrapper: {

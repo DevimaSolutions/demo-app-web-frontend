@@ -7,7 +7,7 @@ const styles = {
     ':before': {
       content: "''",
       position: 'absolute',
-      background: theme.palette.primary.main,
+      background: theme.palette.primary[900],
       opacity: 0.2,
       bottom: 0,
       left: 0,

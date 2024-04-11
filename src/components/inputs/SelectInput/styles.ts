@@ -1,12 +1,12 @@
-import { outlinedInputClasses } from '@mui/material';
+import { alpha, outlinedInputClasses } from '@mui/material';
 
 import { theme } from '@/constants';
 
 const commonStyles = {
   optionHover: {
     '&:hover, &:active, &.Mui-focused': {
-      backgroundColor: theme.palette.primary[400],
-      color: theme.palette.primary[800],
+      backgroundColor: alpha(theme.palette.primary[900], 0.1),
+      color: theme.palette.primaryDark[100],
     },
   },
 };
@@ -25,7 +25,7 @@ const styles = {
         boxShadow: theme.shadows[0],
       },
       '&.Mui-focused:hover': {
-        border: `1.5px solid ${theme.palette.primary.main}`,
+        border: `1.5px solid ${theme.palette.primary[900]}`,
         boxShadow: theme.shadows[1],
       },
     },

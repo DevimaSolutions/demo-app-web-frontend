@@ -28,9 +28,9 @@ function PasswordInput<
           <InputAdornment position="end">
             <IconButton aria-label="Toggle password visibility" onClick={onToggleShowPassword}>
               {isPasswordShown ? (
-                <EyeIcon fill={theme.palette.primary.main} />
+                <EyeIcon fill={theme.palette.primary[900]} />
               ) : (
-                <EyeCrossedIcon fill={theme.palette.primary.main} />
+                <EyeCrossedIcon fill={theme.palette.primary[900]} />
               )}
             </IconButton>
           </InputAdornment>

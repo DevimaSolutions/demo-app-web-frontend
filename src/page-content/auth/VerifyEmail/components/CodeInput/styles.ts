@@ -17,7 +17,7 @@ const styles = {
       height: 80,
     },
     '.character--selected': {
-      border: `1.5px solid ${isError ? theme.palette.error.main : theme.palette.primary.main}`,
+      border: `1.5px solid ${isError ? theme.palette.error.main : theme.palette.primary[900]}`,
       outline: `2px solid ${isError ? 'rgba(255, 101, 101, 0.3)' : 'rgba(134, 116, 219, 0.1)'}`,
     },
     '.character--filled': {

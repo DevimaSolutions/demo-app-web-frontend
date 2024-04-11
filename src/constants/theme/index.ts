@@ -41,8 +41,8 @@ export const theme = createTheme({
             backgroundColor: '#6A51E1',
           },
           '&:disabled': {
-            backgroundColor: '#D2CDDA',
-            color: '#A09BA8',
+            backgroundColor: '#886FFF1A',
+            color: '#886FFF99',
           },
         },
         containedSecondary: {
@@ -118,7 +118,7 @@ export const theme = createTheme({
       },
       styleOverrides: {
         root: {
-          color: '#38229F',
+          color: '#6A51E1',
           fontFamily: 'Poppins',
           fontWeight: 500,
           fontSize: '12px',
@@ -146,13 +146,14 @@ export const theme = createTheme({
             border: '1.5px solid #FFFFFF',
             backgroundColor: '#FFFFFF',
             '&:hover': {
-              border: '1.5px solid #8A80B9',
+              border: '1.5px solid #886FFF',
               boxShadow: '0px 0px 0px 2.5px #8674DB1A',
             },
             '&:active, &.Mui-focused': {
-              border: '1.5px solid #8A80B966',
+              border: '1.5px solid #BDAFFF',
               boxShadow: 'none',
             },
+
             fieldset: {
               border: 'none',
               top: 0,
@@ -236,7 +237,7 @@ export const theme = createTheme({
       styleOverrides: {
         paper: {
           marginTop: '8px',
-          border: '1.5px solid #8A80B966',
+          border: '1.5px solid #BDAFFF',
           boxShadow: 'none',
           borderRadius: '8px',
         },
@@ -415,7 +416,7 @@ export const theme = createTheme({
       '600': '#0072E5',
       '700': '#886FFF',
       '800': '#38229F', // selected text
-      '900': '#886FFF', // check mark icon
+      '900': '#886FFF', // check mark icon / new main color
       main: '#8A80B9',
       light: '#66B2FF',
       dark: '#0059B2',
