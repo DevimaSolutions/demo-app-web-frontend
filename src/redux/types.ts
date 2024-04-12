@@ -1,14 +1,9 @@
-import type { OrderDirection } from '@/constants';
+import type { IBaseOrderQuery, IBasePaginationQuery } from '@/data-transfer/queries';
 
-export interface IBasePaginationState {
+export interface IBasePaginationState extends IBasePaginationQuery {
   isLoading: boolean;
-  page: number;
-  limit: number;
   hasMore: boolean;
   total: number;
 }
 
-export interface IBaseOrderState {
-  orderBy: string;
-  orderDirection: OrderDirection;
-}
+export type IBaseOrderState = IBaseOrderQuery;
