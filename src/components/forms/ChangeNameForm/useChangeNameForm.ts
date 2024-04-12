@@ -7,7 +7,6 @@ import { thunks } from '@/redux/profile';
 
 import type { IChangeNameFormData, IChangeNameFormProps } from './types';
 import type { IFormErrorResponse } from '@/data-transfer/responses';
-import type { AxiosError } from 'axios';
 import type { FormikHelpers } from 'formik';
 
 const useChangeNameForm = ({ name, onSubmit }: IChangeNameFormProps) => {
@@ -25,9 +24,9 @@ const useChangeNameForm = ({ name, onSubmit }: IChangeNameFormProps) => {
           onSubmit();
           toast(successMessages.fieldChanged('name'));
         })
-        .catch((error: AxiosError<IFormErrorResponse<IChangeNameFormData>>) => {
+        .catch((error: IFormErrorResponse<IChangeNameFormData>) => {
           setErrors({
-            ...error.response?.data?.errors,
+            ...error.errors,
           });
         })
         .finally(() => setSubmitting(false));

@@ -1,4 +1,9 @@
-import { buttonClasses, outlinedInputClasses, typographyClasses } from '@mui/material';
+import {
+  buttonClasses,
+  inputBaseClasses,
+  outlinedInputClasses,
+  typographyClasses,
+} from '@mui/material';
 
 import { theme } from '@/constants';
 
@@ -15,7 +20,7 @@ const styles = {
     gap: 1.5,
   },
   input: {
-    [`& .${outlinedInputClasses.input}`]: {
+    [`& .${inputBaseClasses.input}.${outlinedInputClasses.input}.${outlinedInputClasses.input}`]: {
       paddingLeft: 0,
     },
   },
