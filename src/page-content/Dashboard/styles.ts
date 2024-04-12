@@ -1,11 +1,14 @@
+import { theme } from '@/constants';
+
 const styles = {
   root: {
-    p: 6,
+    p: 5,
   },
   container: {
-    display: 'flex',
+    display: 'grid',
+    gridTemplateColumns: theme.spacing(84.375, 40.625),
+    gap: 3,
     justifyContent: 'center',
-    gap: 4,
   },
   title: {
     fontSize: 40,
@@ -20,12 +23,21 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: 4,
+
+    minWidth: 0,
+    height: '100%',
+    overflowY: 'auto',
   },
   rightTable: {
     width: 325,
     display: 'flex',
     flexDirection: 'column',
     gap: 4,
+
+    position: 'sticky',
+    top: 40,
+    height: 'min-content',
+    overflow: 'hidden',
   },
   rowContainer: {
     display: 'flex',
