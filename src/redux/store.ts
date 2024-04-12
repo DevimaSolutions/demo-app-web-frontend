@@ -5,7 +5,6 @@ import { isSSR } from '@/utils';
 import authReducer from './authorization/slice';
 import friendsReducer from './friends/slice';
 import onboardingReducer from './onboarding/slice';
-import profileReducer from './profile/slice';
 
 import type { EnhancedStore } from '@reduxjs/toolkit';
 
@@ -19,7 +18,6 @@ const createStore = (preloadedState?: any) =>
       auth: authReducer,
       onboarding: onboardingReducer,
       friends: friendsReducer,
-      profile: profileReducer,
     },
     preloadedState,
   });

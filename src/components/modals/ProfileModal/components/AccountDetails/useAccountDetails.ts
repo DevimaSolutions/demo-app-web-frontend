@@ -1,10 +1,9 @@
-import { useSelector } from '@/hooks';
-import { selectors } from '@/redux/profile';
+import { useAuthContext } from '@/context';
 
 const useAccountDetails = () => {
-  const { profile, isLoading } = useSelector(selectors.profileSelector);
+  const { user } = useAuthContext();
 
-  return { profile, isLoading };
+  return { user };
 };
 
 export default useAccountDetails;

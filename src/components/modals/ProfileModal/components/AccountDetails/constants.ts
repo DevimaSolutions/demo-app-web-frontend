@@ -1,7 +1,7 @@
-import type { IProfileStateDto } from '@/redux/profile/types';
+import type { IFullUserResponse } from '@/data-transfer/responses';
 
 const accountFields = (
-  profile: IProfileStateDto,
+  profile: IFullUserResponse,
   changePassword: () => void,
   changeName: () => void,
   changeUsername: () => void,

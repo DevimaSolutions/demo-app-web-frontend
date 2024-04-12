@@ -5,7 +5,7 @@ import { profileService } from '@/services';
 import { signOut } from '@/utils';
 
 const useProfileModal = () => {
-  const { user, isLoading } = useAuthContext();
+  const { user } = useAuthContext();
   const [tabValue, setTabValue] = useState<number>(0);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -30,7 +30,6 @@ const useProfileModal = () => {
 
   return {
     user,
-    isLoading,
     handleSignOut,
     tabValue,
     handleTabChange,

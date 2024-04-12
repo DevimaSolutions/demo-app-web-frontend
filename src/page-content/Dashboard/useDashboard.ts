@@ -1,9 +1,7 @@
-import { useSelector } from '@/hooks';
-import { selectors } from '@/redux/profile';
-
+import { useAuthContext } from '@/context';
 const useDashboard = () => {
-  const { profile } = useSelector(selectors.profileSelector);
-  return { profile };
+  const { user } = useAuthContext();
+  return { user };
 };
 
 export default useDashboard;

@@ -2,8 +2,7 @@ import { useCallback } from 'react';
 import { toast } from 'react-toastify';
 
 import { successMessages } from '@/constants';
-import { useDispatch } from '@/hooks';
-import { thunks } from '@/redux/profile';
+import { profileService } from '@/services';
 
 import type { IChangeUsernameFormData, IChangeUsernameFormProps } from './types';
 import type { IFormErrorResponse } from '@/data-transfer/responses';
@@ -12,14 +11,13 @@ import type { FormikHelpers } from 'formik';
 const useChangeUsernameForm = ({ username, onSubmit }: IChangeUsernameFormProps) => {
   const initialValues: IChangeUsernameFormData = { username: username };
 
-  const dispatch = useDispatch();
   const submitHandler = useCallback(
     (
       values: IChangeUsernameFormData,
       { setErrors, setSubmitting }: FormikHelpers<IChangeUsernameFormData>,
     ) => {
-      dispatch(thunks.updateProfile(values))
-        .unwrap()
+      profileService
+        .updateProfile(values)
         .then(() => {
           onSubmit();
           toast(successMessages.fieldChanged('username'));
@@ -31,7 +29,7 @@ const useChangeUsernameForm = ({ username, onSubmit }: IChangeUsernameFormProps)
         })
         .finally(() => setSubmitting(false));
     },
-    [onSubmit, dispatch],
+    [onSubmit],
   );
 
   return { initialValues, submitHandler };

@@ -1,6 +1,6 @@
 import { getAuthManager } from '@/utils';
 
-import type { IUpdatePasswordRequest,IUpdateProfileRequest } from '@/data-transfer/requests';
+import type { IUpdatePasswordRequest, IUpdateProfileRequest } from '@/data-transfer/requests';
 import type {
   IFullUserResponse,
   IProfileDto,
@@ -46,6 +46,7 @@ const uploadAvatar = async (file: File) => {
     .then((res) => res.data);
 
   auth.updateUser(response);
+};
 
 const updateProfile = async (params: IUpdateProfileRequest) => {
   const auth = await getAuthManager();

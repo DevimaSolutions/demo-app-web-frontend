@@ -1,4 +1,4 @@
-import { Box, Button, CircularProgress, IconButton, Input, Typography } from '@mui/material';
+import { Box, Button, IconButton, Input, Typography } from '@mui/material';
 
 import { Avatar, RoundTabsGroup, ShareIcon, SignOutIcon } from '@/components';
 import { fileConstants } from '@/constants';
@@ -15,7 +15,6 @@ import type { IProfileModalProps } from './types';
 const ProfileModal = (props: IProfileModalProps) => {
   const {
     user,
-    isLoading,
     handleSignOut,
     tabValue,
     handleTabChange,
@@ -23,51 +22,42 @@ const ProfileModal = (props: IProfileModalProps) => {
     triggerAvatarUpload,
     handleAvatarUpload,
   } = useProfileModal();
-
   return (
     <BaseModal sx={styles.root} {...props}>
-      {isLoading ? (
-        <Box sx={styles.loadingContainer}>
-          <CircularProgress />
-        </Box>
-      ) : (
-        <>
-          <Box sx={styles.topPart}>
-            <Box sx={styles.avatarNameWrapper}>
-              <Avatar
-                size="large"
-                src={user?.avatar?.path}
-                level={user?.level ?? undefined}
-                xpProgress={user?.experience ?? undefined}
-                avatarSx={styles.avatar}
-                onClick={triggerAvatarUpload}
-              />
-              <Box sx={styles.userNamesWrapper}>
-                <Box sx={styles.nameWrapper}>
-                  <Typography variant="h3">{user?.name}</Typography>
-                  <Button sx={styles.shareButton} onClick={props.openShare}>
-                    <ShareIcon />
-                  </Button>
-                </Box>
-                <Typography variant="subtitle2">@{user?.username}</Typography>
-              </Box>
+      <Box sx={styles.topPart}>
+        <Box sx={styles.avatarNameWrapper}>
+          <Avatar
+            size="large"
+            src={user?.avatar?.path}
+            level={user?.level ?? undefined}
+            xpProgress={user?.experience ?? undefined}
+            avatarSx={styles.avatar}
+            onClick={triggerAvatarUpload}
+          />
+          <Box sx={styles.userNamesWrapper}>
+            <Box sx={styles.nameWrapper}>
+              <Typography variant="h3">{user?.name}</Typography>
+              <Button sx={styles.shareButton} onClick={props.openShare}>
+                <ShareIcon />
+              </Button>
             </Box>
-            <IconButton sx={styles.signOutButton} onClick={handleSignOut}>
-              <SignOutIcon disabled />
-            </IconButton>
+            <Typography variant="subtitle2">@{user?.username}</Typography>
           </Box>
-          <Box sx={styles.bottomPart}>
-            <RoundTabsGroup options={switchOptions} value={tabValue} onChange={handleTabChange} />
-            <AccountDetails
-              value={tabValue}
-              index={0}
-              onChangePassword={props.openChangePassword}
-              onChangeName={props.openChangeName}
-              onChangeUsername={props.openChangeUsername}
-            />
-          </Box>
-        </>
-      )}
+        </Box>
+        <IconButton sx={styles.signOutButton} onClick={handleSignOut}>
+          <SignOutIcon disabled />
+        </IconButton>
+      </Box>
+      <Box sx={styles.bottomPart}>
+        <RoundTabsGroup options={switchOptions} value={tabValue} onChange={handleTabChange} />
+        <AccountDetails
+          value={tabValue}
+          index={0}
+          onChangePassword={props.openChangePassword}
+          onChangeName={props.openChangeName}
+          onChangeUsername={props.openChangeUsername}
+        />
+      </Box>
       <Input
         type="file"
         sx={styles.fileInput}

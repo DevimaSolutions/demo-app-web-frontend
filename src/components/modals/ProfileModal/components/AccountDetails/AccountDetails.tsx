@@ -15,7 +15,12 @@ const AccountDetails = ({
   onChangeName,
   onChangeUsername,
 }: IAccountDetailProps) => {
-  const { profile } = useAccountDetails();
+  const { user } = useAccountDetails();
+
+  if (!user) {
+    return <></>;
+  }
+
   const EditEndAdornment = (handleClick?: () => void) => (
     <InputAdornment position="end" sx={styles.editEndAdornment}>
       <IconButton onClick={handleClick}>
@@ -26,7 +31,7 @@ const AccountDetails = ({
   return (
     <TabPanel value={value} index={index}>
       <Box sx={styles.inputGrid}>
-        {accountFields(profile, onChangePassword, onChangeName, onChangeUsername).map(
+        {accountFields(user, onChangePassword, onChangeName, onChangeUsername).map(
           (field, fieldIndex) => (
             <TextField
               key={fieldIndex}
