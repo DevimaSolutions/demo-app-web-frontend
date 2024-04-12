@@ -1,6 +1,6 @@
 import { getAuthManager } from '@/utils';
 
-import type { IUpdatePasswordRequest } from '@/data-transfer/requests';
+import type { IUpdatePasswordRequest,IUpdateProfileRequest } from '@/data-transfer/requests';
 import type {
   IFullUserResponse,
   IProfileDto,
@@ -47,6 +47,12 @@ const uploadAvatar = async (file: File) => {
 
   auth.updateUser(response);
 
+const updateProfile = async (params: IUpdateProfileRequest) => {
+  const auth = await getAuthManager();
+
+  const response = await auth.axios.patch<IProfileDto>('/profile', params).then((res) => res.data);
+
+  auth.updateUser(response);
   return response;
 };
 
@@ -54,5 +60,7 @@ const profileService = {
   getProfile,
   updatePassword,
   uploadAvatar,
+  updateProfile,
 };
+
 export default profileService;

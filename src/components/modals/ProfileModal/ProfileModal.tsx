@@ -62,6 +62,8 @@ const ProfileModal = (props: IProfileModalProps) => {
               value={tabValue}
               index={0}
               onChangePassword={props.openChangePassword}
+              onChangeName={props.openChangeName}
+              onChangeUsername={props.openChangeUsername}
             />
           </Box>
         </>

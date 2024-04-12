@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { getProfile } from './thunks';
+import { getProfile, updateProfile } from './thunks';
 
 import type IProfileState from './types';
 
@@ -33,6 +33,9 @@ export const profileService = createSlice({
     });
     builder.addCase(getProfile.rejected, (state) => {
       state.isLoading = false;
+    });
+    builder.addCase(updateProfile.fulfilled, (state, { payload }) => {
+      state.profile = payload;
     });
   },
 });

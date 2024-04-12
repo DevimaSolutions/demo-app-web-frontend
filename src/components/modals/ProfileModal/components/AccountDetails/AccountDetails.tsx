@@ -8,7 +8,13 @@ import useAccountDetails from './useAccountDetails';
 
 import type { IAccountDetailProps } from './types';
 
-const AccountDetails = ({ value, index, onChangePassword }: IAccountDetailProps) => {
+const AccountDetails = ({
+  value,
+  index,
+  onChangePassword,
+  onChangeName,
+  onChangeUsername,
+}: IAccountDetailProps) => {
   const { profile } = useAccountDetails();
   const EditEndAdornment = (handleClick?: () => void) => (
     <InputAdornment position="end" sx={styles.editEndAdornment}>
@@ -20,22 +26,24 @@ const AccountDetails = ({ value, index, onChangePassword }: IAccountDetailProps)
   return (
     <TabPanel value={value} index={index}>
       <Box sx={styles.inputGrid}>
-        {accountFields(profile, onChangePassword).map((field, fieldIndex) => (
-          <TextField
-            key={fieldIndex}
-            label={field.label}
-            defaultValue={field.defaultValue}
-            InputProps={{
-              readOnly: true,
-              ...(field.isEditable && {
-                endAdornment: EditEndAdornment(field.onClick),
-              }),
-            }}
-            type={field.type}
-            disabled={field.disabled}
-            variant="standard"
-          />
-        ))}
+        {accountFields(profile, onChangePassword, onChangeName, onChangeUsername).map(
+          (field, fieldIndex) => (
+            <TextField
+              key={fieldIndex}
+              label={field.label}
+              defaultValue={field.defaultValue}
+              InputProps={{
+                readOnly: true,
+                ...(field.isEditable && {
+                  endAdornment: EditEndAdornment(field.onClick),
+                }),
+              }}
+              type={field.type}
+              disabled={field.disabled}
+              variant="standard"
+            />
+          ),
+        )}
       </Box>
     </TabPanel>
   );

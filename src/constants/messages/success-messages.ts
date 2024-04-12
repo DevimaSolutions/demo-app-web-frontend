@@ -1,5 +1,5 @@
 const successMessages = {
-  passwordChanged: 'Your password was successfully changed!',
+  fieldChanged: (fieldName: string) => `Your ${fieldName} was successfully changed!`,
   emailSent: (email: string) => `We have sent email to ${email}`,
 };
 

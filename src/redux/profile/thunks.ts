@@ -7,3 +7,8 @@ export const getProfile = createAsyncThunk(
   'profile/getProfile',
   handleThunkApiError(profileService.getProfile),
 );
+
+export const updateProfile = createAsyncThunk(
+  'profile/updateProfile',
+  handleThunkApiError(profileService.updateProfile),
+);

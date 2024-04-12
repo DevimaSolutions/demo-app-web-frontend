@@ -23,7 +23,7 @@ const useResetPasswordForm = ({ token, toastIcon }: IUseResetPasswordFormProps) 
       authorizationService
         .resetPassword({ token, password })
         .then(() => {
-          toast.success(successMessages.passwordChanged, { icon: toastIcon });
+          toast.success(successMessages.fieldChanged('password'), { icon: toastIcon });
           router.push('/sign-in');
         })
         .catch((error) => {

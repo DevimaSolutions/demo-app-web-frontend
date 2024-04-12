@@ -1,18 +1,25 @@
 import type { IProfileStateDto } from '@/redux/profile/types';
 
-const accountFields = (profile: IProfileStateDto, changePassword: () => void) => {
+const accountFields = (
+  profile: IProfileStateDto,
+  changePassword: () => void,
+  changeName: () => void,
+  changeUsername: () => void,
+) => {
   return [
     {
       label: 'Name',
       defaultValue: profile.name,
       type: 'text',
       isEditable: true,
+      onClick: changeName,
     },
     {
       label: 'Username',
       defaultValue: `@${profile.username}`,
       type: 'text',
       isEditable: true,
+      onClick: changeUsername,
     },
     {
       label: 'Email',

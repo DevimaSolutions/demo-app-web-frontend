@@ -3,4 +3,6 @@ export interface IProfileModalProps {
   onClose: () => void;
   openShare: () => void;
   openChangePassword: () => void;
+  openChangeName: () => void;
+  openChangeUsername: () => void;
 }

@@ -16,7 +16,7 @@ const useSelectInput = <
   const adornmentColor = hasError
     ? theme.palette.error.main
     : (field.value as string)?.length
-    ? theme.palette.grey[300]
+    ? theme.palette.primary[300]
     : theme.palette.primary[900];
 
   return { hasError, errorText, adornmentColor };
