@@ -1,6 +1,7 @@
-import { Box, Button, CircularProgress, IconButton, Typography } from '@mui/material';
+import { Box, Button, CircularProgress, IconButton, Input, Typography } from '@mui/material';
 
 import { Avatar, RoundTabsGroup, ShareIcon, SignOutIcon } from '@/components';
+import { fileConstants } from '@/constants';
 
 import BaseModal from '../BaseModal';
 
@@ -12,7 +13,16 @@ import useProfileModal from './useProfileModal';
 import type { IProfileModalProps } from './types';
 
 const ProfileModal = (props: IProfileModalProps) => {
-  const { profile, isLoading, handleSignOut, tabValue, handleTabChange } = useProfileModal();
+  const {
+    user,
+    isLoading,
+    handleSignOut,
+    tabValue,
+    handleTabChange,
+    fileInputRef,
+    triggerAvatarUpload,
+    handleAvatarUpload,
+  } = useProfileModal();
 
   return (
     <BaseModal sx={styles.root} {...props}>
@@ -26,18 +36,20 @@ const ProfileModal = (props: IProfileModalProps) => {
             <Box sx={styles.avatarNameWrapper}>
               <Avatar
                 size="large"
-                src={profile?.avatar?.path}
-                level={profile.level ?? undefined}
-                xpProgress={profile.experience ?? undefined}
+                src={user?.avatar?.path}
+                level={user?.level ?? undefined}
+                xpProgress={user?.experience ?? undefined}
+                avatarSx={styles.avatar}
+                onClick={triggerAvatarUpload}
               />
               <Box sx={styles.userNamesWrapper}>
                 <Box sx={styles.nameWrapper}>
-                  <Typography variant="h3">{profile.name}</Typography>
+                  <Typography variant="h3">{user?.name}</Typography>
                   <Button sx={styles.shareButton} onClick={props.openShare}>
                     <ShareIcon />
                   </Button>
                 </Box>
-                <Typography variant="subtitle2">@{profile.username}</Typography>
+                <Typography variant="subtitle2">@{user?.username}</Typography>
               </Box>
             </Box>
             <IconButton sx={styles.signOutButton} onClick={handleSignOut}>
@@ -54,6 +66,16 @@ const ProfileModal = (props: IProfileModalProps) => {
           </Box>
         </>
       )}
+      <Input
+        type="file"
+        sx={styles.fileInput}
+        onChange={handleAvatarUpload}
+        inputProps={{
+          accept: fileConstants.imageMimeTypes,
+          maxsize: fileConstants.avatarSize,
+          ref: fileInputRef,
+        }}
+      />
     </BaseModal>
   );
 };

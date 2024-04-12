@@ -1,7 +1,11 @@
 import { getAuthManager } from '@/utils';
 
 import type { IUpdatePasswordRequest } from '@/data-transfer/requests';
-import type { IProfileDto, IUpdatePasswordResponse } from '@/data-transfer/responses';
+import type {
+  IFullUserResponse,
+  IProfileDto,
+  IUpdatePasswordResponse,
+} from '@/data-transfer/responses';
 
 const getProfile = async (accessToken?: string) => {
   const auth = await getAuthManager();
@@ -29,8 +33,26 @@ const updatePassword = async (params: IUpdatePasswordRequest) => {
   return response;
 };
 
+const uploadAvatar = async (file: File) => {
+  const auth = await getAuthManager();
+
+  const formData = new FormData();
+  formData.append('file', file);
+
+  const response = await auth.axios
+    .post<IFullUserResponse>('/profile/avatar/upload', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    })
+    .then((res) => res.data);
+
+  auth.updateUser(response);
+
+  return response;
+};
+
 const profileService = {
   getProfile,
   updatePassword,
+  uploadAvatar,
 };
 export default profileService;

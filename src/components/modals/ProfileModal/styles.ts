@@ -84,6 +84,15 @@ const styles = {
     alignItems: 'center',
     height: '100%',
   },
+  avatar: {
+    cursor: 'pointer',
+    ['&:hover']: {
+      opacity: 0.8,
+    },
+  },
+  fileInput: {
+    display: 'none',
+  },
 } as const;
 
 export default styles;

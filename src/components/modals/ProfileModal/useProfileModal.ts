@@ -1,12 +1,17 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
-import { useSelector } from '@/hooks';
-import { selectors } from '@/redux/profile';
+import { useAuthContext } from '@/context';
+import { profileService } from '@/services';
 import { signOut } from '@/utils';
 
 const useProfileModal = () => {
-  const { profile, isLoading } = useSelector(selectors.profileSelector);
+  const { user, isLoading } = useAuthContext();
   const [tabValue, setTabValue] = useState<number>(0);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const triggerAvatarUpload = () => {
+    fileInputRef.current?.click();
+  };
 
   const handleSignOut = () => {
     signOut();
@@ -16,7 +21,23 @@ const useProfileModal = () => {
     setTabValue(newValue);
   };
 
-  return { profile, isLoading, handleSignOut, tabValue, handleTabChange };
+  const handleAvatarUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      profileService.uploadAvatar(file);
+    }
+  };
+
+  return {
+    user,
+    isLoading,
+    handleSignOut,
+    tabValue,
+    handleTabChange,
+    fileInputRef,
+    triggerAvatarUpload,
+    handleAvatarUpload,
+  };
 };
 
 export default useProfileModal;

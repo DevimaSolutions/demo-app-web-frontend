@@ -8,3 +8,4 @@ export * from './enums';
 export * from './onboarding';
 export * from './order';
 export * from './friends';
+export * from './files';

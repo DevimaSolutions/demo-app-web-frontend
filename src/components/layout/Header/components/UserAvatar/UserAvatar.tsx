@@ -12,7 +12,7 @@ import styles from './styles';
 import { useUserAvatar } from './useUserAvatar';
 
 const UserAvatar = () => {
-  const { user, isUserLoading, profile, open, handleModalState } = useUserAvatar();
+  const { user, isUserLoading, open, handleModalState } = useUserAvatar();
 
   if (isUserLoading) {
     return <Box sx={styles.container} />;
@@ -37,9 +37,9 @@ const UserAvatar = () => {
         color="inherit"
       >
         <Avatar
-          src={profile.avatar?.path}
-          level={profile.level ?? undefined}
-          xpProgress={profile.experience ?? undefined}
+          src={user.avatar?.path}
+          level={user.level ?? undefined}
+          xpProgress={user.experience ?? undefined}
         />
       </IconButton>
       <ProfileModal
