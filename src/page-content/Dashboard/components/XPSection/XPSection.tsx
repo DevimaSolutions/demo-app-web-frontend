@@ -8,7 +8,8 @@ const XPSection = ({ level, xpPoints }: IXPSectionProps) => {
   return (
     <Box sx={styles.root}>
       <Box sx={styles.mainInfo}>
-        <Typography sx={styles.xpStats}>lvl. {level}</Typography>
+        {/*You’re on a way to this level*/}
+        <Typography sx={styles.xpStats}>lvl. {level + 1}</Typography>
         <Typography sx={styles.xpStats}>
           {xpPoints}
           <span>/1000 XP</span>
