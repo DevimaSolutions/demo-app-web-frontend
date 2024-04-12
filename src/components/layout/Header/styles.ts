@@ -4,6 +4,8 @@ import { theme } from '@/constants';
 
 const styles = {
   appBar: {
+    overflowY: 'auto',
+    overflowX: 'hidden',
     backgroundColor: theme.palette.common.white,
     boxShadow: 'none',
     top: 0,
