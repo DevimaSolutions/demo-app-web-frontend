@@ -4,6 +4,7 @@ import {
   Avatar,
   ChangeNameModal,
   ChangePasswordModal,
+  ChangeUsernameModal,
   NextLinkButton,
   ProfileModal,
   ShareProfileModal,
@@ -63,6 +64,11 @@ const UserAvatar = () => {
       />
       <ChangeNameModal
         open={open === 'changeName'}
+        profile={user}
+        onClose={handleModalState('profile')}
+      />
+      <ChangeUsernameModal
+        open={open === 'changeUsername'}
         profile={user}
         onClose={handleModalState('profile')}
       />

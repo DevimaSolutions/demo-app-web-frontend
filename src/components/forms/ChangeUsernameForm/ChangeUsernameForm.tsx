@@ -1,16 +1,16 @@
-import { Box, Button, InputAdornment } from '@mui/material';
+import { Box, Button, InputAdornment, Typography } from '@mui/material';
 import { Formik, Form, Field } from 'formik';
 
 import { PersonIcon, TextInput } from '@/components';
 
 import { schema } from './schema';
 import styles from './styles';
-import useChangeNameForm from './useChangeNameForm';
+import useChangeUsernameForm from './useChangeUsernameForm';
 
-import type { IChangeNameFormProps } from './types';
+import type { IChangeUsernameFormProps } from './types';
 
-export default function ChangeNameForm(props: IChangeNameFormProps) {
-  const { initialValues, submitHandler } = useChangeNameForm(props);
+export default function ChangeUsernameForm(props: IChangeUsernameFormProps) {
+  const { initialValues, submitHandler } = useChangeUsernameForm(props);
   return (
     <Formik
       initialValues={initialValues}
@@ -22,15 +22,17 @@ export default function ChangeNameForm(props: IChangeNameFormProps) {
         <Box sx={styles.container}>
           <Form style={styles.form}>
             <Field
-              name="name"
-              autoComplete="name"
-              placeholder="Your name"
+              name="username"
+              autoComplete="username"
+              placeholder="Username"
               fullWidth
               component={TextInput}
+              sx={styles.input}
               InputProps={{
                 startAdornment: (
-                  <InputAdornment position="start">
+                  <InputAdornment position="start" sx={styles.inputAdornment}>
                     <PersonIcon width={20} height={20} />
+                    <Typography>@</Typography>
                   </InputAdornment>
                 ),
               }}
@@ -40,7 +42,7 @@ export default function ChangeNameForm(props: IChangeNameFormProps) {
               color="primary"
               fullWidth
               type="submit"
-              disabled={isSubmitting || values.name === props.name || !isValid}
+              disabled={isSubmitting || values.username === props.username || !isValid}
             >
               Update
             </Button>

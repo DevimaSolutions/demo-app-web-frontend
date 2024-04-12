@@ -5,27 +5,27 @@ import { successMessages } from '@/constants';
 import { useDispatch } from '@/hooks';
 import { thunks } from '@/redux/profile';
 
-import type { IChangeNameFormData, IChangeNameFormProps } from './types';
+import type { IChangeUsernameFormData, IChangeUsernameFormProps } from './types';
 import type { IFormErrorResponse } from '@/data-transfer/responses';
 import type { AxiosError } from 'axios';
 import type { FormikHelpers } from 'formik';
 
-const useChangeNameForm = ({ name, onSubmit }: IChangeNameFormProps) => {
-  const initialValues: IChangeNameFormData = { name: name };
+const useChangeUsernameForm = ({ username, onSubmit }: IChangeUsernameFormProps) => {
+  const initialValues: IChangeUsernameFormData = { username: username };
 
   const dispatch = useDispatch();
   const submitHandler = useCallback(
     (
-      values: IChangeNameFormData,
-      { setErrors, setSubmitting }: FormikHelpers<IChangeNameFormData>,
+      values: IChangeUsernameFormData,
+      { setErrors, setSubmitting }: FormikHelpers<IChangeUsernameFormData>,
     ) => {
       dispatch(thunks.updateProfile(values))
         .unwrap()
         .then(() => {
           onSubmit();
-          toast(successMessages.fieldChanged('name'));
+          toast(successMessages.fieldChanged('username'));
         })
-        .catch((error: AxiosError<IFormErrorResponse<IChangeNameFormData>>) => {
+        .catch((error: AxiosError<IFormErrorResponse<IChangeUsernameFormData>>) => {
           setErrors({
             ...error.response?.data?.errors,
           });
@@ -38,4 +38,4 @@ const useChangeNameForm = ({ name, onSubmit }: IChangeNameFormProps) => {
   return { initialValues, submitHandler };
 };
 
-export default useChangeNameForm;
+export default useChangeUsernameForm;
