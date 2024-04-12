@@ -23,7 +23,7 @@ const styles = {
     fontSize: 14,
     lineHeight: '20px',
     fontWeight: 500,
-    color: theme.palette.text.primary,
+    color: theme.palette.text.secondary,
     textDecoration: 'none',
   },
   socialLinkIcon: {

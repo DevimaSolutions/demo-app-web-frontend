@@ -43,7 +43,7 @@ const styles = {
     position: 'absolute',
     bottom: -2,
     right: 0,
-    background: theme.palette.text.primary,
+    background: theme.palette.text.secondary,
     fontSize: avatarSizesMapping[size].levelFontSize,
     fontWeight: 600,
     lineHeight: '12px',

@@ -33,7 +33,7 @@ const styles = {
     gap: 0.25,
     [`& .${typographyClasses.subtitle2}`]: {
       lineHeight: '24px',
-      color: alpha(theme.palette.text.primary, 0.7),
+      color: alpha(theme.palette.text.secondary, 0.7),
     },
   },
   nameWrapper: {

@@ -13,7 +13,7 @@ const styles = {
     flexDirection: 'column',
     gap: 1.5,
     [`& .${typographyClasses.subtitle2}`]: {
-      color: alpha(theme.palette.text.primary, 0.4),
+      color: alpha(theme.palette.text.secondary, 0.4),
     },
   },
   titleContainer: {

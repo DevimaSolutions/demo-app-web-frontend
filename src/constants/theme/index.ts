@@ -271,7 +271,7 @@ export const theme = createTheme({
           lineHeight: '24px',
           color: '#16141966',
           '&.Mui-selected': {
-            color: '#161419',
+            color: '#343434',
           },
         },
       },
@@ -442,8 +442,8 @@ export const theme = createTheme({
       rubies: '#FC3952',
     },
     text: {
-      primary: '#2C2535',
-      secondary: '#2F3A45',
+      primary: '#343434',
+      secondary: '#2C2535',
       disabled: '#BDBDBD',
     },
     grey: {
@@ -547,7 +547,6 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: 'Poppins,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
-
     h1: {
       fontSize: 'clamp(2.625rem, 1.2857rem + 3.5714vw, 4rem)',
       fontWeight: 800,
