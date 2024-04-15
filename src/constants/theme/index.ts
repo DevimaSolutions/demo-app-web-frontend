@@ -250,9 +250,9 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           minHeight: '38px',
+          flexShrink: 0,
         },
         flexContainer: {
-          height: '38px',
           borderBottom: '2px solid',
           borderColor: '#E5E8EC',
         },
