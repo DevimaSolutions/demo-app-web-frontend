@@ -9,6 +9,7 @@ WORKDIR /src/app
 
 # Install dependencies based on the preferred package manager
 COPY package*.json yarn.lock ./
+COPY patches ./patches
 
 RUN yarn install --frozen-lockfile
 
