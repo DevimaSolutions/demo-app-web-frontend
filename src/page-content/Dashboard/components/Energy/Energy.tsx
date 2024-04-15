@@ -7,23 +7,24 @@ import styles from './styles';
 import useEnergy from './useEnergy';
 
 const Energy = () => {
-  const { energy, seconds, minutes, totalSeconds } = useEnergy();
+  const { energy, seconds, maxPoints, minutes, totalSeconds, timeInSeconds } = useEnergy();
   return (
     <Box sx={styles.root}>
       <Box sx={styles.dataSection}>
         <Box sx={styles.energyBox}>
-          {energy - 1} <EnergyIcon />
+          {energy} <EnergyIcon />
         </Box>
         <Box sx={styles.time}>
           {minutes}:{seconds}
         </Box>
       </Box>
       <Box sx={styles.progressSection}>
-        {Array.from({ length: 5 }).map((_, idx) => (
+        {Array.from({ length: maxPoints }).map((_, idx) => (
           <EnergyElement
             energyCount={energy}
-            position={idx + 1}
+            position={idx}
             totalSeconds={totalSeconds}
+            timeInSeconds={timeInSeconds}
             key={idx}
           />
         ))}

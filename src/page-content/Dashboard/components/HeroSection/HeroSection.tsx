@@ -1,6 +1,8 @@
 import { Box, Button, Typography } from '@mui/material';
+import { useCallback } from 'react';
 
 import { RewardPlaceholderIcon } from '@/components';
+import { gameService } from '@/services';
 
 import { variants } from './constants';
 import styles from './styles';
@@ -9,6 +11,11 @@ import type { IHeroSectionProps } from './types';
 
 const HeroSection = ({ type }: IHeroSectionProps) => {
   const settings = variants[type];
+
+  const playHandle = useCallback(async () => {
+    await gameService.playGame();
+  }, []);
+
   return (
     <Box sx={styles.root(settings.backgroundLink)}>
       <Typography sx={styles.title}>GAME OF THE DAY</Typography>
@@ -25,7 +32,7 @@ const HeroSection = ({ type }: IHeroSectionProps) => {
             <Typography sx={styles.rewardText}>Reward #2</Typography>
           </Box>
         </Box>
-        <Button variant="contained" fullWidth sx={styles.playButton}>
+        <Button variant="contained" onClick={playHandle} fullWidth sx={styles.playButton}>
           Play LVL. 3
         </Button>
       </Box>

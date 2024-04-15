@@ -1,5 +1,6 @@
 import type { ISoftSkillsObject } from './onboarding.response';
 import type { UserRole, UserStatus } from '@/constants';
+import type { IEnergyResponse } from '@/data-transfer/responses';
 
 export interface IAvatar {
   id: string;
@@ -36,6 +37,7 @@ export interface IFullUserResponse extends IUserResponse {
   createdAt: Date;
   updatedAt: Date;
   softSkills: ISoftSkillsObject[];
+  energy: IEnergyResponse;
   subscriptions: ISubscriptionResponse[];
   diamonds: number;
 }

@@ -1,29 +1,35 @@
 import { useEffect, useState } from 'react';
 
-const useTimer = (initialMinutes: number, action?: () => void, dependency?: number | string) => {
-  const [secondsRemaining, setSecondsRemaining] = useState(initialMinutes * 60);
+const useTimer = (
+  initialSeconds: number | null,
+  action: (dependency: number) => void,
+  dependency: number,
+) => {
+  const [secondsRemaining, setSecondsRemaining] = useState(initialSeconds);
 
   useEffect(() => {
     let intervalId: NodeJS.Timer | null = null;
 
-    if (secondsRemaining > 0) {
-      intervalId = setInterval(() => {
-        setSecondsRemaining((prevSeconds) => Math.max(0, prevSeconds - 1));
-      }, 1000);
-    } else if (action) {
-      setSecondsRemaining(initialMinutes * 60);
-      action();
+    if (secondsRemaining !== null) {
+      if (secondsRemaining > 0) {
+        intervalId = setInterval(() => {
+          setSecondsRemaining((prevSeconds) => (prevSeconds ? Math.max(0, prevSeconds - 1) : null));
+        }, 1000);
+      } else {
+        setSecondsRemaining(initialSeconds);
+        action(dependency);
+      }
     }
 
     return () => clearInterval(intervalId as NodeJS.Timer);
-  }, [action, initialMinutes, secondsRemaining]);
+  }, [action, dependency, initialSeconds, secondsRemaining]);
 
   useEffect(() => {
-    setSecondsRemaining(initialMinutes * 60);
-  }, [initialMinutes, dependency]);
+    setSecondsRemaining(initialSeconds);
+  }, [initialSeconds, dependency]);
 
-  const minutes = Math.floor(secondsRemaining / 60);
-  const seconds = (secondsRemaining % 60).toString().padStart(2, '0');
+  const minutes = secondsRemaining ? Math.floor(secondsRemaining / 60) : 0;
+  const seconds = secondsRemaining ? (secondsRemaining % 60).toString().padStart(2, '0') : 0;
 
   return { minutes, seconds, totalSeconds: secondsRemaining };
 };
