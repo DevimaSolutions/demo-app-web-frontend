@@ -41,7 +41,7 @@ const styles = {
           justifyContent: 'center',
           marginLeft: 2,
         }),
-    height: 240,
+    height: '100%',
     display: 'flex',
     flexDirection: 'column',
     gap: 2.25,

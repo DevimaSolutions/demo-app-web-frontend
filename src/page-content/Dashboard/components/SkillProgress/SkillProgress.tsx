@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 import { RoundTabsGroup } from '@/components';
 
@@ -20,7 +20,6 @@ const SkillProgress = () => {
           <SkillProgressElement skill={skill} key={skill.name} />
         ))}
       </Box>
-      <Button sx={styles.viewAllButton}>View all skills</Button>
     </Box>
   );
 };

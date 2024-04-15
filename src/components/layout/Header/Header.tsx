@@ -37,12 +37,8 @@ const Header = () => {
         >
           <ArcadeIcon width={32} height={32} disabled />
         </CategoryButton>
-        <CategoryButton
-          onClick={handleRedirect('/store')}
-          selected={router.pathname === '/store'}
-          disabled
-        >
-          <StoreIcon width={32} height={32} disabled />
+        <CategoryButton onClick={handleRedirect('/store')} selected={router.pathname === '/store'}>
+          <StoreIcon width={32} height={32} />
         </CategoryButton>
         <CategoryButton onClick={handleSignOut} sx={styles.signOutOption}>
           <SignOutIcon width={32} height={32} />

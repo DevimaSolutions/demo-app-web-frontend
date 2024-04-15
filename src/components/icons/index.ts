@@ -24,6 +24,7 @@ export { default as EditPencilIcon } from './EditPencilIcon';
 export { default as ExitIcon } from './ExitIcon';
 export { default as RewardPlaceholderIcon } from './RewardPlaceholderIcon';
 export { default as MountainsIcons } from './MountainsIcons';
+export { default as EliteBadgeIcon } from './EliteBadgeIcon';
 
 export * from './socials';
 export * from './coins';

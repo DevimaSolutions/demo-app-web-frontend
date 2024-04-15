@@ -44,6 +44,24 @@ const styles = {
     gap: 4,
     width: '100%',
   },
+  userContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 1.5,
+  },
+  eliteBadge: {
+    p: theme.spacing(0.75, 1, 0.75, 0.75),
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 0.5,
+    background: theme.palette.grey[600],
+    color: theme.palette.common.white,
+    fontSize: 20,
+    lineHeight: '20px',
+    fontWeight: 500,
+    borderRadius: 0.8,
+  },
 } as const;
 
 export default styles;

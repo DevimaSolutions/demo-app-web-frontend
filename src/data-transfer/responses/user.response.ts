@@ -16,6 +16,15 @@ export interface IUserResponse {
   avatar?: IAvatar;
   status: UserStatus;
 }
+
+export interface ISubscriptionResponse {
+  id: string;
+  name: string;
+  description: string;
+  startAt: Date;
+  endAt: Date;
+}
+
 export interface IFullUserResponse extends IUserResponse {
   name: string;
   phoneNumber: string | null;
@@ -27,4 +36,5 @@ export interface IFullUserResponse extends IUserResponse {
   createdAt: Date;
   updatedAt: Date;
   softSkills: ISoftSkillsObject[];
+  subscriptions: ISubscriptionResponse[];
 }

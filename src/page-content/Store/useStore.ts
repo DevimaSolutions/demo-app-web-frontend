@@ -4,12 +4,14 @@ import { toast } from 'react-toastify';
 
 import { errorMessages } from '@/constants';
 import { storeService } from '@/services';
+import { getEnv } from '@/utils/env/env.util';
 
 import type { ISubscriptionVariant } from '@/data-transfer/responses';
 
 const useStore = () => {
   const [variants, setVariants] = useState<ISubscriptionVariant[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const { frontendUrl } = getEnv();
   const router = useRouter();
 
   const handleCreateSubscriptionSession = async (priceId: string) => {
@@ -17,8 +19,8 @@ const useStore = () => {
     try {
       const link = await storeService.createSubscriptionSession({
         stripPriceId: priceId,
-        successUrl: 'http://localhost:3000',
-        cancelUrl: 'http://localhost:3000',
+        successUrl: frontendUrl,
+        cancelUrl: frontendUrl,
       });
 
       router.push(link.sessionUrl);
