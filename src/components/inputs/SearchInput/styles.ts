@@ -7,7 +7,7 @@ const styles = {
     width: '100%',
     [`& .${inputBaseClasses.root}.${outlinedInputClasses.root}`]: {
       borderRadius: theme.spacing(2),
-      backgroundColor: theme.palette.grey[400],
+      backgroundColor: theme.palette.grey[700],
       border: `1px solid ${alpha(theme.palette.grey[600], 0.1)}`,
       '&:hover': {
         backgroundColor: theme.palette.grey[400],

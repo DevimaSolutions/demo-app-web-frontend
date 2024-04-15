@@ -12,21 +12,16 @@ const FriendsSection = () => {
     <Box sx={styles.root}>
       <Box sx={styles.titleContainer}>
         <Typography variant="h3">Friends</Typography>
-        {hasFriendsInit && (
-          <Button sx={styles.addFriendButton} onClick={handleRedirect('/friends')}>
-            Add friend
-          </Button>
-        )}
       </Box>
       <Box sx={styles.contentContainer(hasFriendsInit)}>
         {hasFriendsInit ? (
-          <Box>
+          <>
             <Tabs value={tabValue} sx={styles.tabs} onChange={handleTabChange}>
               <Tab label="All" />
               <Tab label="Online X" disabled />
             </Tabs>
             <AllTabPanel value={tabValue} index={0} />
-          </Box>
+          </>
         ) : (
           <>
             <Typography variant="subtitle2">Wow, it’s really cold here...</Typography>

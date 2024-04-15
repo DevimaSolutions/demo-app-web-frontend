@@ -13,7 +13,7 @@ const styles = {
     flexDirection: 'column',
     gap: 1.5,
     [`& .${typographyClasses.subtitle2}`]: {
-      color: alpha(theme.palette.text.secondary, 0.4),
+      color: alpha(theme.palette.text.primary, 0.4),
     },
   },
   titleContainer: {
@@ -44,7 +44,7 @@ const styles = {
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
-    gap: 2.25,
+    gap: 3,
   }),
   loadingWrapper: {
     height: '100%',

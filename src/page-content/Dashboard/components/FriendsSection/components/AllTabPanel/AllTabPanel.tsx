@@ -1,7 +1,7 @@
 import { Box, CircularProgress, Typography } from '@mui/material';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-import { Avatar, TabPanel } from '@/components';
+import { Avatar, SearchInput, TabPanel } from '@/components';
 
 import LevelHalfCircle from '../LevelHalfCircle';
 
@@ -11,20 +11,21 @@ import useAllTabPanel from './useAllTabPanel';
 import type ITabPanelProps from '../types';
 
 const AllTabPanel = ({ value, index }: ITabPanelProps) => {
-  const { friends, isFriendsLoading, loadMore, hasMore, checkOnline } = useAllTabPanel();
+  const { friends, isFriendsLoading, loadMore, hasMore, checkOnline, handleSearch } =
+    useAllTabPanel();
   return (
     <TabPanel value={value} index={index}>
-      <InfiniteScroll
-        style={styles.friendsWrapper}
-        dataLength={friends.length}
-        scrollableTarget="infinite-scroll-parent"
-        next={loadMore}
-        hasMore={hasMore}
-        loader={<></>}
-      >
-        {
-          //TODO: add click action
-          friends.length ? (
+      <Box sx={styles.root}>
+        <SearchInput sx={styles.searchInput} onSearch={handleSearch} />
+        <InfiniteScroll
+          style={styles.friendsWrapper}
+          dataLength={friends.length}
+          scrollableTarget="infinite-scroll-parent"
+          next={loadMore}
+          hasMore={hasMore}
+          loader={<></>}
+        >
+          {friends.length ? (
             friends.map((friend, friendsIndex) => (
               <Box key={friendsIndex} sx={styles.friend}>
                 <Typography variant="subtitle1" sx={styles.number}>
@@ -43,15 +44,15 @@ const AllTabPanel = ({ value, index }: ITabPanelProps) => {
               </Box>
             ))
           ) : (
-            <>No results</>
-          )
-        }
-      </InfiniteScroll>
-      {isFriendsLoading && (
-        <Box sx={styles.loadingWrapper}>
-          <CircularProgress />
-        </Box>
-      )}
+            <Box sx={styles.noResults}>No results</Box>
+          )}
+        </InfiniteScroll>
+        {isFriendsLoading && (
+          <Box sx={styles.loadingWrapper}>
+            <CircularProgress />
+          </Box>
+        )}
+      </Box>
     </TabPanel>
   );
 };

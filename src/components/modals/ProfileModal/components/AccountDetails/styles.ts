@@ -22,14 +22,14 @@ const styles = {
     [`& .${inputClasses.input}`]: {
       '&:hover': {
         cursor: 'default',
-        color: theme.palette.text.secondary,
+        color: theme.palette.text.primary,
       },
       fontWeight: 500,
       fontSize: 18,
       lineHeight: '24px',
     },
     [`& .${inputLabelClasses.root}`]: {
-      color: alpha(theme.palette.text.secondary, 0.4),
+      color: alpha(theme.palette.text.primary, 0.4),
       fontWeight: 500,
       fontSize: 12,
       lineHeight: '16px',

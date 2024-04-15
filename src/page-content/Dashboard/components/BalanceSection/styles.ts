@@ -19,7 +19,7 @@ const styles = {
     fontSize: 14,
     lineHeight: '17px',
     fontWeight: 500,
-    color: alpha(theme.palette.text.secondary, 0.4),
+    color: alpha(theme.palette.text.primary, 0.4),
   },
   countContainer: {
     display: 'flex',
@@ -28,7 +28,7 @@ const styles = {
     fontSize: 24,
     lineHeight: '24px',
     fontWeight: 600,
-    color: theme.palette.text.secondary,
+    color: theme.palette.text.primary,
   },
   actionButton: {
     background: theme.palette.primary[700],

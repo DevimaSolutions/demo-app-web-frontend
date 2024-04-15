@@ -1,6 +1,18 @@
-import { typographyClasses } from '@mui/material';
+import { alpha, inputBaseClasses, outlinedInputClasses, typographyClasses } from '@mui/material';
+
+import { theme } from '@/constants';
 
 const styles = {
+  root: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 3,
+    ['& .infinite-scroll-component__outerdiv']: {
+      height: '100%',
+    },
+  },
   loadingWrapper: {
     height: '100%',
     display: 'flex',
@@ -8,12 +20,12 @@ const styles = {
     justifyContent: 'center',
   },
   friendsWrapper: {
+    height: '100%',
     display: 'flex',
     flexDirection: 'column',
     overflowY: 'auto',
     gap: '16px',
-    marginTop: '24px',
-    padding: '0px 0px 8px 16px',
+    paddingLeft: theme.spacing(0.5),
   },
   friend: {
     width: '100%',
@@ -35,6 +47,7 @@ const styles = {
       fontSize: 14,
       fontWeight: 600,
       lineHeight: '20px',
+      color: alpha(theme.palette.text.primary, 0.2),
     },
   },
   username: {
@@ -43,6 +56,15 @@ const styles = {
       fontWeight: 500,
       lineHeight: '14px',
     },
+  },
+  searchInput: {
+    padding: theme.spacing(0, 0, 0, 2.5),
+    [`& .${inputBaseClasses.root}.${outlinedInputClasses.root}`]: {
+      backgroundColor: theme.palette.common.white,
+    },
+  },
+  noResults: {
+    pl: 3,
   },
 } as const;
 
