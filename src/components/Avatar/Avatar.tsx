@@ -35,7 +35,7 @@ const Avatar = ({
         <CircularProgress
           variant="determinate"
           sx={styles.progress}
-          value={xpProgress}
+          value={xpProgress / 10}
           size={avatarSizesMapping[size].size}
           thickness={3}
         />
