@@ -9,15 +9,16 @@ import type { FirebaseOptions } from 'firebase/app';
 
 const env = envUtil.getEnv();
 
+// TODO: IMPORTANT: THIS IS TEMPORARY TEST FIX, REMOVE IT LATER
 const firebaseConfig: FirebaseOptions = {
-  apiKey: env.firebase.apiKey,
-  authDomain: env.firebase.authDomain,
-  databaseURL: env.firebase.databaseURL,
-  projectId: env.firebase.projectId,
-  storageBucket: env.firebase.storageBucket,
-  messagingSenderId: env.firebase.messagingSenderId,
-  appId: env.firebase.appId,
-  measurementId: env.firebase.measurementId,
+  apiKey: env.firebase.apiKey || 'AIzaSyAK3JoxuMej6n9LURbHrttMMYBGVS_68Hg',
+  authDomain: env.firebase.authDomain || 'shapergap.firebaseapp.com',
+  databaseURL: env.firebase.databaseURL || 'https://shapergap-default-rtdb.firebaseio.com',
+  projectId: env.firebase.projectId || 'shapergap',
+  storageBucket: env.firebase.storageBucket || 'shapergap.appspot.com',
+  messagingSenderId: env.firebase.messagingSenderId || '702163433441',
+  appId: env.firebase.appId || '1:702163433441:web:5f7c74ac1466fd11e784a0',
+  measurementId: env.firebase.measurementId || 'G-6ZW5VY840H',
 };
 
 // Initialize Firebase
