@@ -37,4 +37,5 @@ export interface IFullUserResponse extends IUserResponse {
   updatedAt: Date;
   softSkills: ISoftSkillsObject[];
   subscriptions: ISubscriptionResponse[];
+  diamonds: number;
 }

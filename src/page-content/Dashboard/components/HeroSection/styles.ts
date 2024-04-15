@@ -64,6 +64,7 @@ const styles = {
   playButton: {
     mt: 2,
     borderRadius: '4px 4px 8px 8px',
+    fontWeight: 600,
   },
 } as const;
 

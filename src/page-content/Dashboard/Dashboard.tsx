@@ -41,7 +41,7 @@ const Dashboard = () => {
           <SkillProgress />
         </Box>
         <Box sx={styles.rightTable}>
-          <BalanceSection />
+          <BalanceSection diamonds={user?.diamonds} />
           <FriendsSection />
         </Box>
       </Box>

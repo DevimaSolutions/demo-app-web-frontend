@@ -5,7 +5,9 @@ import { PlusIcon, RubiesSimpleIcon } from '@/components';
 import styles from './styles';
 import useBalanceSection from './useBalanceSection';
 
-const BalanceSection = () => {
+import type { IBalanceSectionProps } from './types';
+
+const BalanceSection = ({ diamonds }: IBalanceSectionProps) => {
   const { handleRedirect } = useBalanceSection();
 
   return (
@@ -13,8 +15,7 @@ const BalanceSection = () => {
       <Box sx={styles.innerBox}>
         Diamonds
         <Box sx={styles.countContainer}>
-          {/* TODO: Change to real data */}
-          {Number(2145).toLocaleString()}
+          {Number(diamonds).toLocaleString()}
           <Box sx={styles.actionButton} onClick={handleRedirect('/store')}>
             <PlusIcon />
           </Box>
