@@ -31,7 +31,7 @@ const ResetPasswordForm = ({ token }: IResetPasswordFormProps) => {
               component={PasswordInput}
             />
             <Field
-              name="repeatPassword"
+              name="confirmPassword"
               autoComplete="current-password"
               placeholder="Confirm new password"
               fullWidth

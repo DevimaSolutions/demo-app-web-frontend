@@ -2,7 +2,7 @@ import type { ReactElement } from 'react';
 
 export interface IResetPasswordFormValues {
   password: string;
-  repeatPassword: string;
+  confirmPassword: string;
 }
 
 export interface IResetPasswordFormProps {

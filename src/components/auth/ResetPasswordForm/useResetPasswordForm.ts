@@ -12,7 +12,7 @@ const useResetPasswordForm = ({ token, toastIcon }: IUseResetPasswordFormProps) 
   const router = useRouter();
   const initialValues = {
     password: '',
-    repeatPassword: '',
+    confirmPassword: '',
   };
 
   const resetPasswordHandler = useCallback(
@@ -23,7 +23,7 @@ const useResetPasswordForm = ({ token, toastIcon }: IUseResetPasswordFormProps) 
       authorizationService
         .resetPassword({ token, password })
         .then(() => {
-          toast.success(successMessages.fieldChanged('password'), { icon: toastIcon });
+          toast.success(successMessages.userFieldChanged('password'), { icon: toastIcon });
           router.push('/sign-in');
         })
         .catch((error) => {

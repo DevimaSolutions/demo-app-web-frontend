@@ -1,18 +1,5 @@
-import { object, string, ref } from 'yup';
+import { object } from 'yup';
 
-import { PASSWORD_REGEX, validationMessages } from '@/constants';
+import { confirmPasswordSchema, passwordSchema } from '@/validations';
 
-export const schema = object()
-  .shape({
-    password: string()
-      .min(8)
-      .max(64)
-      .matches(PASSWORD_REGEX, validationMessages.password)
-      .required()
-      .trim(),
-    repeatPassword: string()
-      .oneOf([ref('password'), null], validationMessages.comparePassword)
-      .required()
-      .trim(),
-  })
-  .required();
+export const schema = object().concat(passwordSchema).concat(confirmPasswordSchema).required();

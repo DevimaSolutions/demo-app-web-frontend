@@ -21,7 +21,7 @@ const useChangePasswordForm = ({ onSubmit }: IChangePasswordFormProps) => {
         .updatePassword(values)
         .then(() => {
           onSubmit();
-          toast(successMessages.fieldChanged('password'));
+          toast(successMessages.userFieldChanged('password'));
         })
         .catch((error: AxiosError<IFormErrorResponse<IChangePasswordFormData>>) => {
           setErrors({

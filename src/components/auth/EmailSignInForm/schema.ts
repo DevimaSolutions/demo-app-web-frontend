@@ -1,6 +1,9 @@
 import { object, string } from 'yup';
 
+import { emailSchema } from '@/validations';
+
 export const schema = object({
-  email: string().trim().email().required(),
   password: string().trim().required(),
-}).required();
+})
+  .concat(emailSchema)
+  .required();

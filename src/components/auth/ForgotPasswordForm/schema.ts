@@ -1,5 +1,3 @@
-import { object, string } from 'yup';
+import { emailSchema } from '@/validations';
 
-export const schema = object({
-  email: string().trim().email().required(),
-}).required();
+export const schema = emailSchema;

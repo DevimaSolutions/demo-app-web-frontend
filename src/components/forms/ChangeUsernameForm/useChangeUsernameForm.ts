@@ -20,7 +20,7 @@ const useChangeUsernameForm = ({ username, onSubmit }: IChangeUsernameFormProps)
         .updateProfile(values)
         .then(() => {
           onSubmit();
-          toast(successMessages.fieldChanged('username'));
+          toast(successMessages.userFieldChanged('username'));
         })
         .catch((error: IFormErrorResponse<IChangeUsernameFormData>) => {
           setErrors({
