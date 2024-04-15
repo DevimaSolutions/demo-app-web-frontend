@@ -47,7 +47,7 @@ const styles = {
     mt: 2,
     width: '100%',
     background: alpha(theme.palette.primary[700], 0.1),
-    borderRadius: '4px 4px 8px 8px',
+    borderRadius: theme.spacing(0.5, 0.5, 1, 1),
     p: 2,
     display: 'flex',
     alignItems: 'center',

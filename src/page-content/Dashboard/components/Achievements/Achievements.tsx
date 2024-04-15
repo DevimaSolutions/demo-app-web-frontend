@@ -15,6 +15,7 @@ const Achievements = ({ achievements }: IAchievementsProps) => {
         <Box sx={styles.titleBox}>
           <Typography sx={styles.title}>Achievements</Typography>
           <Typography sx={styles.achievementsCount}>
+            {/* TODO: Add real data */}
             <span>7</span>/43
           </Typography>
         </Box>

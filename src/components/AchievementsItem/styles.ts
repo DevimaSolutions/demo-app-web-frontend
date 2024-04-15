@@ -5,7 +5,7 @@ import { theme } from '@/constants';
 const styles = {
   root: {
     background: theme.palette.common.white,
-    p: '16px 24px 16px 16px',
+    p: theme.spacing(2, 3, 2, 2),
     borderRadius: 0.8,
     width: '100%',
     display: 'flex',
