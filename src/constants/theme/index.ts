@@ -252,6 +252,7 @@ export const theme = createTheme({
           minHeight: '38px',
         },
         flexContainer: {
+          height: '38px',
           borderBottom: '2px solid',
           borderColor: '#E5E8EC',
         },
