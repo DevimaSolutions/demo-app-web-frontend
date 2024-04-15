@@ -2,12 +2,6 @@ import { object, ref, string } from 'yup';
 
 import { PASSWORD_REGEX, validationMessages } from '@/constants';
 
-export const emailSchema = object()
-  .shape({
-    email: string().trim().email().required(),
-  })
-  .required();
-
 export const passwordSchema = object()
   .shape({
     password: string()
