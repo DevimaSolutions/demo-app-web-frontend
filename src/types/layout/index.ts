@@ -3,4 +3,5 @@ export enum Layout {
   Auth,
   Empty,
   Onboarding,
+  Game,
 }

@@ -11,12 +11,14 @@ const AuthLayout = dynamic(() => import('@/components/layout/AuthLayout'));
 const EmptyLayout = dynamic(() => import('@/components/layout/EmptyLayout'));
 const MainLayout = dynamic(() => import('@/components/layout/MainLayout'));
 const OnboardingLayout = dynamic(() => import('@/components/layout/OnboardingLayout'));
+const GameLayout = dynamic(() => import('@/components/layout/GameLayout'));
 
 const layoutMap = {
   [LayoutTypes.Main]: MainLayout,
   [LayoutTypes.Auth]: AuthLayout,
   [LayoutTypes.Empty]: EmptyLayout,
   [LayoutTypes.Onboarding]: OnboardingLayout,
+  [LayoutTypes.Game]: GameLayout,
 };
 
 const Layout = ({ children, layoutType = LayoutTypes.Main }: ILayoutProps) => {
