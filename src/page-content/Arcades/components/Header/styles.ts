@@ -30,7 +30,7 @@ const styles = {
       lineHeight: '20px',
       fontWeight: 600,
       color: theme.palette.text.primary,
-      padding: theme.spacing(1.5, 5.25),
+      padding: theme.spacing(1.375, 5.125),
       svg: {
         width: 16,
         height: 16,

@@ -25,6 +25,7 @@ export { default as ExitIcon } from './ExitIcon';
 export { default as RewardPlaceholderIcon } from './RewardPlaceholderIcon';
 export { default as MountainsIcons } from './MountainsIcons';
 export { default as EliteBadgeIcon } from './EliteBadgeIcon';
+export { default as CrossIcon } from './CrossIcon';
 
 export * from './socials';
 export * from './coins';
