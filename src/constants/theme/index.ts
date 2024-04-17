@@ -51,7 +51,7 @@ export const theme = createTheme({
           fontSize: '16px',
           lineHeight: '20px',
           backgroundColor: '#FFFFFF',
-          color: '#6C629B',
+          color: '#886FFF',
           borderRadius: '8px',
           padding: '12px 20px 14px',
           border: '1.5px solid #FFFFFF',
@@ -415,10 +415,10 @@ export const theme = createTheme({
       '400': '#F1EBF9', //menu option hover
       '500': '#BDAFFF', //dashboard
       '600': '#0072E5',
-      '700': '#886FFF',
+      '700': '#8A80B9',
       '800': '#38229F', // selected text
       '900': '#886FFF', // check mark icon / new main color
-      main: '#8A80B9',
+      main: '#886FFF',
       light: '#66B2FF',
       dark: '#0059B2',
       contrastText: '#fff',
@@ -441,6 +441,7 @@ export const theme = createTheme({
       black: '#1D1D1D',
       white: '#fff',
       rubies: '#FC3952',
+      energy: '#FEC943',
     },
     text: {
       primary: '#343434',

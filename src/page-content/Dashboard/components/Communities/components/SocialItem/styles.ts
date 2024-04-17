@@ -16,7 +16,7 @@ const styles = {
     alignItems: 'center',
     flexDirection: 'column',
     gap: 0.5,
-    color: theme.palette.primary[700],
+    color: theme.palette.primary[900],
     position: 'relative',
   },
   text: {

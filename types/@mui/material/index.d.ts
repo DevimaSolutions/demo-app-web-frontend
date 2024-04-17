@@ -6,6 +6,7 @@ declare module '@mui/material/styles/createPalette' {
   }
   interface CommonColors {
     rubies: string;
+    energy: string;
   }
   interface Palette {
     primaryDark: PaletteColor;

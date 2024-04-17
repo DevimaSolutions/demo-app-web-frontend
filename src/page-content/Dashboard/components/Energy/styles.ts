@@ -20,6 +20,9 @@ const styles = {
     fontSize: 24,
     lineHeight: '24px',
     fontWeight: 600,
+    svg: {
+      color: theme.palette.common.energy,
+    },
   },
   time: {
     fontSize: 16,

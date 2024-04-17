@@ -46,7 +46,7 @@ const styles = {
   achievementsBox: {
     mt: 2,
     width: '100%',
-    background: alpha(theme.palette.primary[700], 0.1),
+    background: alpha(theme.palette.primary[900], 0.1),
     borderRadius: theme.spacing(0.5, 0.5, 1, 1),
     p: 2,
     display: 'flex',

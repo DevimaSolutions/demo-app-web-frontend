@@ -7,7 +7,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    background: theme.palette.primary[700],
+    background: theme.palette.primary[900],
     borderRadius: 0.8,
     position: 'relative',
     overflow: 'hidden',

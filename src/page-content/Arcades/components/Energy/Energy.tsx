@@ -1,29 +1,29 @@
 import { Box, IconButton, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 
-import { PlusIcon, RubiesSimpleIcon } from '@/components';
+import { EnergyIcon, LongArrowIcon } from '@/components';
 
 import styles from './styles';
 
-import type { IBalanceProps } from './types';
+import type { IEnergyProps } from './types';
 
-const Balance = ({ diamonds, ...rest }: IBalanceProps) => {
+const Energy = ({ energy, ...rest }: IEnergyProps) => {
   const router = useRouter();
 
   const handleRedirect = (redirectUrl: string) => () => router.push(redirectUrl);
   return (
     <Box sx={styles.root} {...rest}>
-      <Box sx={styles.rubiesContainer}>
-        <RubiesSimpleIcon />
+      <Box sx={styles.energyContainer}>
+        <EnergyIcon />
       </Box>
       <Box sx={styles.dataContainer}>
-        <Typography>{diamonds}</Typography>
+        <Typography>{energy}</Typography>
         <IconButton onClick={handleRedirect('/store')}>
-          <PlusIcon />
+          <LongArrowIcon />
         </IconButton>
       </Box>
     </Box>
   );
 };
 
-export default Balance;
+export default Energy;

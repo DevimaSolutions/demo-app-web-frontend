@@ -18,18 +18,18 @@ const styles = {
       lineHeight: '24px',
     },
   },
-  rubiesContainer: {
+  energyContainer: {
     width: 24,
     height: 24,
-    padding: theme.spacing(0.75, 0.625),
+    padding: theme.spacing(0.5, 0.5625, 0.5, 0.4375),
     borderRadius: theme.spacing(0.75, 0.25, 0.25, 0.75),
-    background: theme.palette.common.rubies,
+    background: theme.palette.common.energy,
     color: theme.palette.common.white,
     display: 'flex',
     alignItems: 'center',
     svg: {
-      width: 14,
-      height: 13,
+      width: 16,
+      height: 16,
     },
   },
   dataContainer: {

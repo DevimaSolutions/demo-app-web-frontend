@@ -31,7 +31,7 @@ const styles = {
     color: theme.palette.text.primary,
   },
   actionButton: {
-    background: theme.palette.primary[700],
+    background: theme.palette.primary[900],
     width: 20,
     height: 20,
     display: 'flex',

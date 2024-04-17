@@ -7,7 +7,7 @@ import { StreakStatus } from './enums';
 
 export const streakElementSettings = {
   [StreakStatus.Active]: {
-    mainColor: theme.palette.primary[700],
+    mainColor: theme.palette.primary[900],
     mainTextColor: theme.palette.common.white,
     imageBackgroundColor: theme.palette.grey[600],
     dayContainerColor: theme.palette.common.white,

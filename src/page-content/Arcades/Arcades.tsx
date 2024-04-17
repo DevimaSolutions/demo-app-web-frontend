@@ -1,8 +1,8 @@
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 
 import { useAuthContext } from '@/context';
 
-import { Balance } from './components';
+import { Header } from './components';
 import styles from './styles';
 
 const Arcades = () => {
@@ -10,10 +10,7 @@ const Arcades = () => {
 
   return (
     <Box sx={styles.root}>
-      <Box sx={styles.header}>
-        <Typography variant="h1">Arcades</Typography>
-        <Balance diamonds={user?.diamonds ?? 0} />
-      </Box>
+      <Header energy={user?.energy.energy ?? 0} diamonds={user?.diamonds ?? 0} />
     </Box>
   );
 };

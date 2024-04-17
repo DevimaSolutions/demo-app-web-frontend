@@ -18,7 +18,7 @@ const styles = {
     borderRadius: '50%',
     overflow: 'hidden',
     position: 'relative',
-    background: alpha(theme.palette.primary[700], 0.1),
+    background: alpha(theme.palette.primary[900], 0.1),
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -53,7 +53,7 @@ const styles = {
     mt: 0.5,
   },
   activeProgress: (width: number) => ({
-    background: theme.palette.primary[700],
+    background: theme.palette.primary[900],
     height: 4,
     borderRadius: 2,
     width: `${width}%`,

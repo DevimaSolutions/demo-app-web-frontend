@@ -1,5 +1,3 @@
-import type { BoxProps } from '@mui/material';
+import type { IHeaderProps } from '../Header/types';
 
-export interface IBalanceProps extends BoxProps {
-  diamonds: number;
-}
+export type IBalanceProps = Omit<IHeaderProps, 'energy'>;
