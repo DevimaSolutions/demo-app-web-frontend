@@ -31,11 +31,10 @@ const Header = () => {
           <DashboardIcon width={32} height={32} />
         </CategoryButton>
         <CategoryButton
-          disabled
           onClick={handleRedirect('/arcades')}
           selected={router.pathname === '/arcades'}
         >
-          <ArcadeIcon width={32} height={32} disabled />
+          <ArcadeIcon width={32} height={32} />
         </CategoryButton>
         <CategoryButton onClick={handleRedirect('/store')} selected={router.pathname === '/store'}>
           <StoreIcon width={32} height={32} />

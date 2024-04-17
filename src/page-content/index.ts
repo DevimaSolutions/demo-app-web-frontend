@@ -5,3 +5,4 @@ export { default as TermsAndConditions } from './TermsAndConditions';
 export { default as StubPage } from './StubPage';
 export { default as Dashboard } from './Dashboard';
 export { default as Store } from './Store';
+export { default as Arcades } from './Arcades';
