@@ -11,10 +11,12 @@ const useHeader = () => {
     signOut();
   };
 
+  const checkIsSelected = (pathname: string) => router.pathname === pathname;
+
   return {
-    router,
     handleRedirect,
     handleSignOut,
+    checkIsSelected,
   };
 };
 

@@ -13,7 +13,7 @@ import styles from './styles';
 import useHeader from './useHeader';
 
 const Header = () => {
-  const { router, handleRedirect, handleSignOut } = useHeader();
+  const { handleRedirect, handleSignOut, checkIsSelected } = useHeader();
 
   return (
     <AppBar sx={styles.appBar}>
@@ -22,25 +22,22 @@ const Header = () => {
         <CategoryButton
           disabled
           onClick={handleRedirect('/notifications')}
-          selected={router.pathname === '/notifications'}
+          selected={checkIsSelected('/notifications')}
         >
           <NotificationIcon width={32} height={32} disabled />
         </CategoryButton>
         <Divider sx={styles.divider} />
-        <CategoryButton onClick={handleRedirect('/')} selected={router.pathname === '/'}>
-          <DashboardIcon width={32} height={32} />
+        <CategoryButton onClick={handleRedirect('/')} selected={checkIsSelected('/')}>
+          <DashboardIcon width={32} height={32} disabled={!checkIsSelected('/')} />
         </CategoryButton>
-        <CategoryButton
-          onClick={handleRedirect('/arcades')}
-          selected={router.pathname === '/arcades'}
-        >
-          <ArcadeIcon width={32} height={32} />
+        <CategoryButton onClick={handleRedirect('/arcades')} selected={checkIsSelected('/arcades')}>
+          <ArcadeIcon width={32} height={32} disabled={!checkIsSelected('/arcades')} />
         </CategoryButton>
-        <CategoryButton onClick={handleRedirect('/store')} selected={router.pathname === '/store'}>
-          <StoreIcon width={32} height={32} />
+        <CategoryButton onClick={handleRedirect('/store')} selected={checkIsSelected('/store')}>
+          <StoreIcon width={32} height={32} disabled={!checkIsSelected('/store')} />
         </CategoryButton>
         <CategoryButton onClick={handleSignOut} sx={styles.signOutOption}>
-          <SignOutIcon width={32} height={32} />
+          <SignOutIcon width={32} height={32} disabled />
         </CategoryButton>
       </Toolbar>
     </AppBar>
